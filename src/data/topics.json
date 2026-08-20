@@ -20,6 +20,13 @@
       "description": "Sharpen your command of the language that powers the web.",
       "level": "Foundation",
       "accent": "gold"
+    },
+    {
+      "id": "prompt-engineering",
+      "name": "Prompt Engineering",
+      "description": "Design reliable instructions for language models, tools, and real-world AI workflows.",
+      "level": "Intermediate",
+      "accent": "gold"
     }
   ]
 }

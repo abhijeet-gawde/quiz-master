@@ -1,0 +1,525 @@
+{
+  "topicId": "prompt-engineering",
+  "questions": [
+    {
+      "questionId": "pe-1",
+      "questionText": "What is prompt engineering?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Designing and refining instructions to guide an AI model toward a useful result"},{"id":"B","text":"Training a neural network from randomly initialized weights"},{"id":"C","text":"Increasing a computer's memory"},{"id":"D","text":"Replacing an application database"}],
+      "correctAnswers": ["A"],
+      "summary": ["Prompt engineering is the deliberate design, testing, and refinement of model inputs.","It can include instructions, context, examples, constraints, tools, and output formats."]
+    },
+    {
+      "questionId": "pe-2",
+      "questionText": "Which parts commonly make up a well-designed prompt?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"A clear task or instruction"},{"id":"B","text":"Relevant context or source material"},{"id":"C","text":"Examples of the desired behavior"},{"id":"D","text":"Explicit output requirements"}],
+      "correctAnswers": ["A","B","C","D"],
+      "summary": ["Strong prompts make the task, context, examples, and expected output explicit when those elements matter.","Not every prompt needs every component, but missing requirements create avoidable ambiguity."]
+    },
+    {
+      "questionId": "pe-3",
+      "questionText": "In a chat model, what is the usual role of a system message?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Set high-level behavior, boundaries, and stable instructions"},{"id":"B","text":"Provide only the user's latest question"},{"id":"C","text":"Store the model's hidden weights"},{"id":"D","text":"Guarantee that every answer is factually correct"}],
+      "correctAnswers": ["A"],
+      "summary": ["System instructions establish the assistant's general behavior and constraints.","They guide the model but do not guarantee truthfulness or perfect instruction following."]
+    },
+    {
+      "questionId": "pe-4",
+      "questionText": "What makes an instruction more actionable?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Use a specific verb and clearly name the task"},{"id":"B","text":"Define the audience and purpose when relevant"},{"id":"C","text":"State constraints and acceptance criteria"},{"id":"D","text":"Rely on vague phrases such as 'make it good'"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Specific tasks, audiences, constraints, and success criteria reduce interpretation variance.","Vague quality statements are difficult to test and leave too much to the model's assumptions."]
+    },
+    {
+      "questionId": "pe-5",
+      "questionText": "What is zero-shot prompting?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Asking a model to perform a task without providing worked examples"},{"id":"B","text":"Asking a model to answer with zero tokens"},{"id":"C","text":"Training on no data at all"},{"id":"D","text":"Using exactly zero instructions"}],
+      "correctAnswers": ["A"],
+      "summary": ["Zero-shot prompts describe the task without demonstrations.","They are often effective for familiar, well-specified tasks."]
+    },
+    {
+      "questionId": "pe-6",
+      "questionText": "What is few-shot prompting useful for?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Showing the desired input-output pattern"},{"id":"B","text":"Demonstrating a classification label scheme"},{"id":"C","text":"Clarifying style or formatting conventions"},{"id":"D","text":"Changing the model's trained weights permanently"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Few-shot examples teach a pattern inside the prompt's context.","They do not fine-tune or permanently change model parameters."]
+    },
+    {
+      "questionId": "pe-7",
+      "questionText": "Why are delimiters useful in prompts?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"They separate instructions from data and make boundaries easier to interpret"},{"id":"B","text":"They increase the model's context window"},{"id":"C","text":"They encrypt confidential text"},{"id":"D","text":"They force deterministic decoding"}],
+      "correctAnswers": ["A"],
+      "summary": ["XML-like tags, Markdown fences, or clear labels can distinguish untrusted content from instructions.","Delimiters improve clarity but are not a security boundary by themselves."]
+    },
+    {
+      "questionId": "pe-8",
+      "questionText": "Which practices improve few-shot examples?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Use examples representative of real inputs"},{"id":"B","text":"Keep the labels and formatting consistent"},{"id":"C","text":"Include edge cases when they matter"},{"id":"D","text":"Choose examples that contradict the stated task"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Examples should reflect the distribution and conventions expected at runtime.","Contradictory demonstrations create conflicting signals and reduce reliability."]
+    },
+    {
+      "questionId": "pe-9",
+      "questionText": "What does role prompting attempt to do?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Give the model a useful perspective, expertise, or communication style"},{"id":"B","text":"Give the model human consciousness"},{"id":"C","text":"Install a software role on the server"},{"id":"D","text":"Guarantee expert-level accuracy"}],
+      "correctAnswers": ["A"],
+      "summary": ["A role such as 'act as a database reviewer' can focus terminology and priorities.","A role prompt is guidance, not proof of expertise or a substitute for verification."]
+    },
+    {
+      "questionId": "pe-10",
+      "questionText": "What is task decomposition?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Breaking a complex objective into smaller, ordered or independently checkable steps"},{"id":"B","text":"Removing all context from a prompt"},{"id":"C","text":"Converting text into image pixels"},{"id":"D","text":"Sending the same prompt repeatedly without changes"}],
+      "correctAnswers": ["A"],
+      "summary": ["Decomposition reduces cognitive load and makes intermediate results easier to inspect.","Subtasks can be chained, parallelized, or reviewed before the final response."]
+    },
+    {
+      "questionId": "pe-11",
+      "questionText": "Which are examples of prompt chaining?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Extract fields in one step and summarize them in another"},{"id":"B","text":"Draft an answer, then run a separate critique step"},{"id":"C","text":"Pass a validated intermediate result to the next prompt"},{"id":"D","text":"Assume every step is correct without checking it"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Prompt chaining uses multiple focused calls with intermediate outputs.","Validation between steps helps prevent early errors from silently propagating."]
+    },
+    {
+      "questionId": "pe-12",
+      "questionText": "What is the main purpose of asking a model to provide a concise rationale or structured explanation?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Make the result easier to inspect when explanation is needed"},{"id":"B","text":"Guarantee that the hidden reasoning is correct"},{"id":"C","text":"Increase the model's training data"},{"id":"D","text":"Avoid evaluating the final answer"}],
+      "correctAnswers": ["A"],
+      "summary": ["A requested explanation can improve transparency and debugging for appropriate tasks.","An explanation can still be wrong or post-hoc, so the answer and evidence need independent checks."]
+    },
+    {
+      "questionId": "pe-13",
+      "questionText": "What is self-consistency prompting?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Sampling multiple reasoning paths and selecting a consistent final answer"},{"id":"B","text":"Using one fixed answer for every input"},{"id":"C","text":"Removing all randomness from model training"},{"id":"D","text":"Comparing two unrelated databases"}],
+      "correctAnswers": ["A"],
+      "summary": ["Self-consistency aggregates multiple sampled solutions, often by majority agreement.","It can help on some reasoning tasks but increases cost and does not guarantee correctness."]
+    },
+    {
+      "questionId": "pe-14",
+      "questionText": "Which instructions help a model handle ambiguity responsibly?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Ask a clarifying question when required information is missing"},{"id":"B","text":"State assumptions explicitly"},{"id":"C","text":"Allow an 'unknown' or 'insufficient information' outcome"},{"id":"D","text":"Invent missing facts to keep the response flowing"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Clarification, explicit assumptions, and abstention reduce confident guesses.","A prompt should define when the model may say that the available information is insufficient."]
+    },
+    {
+      "questionId": "pe-15",
+      "questionText": "What does temperature generally control in text generation?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"How broadly the model samples among likely next tokens"},{"id":"B","text":"The physical temperature of the server"},{"id":"C","text":"The maximum number of input characters"},{"id":"D","text":"The model's factual knowledge cutoff"}],
+      "correctAnswers": ["A"],
+      "summary": ["Higher temperature usually produces more varied outputs; lower temperature usually makes them more concentrated.","The exact behavior depends on the provider and decoding implementation."]
+    },
+    {
+      "questionId": "pe-16",
+      "questionText": "What is top-p (nucleus) sampling?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Sampling from the smallest set of tokens whose cumulative probability reaches p"},{"id":"B","text":"Selecting the p-th paragraph of a response"},{"id":"C","text":"Limiting prompts to p words"},{"id":"D","text":"Ranking users by prompt quality"}],
+      "correctAnswers": ["A"],
+      "summary": ["Top-p dynamically limits candidate tokens by cumulative probability mass.","Temperature and top-p both affect variation and should usually be tuned carefully rather than pushed to extremes together."]
+    },
+    {
+      "questionId": "pe-17",
+      "questionText": "What are tokens and why do they matter?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Units into which model text is divided"},{"id":"B","text":"A factor in context-window limits"},{"id":"C","text":"A factor in many providers' cost and latency"},{"id":"D","text":"Always exactly one token per word"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Tokens may represent characters, word pieces, punctuation, or whole words depending on the tokenizer.","Input and output token counts affect context capacity, price, and often latency."]
+    },
+    {
+      "questionId": "pe-18",
+      "questionText": "What is a context window?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"The maximum token budget available for the relevant input and output context"},{"id":"B","text":"The visual area where a chat application is displayed"},{"id":"C","text":"A permanent memory of every prior conversation"},{"id":"D","text":"The model's temperature setting"}],
+      "correctAnswers": ["A"],
+      "summary": ["The context window bounds the information the model can attend to in a request.","Long prompts may need summarization, retrieval, or chunking, and a context window is not automatically durable memory."]
+    },
+    {
+      "questionId": "pe-19",
+      "questionText": "Why should output format be specified explicitly?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"It makes responses easier to parse"},{"id":"B","text":"It reduces variation between outputs"},{"id":"C","text":"It lets downstream validation reject malformed results"},{"id":"D","text":"It guarantees valid syntax in every model response"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Schemas, field lists, and examples make the output contract concrete.","Validation and retries are still needed because formatting instructions alone are not guarantees."]
+    },
+    {
+      "questionId": "pe-20",
+      "questionText": "Which practices are appropriate for reliable JSON output?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Define required fields and their types"},{"id":"B","text":"Use the provider's structured-output or schema feature when available"},{"id":"C","text":"Validate the returned JSON before using it"},{"id":"D","text":"Parse arbitrary model text with unsafe code execution"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["A formal schema plus runtime validation creates a clearer interface.","Never execute model-generated code as a shortcut for parsing untrusted output."]
+    },
+    {
+      "questionId": "pe-21",
+      "questionText": "What is hallucination in a language-model response?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Plausible-sounding content that is unsupported, fabricated, or factually wrong"},{"id":"B","text":"A model refusing a request"},{"id":"C","text":"A slow network connection"},{"id":"D","text":"A valid citation from a source"}],
+      "correctAnswers": ["A"],
+      "summary": ["Fluent language is not evidence that a claim is true.","Grounding, citations, verification, and abstention instructions can reduce but not eliminate hallucinations."]
+    },
+    {
+      "questionId": "pe-22",
+      "questionText": "What is retrieval-augmented generation (RAG)?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Retrieving relevant external content and supplying it to the model before generation"},{"id":"B","text":"Randomly generating documents until one looks useful"},{"id":"C","text":"Replacing retrieval with a higher temperature"},{"id":"D","text":"Training a model only on its own outputs"}],
+      "correctAnswers": ["A"],
+      "summary": ["RAG separates retrieval of evidence from generation of the response.","The prompt should identify the supplied context and instruct the model to ground claims in it."]
+    },
+    {
+      "questionId": "pe-23",
+      "questionText": "Which are important RAG prompt considerations?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Tell the model how to use the retrieved context"},{"id":"B","text":"Require citations or source identifiers when appropriate"},{"id":"C","text":"Define what to do when the context does not contain an answer"},{"id":"D","text":"Treat retrieved text as trusted instructions"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Grounding prompts should specify evidence use, citation behavior, and an abstention policy.","Retrieved documents are data and may contain prompt injection; they should not automatically override higher-priority instructions."]
+    },
+    {
+      "questionId": "pe-24",
+      "questionText": "What is tool or function calling?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"A model proposes a structured call to an external function that the application executes"},{"id":"B","text":"A model directly runs any code it writes without application control"},{"id":"C","text":"A method for increasing token vocabulary"},{"id":"D","text":"A prompt with no user input"}],
+      "correctAnswers": ["A"],
+      "summary": ["The application defines tools and validates arguments before executing them.","The model should not be treated as having unrestricted access to systems or data."]
+    },
+    {
+      "questionId": "pe-25",
+      "questionText": "Which controls belong around tool calls?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Validate arguments against a strict schema"},{"id":"B","text":"Authorize the requested action for the current user"},{"id":"C","text":"Apply least privilege and approval for high-impact actions"},{"id":"D","text":"Trust a tool name or argument merely because the model produced it"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Tool use must be governed by normal application security controls.","Schema validation, authorization, least privilege, logging, and confirmation reduce operational risk."]
+    },
+    {
+      "questionId": "pe-26",
+      "questionText": "What is prompt injection?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Untrusted content attempts to alter the model's behavior or make it ignore intended instructions"},{"id":"B","text":"Adding a second valid example to a prompt"},{"id":"C","text":"Compressing a prompt into fewer tokens"},{"id":"D","text":"A model receiving a system message"}],
+      "correctAnswers": ["A"],
+      "summary": ["Injection can appear in user input, web pages, documents, emails, or retrieved content.","Prompt wording alone cannot provide complete isolation; permissions and data-flow controls are essential."]
+    },
+    {
+      "questionId": "pe-27",
+      "questionText": "Which defenses help reduce prompt-injection impact?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Separate trusted instructions from untrusted data"},{"id":"B","text":"Limit tools and sensitive data to the minimum required"},{"id":"C","text":"Validate and sanitize outputs before side effects"},{"id":"D","text":"Assume delimiters make untrusted text harmless"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Defense in depth includes data labeling, least privilege, output validation, monitoring, and human approval.","No single prompt trick reliably prevents injection against a capable model."]
+    },
+    {
+      "questionId": "pe-28",
+      "questionText": "What is the difference between prompting and fine-tuning?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Prompting changes the request at inference time, while fine-tuning updates model parameters using training data"},{"id":"B","text":"They are exactly the same operation"},{"id":"C","text":"Fine-tuning only changes a user's browser settings"},{"id":"D","text":"Prompting permanently changes the base model"}],
+      "correctAnswers": ["A"],
+      "summary": ["Prompting is usually faster to iterate and does not modify the model weights.","Fine-tuning can teach persistent patterns but requires data, training, evaluation, and operational cost."]
+    },
+    {
+      "questionId": "pe-29",
+      "questionText": "What should a prompt evaluation set contain?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Representative normal cases"},{"id":"B","text":"Known edge cases and adversarial inputs"},{"id":"C","text":"Expected outputs, rubrics, or verifiable properties"},{"id":"D","text":"Only examples that the current prompt already passes"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["A useful evaluation set reflects both expected use and failure modes.","Curating only easy examples hides regressions and gives a misleading quality signal."]
+    },
+    {
+      "questionId": "pe-30",
+      "questionText": "Which metrics can be useful when evaluating a prompt?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Task accuracy or rubric-based quality"},{"id":"B","text":"Grounding, citation, or factuality measures"},{"id":"C","text":"Latency, token usage, and cost"},{"id":"D","text":"The prompt's character count as the only quality metric"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Prompt quality is multidimensional: correctness, relevance, safety, groundedness, latency, and cost may all matter.","A short prompt is not automatically a good prompt."]
+    },
+    {
+      "questionId": "pe-31",
+      "questionText": "Why should prompts be versioned?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"To reproduce and compare behavior over time"},{"id":"B","text":"To connect changes with evaluation results"},{"id":"C","text":"To support rollback when a change regresses quality"},{"id":"D","text":"To guarantee that provider models never change"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Prompt text, model version, parameters, tools, and relevant context should be tracked together.","Versioning improves debugging and controlled release; it cannot freeze external model behavior by itself."]
+    },
+    {
+      "questionId": "pe-32",
+      "questionText": "What does grounding require from a response?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Claims are supported by the provided or retrieved evidence"},{"id":"B","text":"The response contains no adjectives"},{"id":"C","text":"The model uses the highest temperature"},{"id":"D","text":"The model refuses every question"}],
+      "correctAnswers": ["A"],
+      "summary": ["Grounding ties an answer to an identified source or trusted context.","A grounding instruction should also define how to handle unsupported claims."]
+    },
+    {
+      "questionId": "pe-33",
+      "questionText": "Which privacy practices are important when sending data to a model?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Minimize and redact sensitive data where possible"},{"id":"B","text":"Understand provider retention and data-use policies"},{"id":"C","text":"Restrict access to prompts, logs, and outputs"},{"id":"D","text":"Put secrets in the prompt because models always keep them private"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Prompt security includes data minimization, provider due diligence, access control, and careful logging.","Never place credentials or unnecessary personal data in prompts."]
+    },
+    {
+      "questionId": "pe-34",
+      "questionText": "What is an agentic workflow?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"A model-driven loop that plans or selects actions, uses tools, observes results, and continues toward a goal"},{"id":"B","text":"A static paragraph with no external interaction"},{"id":"C","text":"A model with unlimited autonomy and permissions"},{"id":"D","text":"A database index for prompts"}],
+      "correctAnswers": ["A"],
+      "summary": ["Agentic systems combine model decisions with application orchestration and tools.","They need bounded goals, budgets, permissions, state handling, and stopping conditions."]
+    },
+    {
+      "questionId": "pe-35",
+      "questionText": "Which are good production practices for an agentic prompt?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Set time, token, and tool-call limits"},{"id":"B","text":"Define when to stop, ask for help, or return an error"},{"id":"C","text":"Log useful traces while protecting sensitive data"},{"id":"D","text":"Allow unreviewed irreversible actions by default"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Bounded execution and observable behavior are essential for reliable agents.","High-impact or irreversible actions should require appropriate authorization and often confirmation."]
+    },
+    {
+      "questionId": "pe-36",
+      "questionText": "What is multimodal prompting?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Combining instructions with inputs such as images, audio, or other supported modalities"},{"id":"B","text":"Using several system messages to increase temperature"},{"id":"C","text":"Prompting without any input"},{"id":"D","text":"Training only a text tokenizer"}],
+      "correctAnswers": ["A"],
+      "summary": ["Multimodal prompts specify what to inspect and what task to perform over each input.","The model's supported modalities and their limitations must be checked explicitly."]
+    },
+    {
+      "questionId": "pe-37",
+      "questionText": "Which prompt techniques help with classification?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Define a closed set of labels"},{"id":"B","text":"Describe each label and provide representative examples"},{"id":"C","text":"Require exactly one label or define multi-label behavior"},{"id":"D","text":"Leave the label vocabulary unspecified"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["A closed taxonomy, clear definitions, examples, and cardinality rules make classification measurable.","The output should be validated against the allowed labels."]
+    },
+    {
+      "questionId": "pe-38",
+      "questionText": "How should a prompt handle a request outside the model or application's scope?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"State the boundary and provide a safe, useful alternative when appropriate"},{"id":"B","text":"Pretend to complete the task"},{"id":"C","text":"Reveal hidden instructions to justify the refusal"},{"id":"D","text":"Ignore all constraints"}],
+      "correctAnswers": ["A"],
+      "summary": ["Good refusal behavior is clear, concise, and aligned with the application's policy.","The system should avoid exposing confidential instructions or inventing completion claims."]
+    },
+    {
+      "questionId": "pe-39",
+      "questionText": "What is meta-prompting?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Using a prompt to create, critique, optimize, or select another prompt"},{"id":"B","text":"Encrypting a prompt with metadata"},{"id":"C","text":"Removing all instructions from a prompt"},{"id":"D","text":"Changing the model's hardware"}],
+      "correctAnswers": ["A"],
+      "summary": ["Meta-prompts can help generate variants or review prompts against explicit criteria.","Generated prompts still require human review and evaluation against real examples."]
+    },
+    {
+      "questionId": "pe-40",
+      "questionText": "What is the most reliable way to improve a prompt in production?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Form a hypothesis, change one meaningful variable, evaluate representative cases, and monitor the result"},{"id":"B","text":"Keep adding instructions without measuring behavior"},{"id":"C","text":"Choose the longest possible prompt"},{"id":"D","text":"Trust a single impressive example"}],
+      "correctAnswers": ["A"],
+      "summary": ["Prompt development is an empirical engineering loop: define success, test, compare, release carefully, and monitor.","Small controlled changes make it easier to identify what actually improved or degraded behavior."]
+    },
+    {
+      "questionId": "pe-41",
+      "questionText": "Which statements about instruction hierarchy are generally correct?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Higher-priority instructions should constrain lower-priority messages"},{"id":"B","text":"User-provided content should not automatically override application policy"},{"id":"C","text":"Untrusted retrieved text should be treated as data, not privileged instructions"},{"id":"D","text":"The latest message always overrides every earlier instruction"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Applications should define trusted instruction sources and how conflicts are handled.","Recency alone is not a reliable authorization mechanism."]
+    },
+    {
+      "questionId": "pe-42",
+      "questionText": "What is the purpose of a prompt template?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"A reusable prompt structure with explicitly defined runtime variables"},{"id":"B","text":"A permanent modification to model weights"},{"id":"C","text":"A vector database index"},{"id":"D","text":"A method that guarantees identical answers"}],
+      "correctAnswers": ["A"],
+      "summary": ["Templates separate stable instructions from changing input values.","Variables should be validated and safely inserted rather than concatenated without boundaries."]
+    },
+    {
+      "questionId": "pe-43",
+      "questionText": "Which practices reduce risks when interpolating user data into a prompt?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Clearly label and delimit the user data"},{"id":"B","text":"Validate length, type, and allowed values before insertion"},{"id":"C","text":"Keep secrets and unnecessary personal data out of the prompt"},{"id":"D","text":"Treat user text as trusted instructions because it came from the application UI"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Interpolation is a data-boundary problem, not merely a string-formatting problem.","Validation, minimization, and clear separation reduce injection and privacy risks."]
+    },
+    {
+      "questionId": "pe-44",
+      "questionText": "What does a stop sequence do?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Stops generation when the configured token sequence is produced"},{"id":"B","text":"Stops the model from reading the prompt"},{"id":"C","text":"Deletes all output after generation"},{"id":"D","text":"Sets the model's knowledge cutoff"}],
+      "correctAnswers": ["A"],
+      "summary": ["Stop sequences can help terminate delimited sections or prevent unwanted continuation.","Provider support and tokenization behavior should be verified before relying on one."]
+    },
+    {
+      "questionId": "pe-45",
+      "questionText": "Which model parameters are commonly used to control response length or repetition?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Maximum output token limit"},{"id":"B","text":"Stop sequences"},{"id":"C","text":"Frequency or presence penalties, where supported"},{"id":"D","text":"The prompt's font family"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Output limits and stop sequences constrain length; penalties can influence repeated token patterns.","Parameter names and exact effects vary by provider."]
+    },
+    {
+      "questionId": "pe-46",
+      "questionText": "What is the practical purpose of a seed parameter when a provider supports it?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Improve repeatability of sampling under otherwise similar conditions"},{"id":"B","text":"Guarantee semantic correctness"},{"id":"C","text":"Increase the context window"},{"id":"D","text":"Encrypt the request"}],
+      "correctAnswers": ["A"],
+      "summary": ["A fixed seed can make comparisons easier, but deterministic behavior is not guaranteed across model or infrastructure changes.","Reproducibility also requires tracking the model, prompt, parameters, tools, and input."]
+    },
+    {
+      "questionId": "pe-47",
+      "questionText": "What is an embedding?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"A numeric vector representing information so semantic similarity can be compared"},{"id":"B","text":"A hidden system instruction"},{"id":"C","text":"A model temperature value"},{"id":"D","text":"A text-only output format"}],
+      "correctAnswers": ["A"],
+      "summary": ["Embeddings map text or other supported content into vectors used for similarity and retrieval tasks.","An embedding captures useful patterns but is not a perfect measure of meaning or truth."]
+    },
+    {
+      "questionId": "pe-48",
+      "questionText": "Which decisions are part of document chunking for RAG?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Chunk size and overlap"},{"id":"B","text":"Preserving headings, tables, and source metadata"},{"id":"C","text":"Choosing boundaries that retain useful semantic units"},{"id":"D","text":"Splitting every document at an arbitrary identical character count without testing"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Chunking balances retrieval precision, context completeness, and token cost.","Structure and metadata improve traceability and retrieval quality; chunking needs empirical evaluation."]
+    },
+    {
+      "questionId": "pe-49",
+      "questionText": "What is reranking in a retrieval pipeline?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Reordering initially retrieved candidates using a more precise relevance model or scoring step"},{"id":"B","text":"Randomizing search results"},{"id":"C","text":"Converting an answer into JSON"},{"id":"D","text":"Increasing generation temperature"}],
+      "correctAnswers": ["A"],
+      "summary": ["A fast first-stage retriever can return candidates that a slower reranker orders more accurately.","Reranking can improve relevance but adds latency and cost."]
+    },
+    {
+      "questionId": "pe-50",
+      "questionText": "Which retrieval metrics describe different aspects of a RAG system?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Recall: how much relevant material was retrieved"},{"id":"B","text":"Precision: how much retrieved material was relevant"},{"id":"C","text":"Answer faithfulness or citation correctness"},{"id":"D","text":"Prompt length as a complete substitute for retrieval evaluation"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Retrieval quality and answer quality are related but distinct evaluation layers.","A system can retrieve the right document and still produce an unsupported answer, or generate well from incomplete retrieval."]
+    },
+    {
+      "questionId": "pe-51",
+      "questionText": "How should retrieved context normally be represented in a grounding prompt?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Clearly labeled, delimited evidence with source identifiers and an explicit rule for unsupported claims"},{"id":"B","text":"As higher-priority instructions than the system policy"},{"id":"C","text":"Without source metadata so citations cannot be checked"},{"id":"D","text":"Mixed into the task instruction without boundaries"}],
+      "correctAnswers": ["A"],
+      "summary": ["Clear evidence boundaries help the model distinguish task instructions from retrieved data.","Source identifiers enable traceability and auditing."]
+    },
+    {
+      "questionId": "pe-52",
+      "questionText": "Which metrics are commonly used for binary classification evaluation?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Precision"},{"id":"B","text":"Recall"},{"id":"C","text":"F1 score"},{"id":"D","text":"Context-window size as a classification metric"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Precision measures the correctness of predicted positives; recall measures the positives found; F1 combines them.","The appropriate metric depends on the cost of false positives and false negatives."]
+    },
+    {
+      "questionId": "pe-53",
+      "questionText": "What is an LLM-as-judge evaluation?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Using a model to score or compare outputs against a defined rubric"},{"id":"B","text":"Allowing a model to deploy production code without review"},{"id":"C","text":"Measuring only response latency"},{"id":"D","text":"Fine-tuning the evaluator on every response automatically"}],
+      "correctAnswers": ["A"],
+      "summary": ["LLM judges can scale rubric-based evaluation for qualities that are difficult to match exactly.","They need calibration, human spot checks, bias analysis, and protection against judge preferences or prompt leakage."]
+    },
+    {
+      "questionId": "pe-54",
+      "questionText": "Which practices make human evaluation more reliable?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Use a written rubric with observable criteria"},{"id":"B","text":"Blind evaluators to the prompt version when feasible"},{"id":"C","text":"Measure agreement between evaluators"},{"id":"D","text":"Change the scoring criteria for each answer"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Consistent criteria and blinded comparisons reduce bias.","Inter-rater agreement helps reveal ambiguous rubrics or inconsistent judgments."]
+    },
+    {
+      "questionId": "pe-55",
+      "questionText": "What is a prompt regression test?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"A repeatable test that checks whether a prompt change preserves or improves expected behavior"},{"id":"B","text":"A test that only checks whether the prompt has fewer characters"},{"id":"C","text":"A model retraining procedure"},{"id":"D","text":"A test run only after a production incident"}],
+      "correctAnswers": ["A"],
+      "summary": ["Regression suites make prompt changes measurable before release.","They should include positive, negative, edge, safety, and representative cases."]
+    },
+    {
+      "questionId": "pe-56",
+      "questionText": "Which concerns belong in a certification-level prompt production review?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Quality and safety acceptance criteria"},{"id":"B","text":"Latency, cost, rate limits, and failure handling"},{"id":"C","text":"Privacy, retention, access control, and auditability"},{"id":"D","text":"Only whether one manually tested answer looked impressive"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Production readiness includes quality, safety, operations, privacy, and governance.","Anecdotal success is not sufficient evidence for deployment."]
+    },
+    {
+      "questionId": "pe-57",
+      "questionText": "What should a robust model API integration do when a request fails transiently?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Retry only retryable failures with bounded exponential backoff"},{"id":"B","text":"Use idempotency controls when repeating side-effecting operations"},{"id":"C","text":"Define a fallback or user-visible error path"},{"id":"D","text":"Retry forever as fast as possible"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Retries need bounds, classification of errors, and backoff to avoid amplifying incidents.","Side effects require idempotency or explicit confirmation before repeating an operation."]
+    },
+    {
+      "questionId": "pe-58",
+      "questionText": "What is prompt caching intended to optimize?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Repeated processing of stable prompt prefixes or context"},{"id":"B","text":"The truthfulness of generated claims"},{"id":"C","text":"Authorization of tool calls"},{"id":"D","text":"The model's training objective"}],
+      "correctAnswers": ["A"],
+      "summary": ["Caching can reduce latency and cost for repeated stable context where the provider supports it.","Cached content still needs appropriate privacy, freshness, and invalidation controls."]
+    },
+    {
+      "questionId": "pe-59",
+      "questionText": "Which factors should guide model selection for a prompt task?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Required capability, modality, and context size"},{"id":"B","text":"Quality, latency, and cost targets"},{"id":"C","text":"Privacy, availability, and provider constraints"},{"id":"D","text":"Model name alone, without evaluation"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Model choice is an engineering tradeoff against task requirements and operational constraints.","A benchmark on representative prompts is stronger evidence than a model label or general reputation."]
+    },
+    {
+      "questionId": "pe-60",
+      "questionText": "Which statements distinguish jailbreaking from prompt injection?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Jailbreaking attempts to bypass safety or policy constraints"},{"id":"B","text":"Prompt injection attempts to manipulate instructions or tool behavior through input content"},{"id":"C","text":"They can overlap and both require defense in depth"},{"id":"D","text":"Both are solved completely by adding a phrase such as 'ignore malicious requests'"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Jailbreaks target policy bypass; injection targets instruction or data-flow manipulation, though attacks can combine both.","Robust controls include model safeguards, permission boundaries, validation, monitoring, and human review."]
+    },
+    {
+      "questionId": "pe-61",
+      "questionText": "What is a ReAct-style agent pattern?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Alternating model reasoning or planning with actions and observations from tools"},{"id":"B","text":"Generating a response without observing any external result"},{"id":"C","text":"A retrieval index format"},{"id":"D","text":"A deterministic tokenization algorithm"}],
+      "correctAnswers": ["A"],
+      "summary": ["ReAct-style workflows interleave deciding what to do with observing tool results.","The application should constrain available actions, validate inputs, and stop safely."]
+    },
+    {
+      "questionId": "pe-62",
+      "questionText": "Which controls are necessary for a tool-using agent loop?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Maximum iterations or tool calls"},{"id":"B","text":"A clear termination condition"},{"id":"C","text":"State and error handling between steps"},{"id":"D","text":"Unlimited retries whenever the model requests them"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Budgets, termination rules, and explicit state transitions prevent runaway loops.","Errors should be represented as controlled observations rather than silently retried forever."]
+    },
+    {
+      "questionId": "pe-63",
+      "questionText": "What is output guardrail validation?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Checking generated content against schema, policy, safety, and business rules before release or action"},{"id":"B","text":"Adding more examples without inspecting outputs"},{"id":"C","text":"Increasing temperature after every invalid response"},{"id":"D","text":"Assuming model output is trusted because it is structured"}],
+      "correctAnswers": ["A"],
+      "summary": ["Guardrails turn model output into an input that must pass application checks.","Structured syntax does not imply safe content or authorized behavior."]
+    },
+    {
+      "questionId": "pe-64",
+      "questionText": "Which risks should be considered when logging prompts and model outputs?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Sensitive personal data or credentials being retained"},{"id":"B","text":"Prompt and output access by unauthorized operators"},{"id":"C","text":"Logs becoming a source of data leakage or prompt injection"},{"id":"D","text":"The assumption that logs are harmless because they are not user-facing"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Observability must be balanced with minimization, redaction, retention limits, and access controls.","Operational logs are part of the system's security and privacy boundary."]
+    },
+    {
+      "questionId": "pe-65",
+      "questionText": "What is the strongest evidence that a prompt change improved a production workflow?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"It improves predefined quality and safety metrics on representative tests while meeting operational targets"},{"id":"B","text":"It produces one unusually eloquent response"},{"id":"C","text":"It is longer than the previous prompt"},{"id":"D","text":"The model says that the new prompt is better"}],
+      "correctAnswers": ["A"],
+      "summary": ["Certification-level practice relies on repeatable evidence across quality, safety, cost, and latency.","Controlled experiments and monitoring are needed to confirm that offline gains carry into real use."]
+    }
+  ]
+}
