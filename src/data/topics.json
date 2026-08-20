@@ -1,0 +1,25 @@
+{
+  "topics": [
+    {
+      "id": "react",
+      "name": "React Fundamentals",
+      "description": "Build a strong foundation in components, hooks, and rendering.",
+      "level": "Foundation",
+      "accent": "coral"
+    },
+    {
+      "id": "node",
+      "name": "Node.js",
+      "description": "Explore the runtime, modules, and patterns behind modern backends.",
+      "level": "Intermediate",
+      "accent": "mint"
+    },
+    {
+      "id": "javascript",
+      "name": "Modern JavaScript",
+      "description": "Sharpen your command of the language that powers the web.",
+      "level": "Foundation",
+      "accent": "gold"
+    }
+  ]
+}

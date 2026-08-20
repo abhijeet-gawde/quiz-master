@@ -1,0 +1,21 @@
+{
+  "topicId": "node",
+  "questions": [
+    {
+      "questionId": "node-1",
+      "questionText": "Which built-in Node.js module is commonly used to create an HTTP server?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"http"},{"id":"B","text":"server"},{"id":"C","text":"web"},{"id":"D","text":"request"}],
+      "correctAnswers": ["A"],
+      "summary": ["The http module provides server and client APIs.","Node servers can listen for requests without a separate web server."]
+    },
+    {
+      "questionId": "node-2",
+      "questionText": "Which statements describe Node.js accurately?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"It runs JavaScript outside the browser"},{"id":"B","text":"It uses an event-driven I/O model"},{"id":"C","text":"It requires a browser DOM"},{"id":"D","text":"It includes npm as its package manager"}],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["Node.js uses the V8 engine outside the browser.","Its event loop supports non-blocking I/O.","npm helps install and manage JavaScript packages."]
+    }
+  ]
+}

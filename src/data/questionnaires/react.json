@@ -1,0 +1,21 @@
+{
+  "topicId": "react",
+  "questions": [
+    {
+      "questionId": "react-1",
+      "questionText": "Which hooks are available in React?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"useState"},{"id":"B","text":"useEffect"},{"id":"C","text":"useDatabase"},{"id":"D","text":"useMemo"}],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["useState manages component state.","useEffect synchronizes with side effects.","useMemo caches an expensive calculation."]
+    },
+    {
+      "questionId": "react-2",
+      "questionText": "What is the recommended way to render a list of React elements?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Use a stable key prop for each item"},{"id":"B","text":"Use document.write for each item"},{"id":"C","text":"Put every item in a separate root"},{"id":"D","text":"Use a random key on every render"}],
+      "correctAnswers": ["A"],
+      "summary": ["Keys help React identify which list items changed.","Stable keys should come from the data whenever possible."]
+    }
+  ]
+}

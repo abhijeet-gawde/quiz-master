@@ -1,0 +1,21 @@
+{
+  "topicId": "javascript",
+  "questions": [
+    {
+      "questionId": "js-1",
+      "questionText": "Which declarations create block-scoped bindings?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"let"},{"id":"B","text":"const"},{"id":"C","text":"var"},{"id":"D","text":"class"}],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["let and const are block scoped.","class declarations are also scoped to their block.","const prevents reassignment of the binding itself."]
+    },
+    {
+      "questionId": "js-2",
+      "questionText": "What does Array.prototype.map return?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"A new transformed array"},{"id":"B","text":"The original array only"},{"id":"C","text":"A boolean"},{"id":"D","text":"A promise in every case"}],
+      "correctAnswers": ["A"],
+      "summary": ["map creates a new array from the callback results.","The original array is not mutated by map itself."]
+    }
+  ]
+}
