@@ -27,7 +27,7 @@ export default function ResultPanel({ result, summary, onRetry }) {
           </Collapse>
         </>
       )}
-      <Button variant="outlined" onClick={onRetry} sx={{ alignSelf: 'flex-start' }}>Retry</Button>
+      {result === 'incorrect' && <Button variant="outlined" onClick={onRetry} sx={{ alignSelf: 'flex-start' }}>Retry</Button>}
     </Stack>
   );
 }

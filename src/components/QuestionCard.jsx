@@ -12,7 +12,7 @@ export default function QuestionCard({ question, index, total, selected, result,
           {result === 'correct' && <CheckRoundedIcon color="success" />}
         </Stack>
         <Typography variant="h5" component="h2" sx={{ mt: 2, mb: 3, fontWeight: 800, lineHeight: 1.25 }}>{question.questionText}</Typography>
-        <AnswerOptions question={question} selected={selected} disabled={result === 'correct'} onChange={onSelect} />
+        <AnswerOptions question={question} selected={selected} disabled={Boolean(result)} onChange={onSelect} />
         <Divider sx={{ my: 3 }} />
         {!result && <Button variant="contained" onClick={onVerify} disabled={selected.length === 0}>Verify answer</Button>}
         <ResultPanel result={result} summary={question.summary} onRetry={onRetry} />
