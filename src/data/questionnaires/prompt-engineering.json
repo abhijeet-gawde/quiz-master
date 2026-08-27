@@ -520,6 +520,150 @@
       "options": [{"id":"A","text":"It improves predefined quality and safety metrics on representative tests while meeting operational targets"},{"id":"B","text":"It produces one unusually eloquent response"},{"id":"C","text":"It is longer than the previous prompt"},{"id":"D","text":"The model says that the new prompt is better"}],
       "correctAnswers": ["A"],
       "summary": ["Certification-level practice relies on repeatable evidence across quality, safety, cost, and latency.","Controlled experiments and monitoring are needed to confirm that offline gains carry into real use."]
+    },
+    {
+      "questionId": "pe-66",
+      "questionText": "Which sequence best represents a basic prompt structure?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Instruction, relevant context or input, and expected output format"},{"id":"B","text":"Random tokens, hidden weights, and server temperature"},{"id":"C","text":"Only a role name with no task or input"},{"id":"D","text":"A database schema followed by executable code"}],
+      "correctAnswers": ["A"],
+      "summary": ["A prompt commonly states what to do, supplies the information needed to do it, and defines the desired response shape when useful.","The components can be adapted to the task; a minimal prompt may need only a clear instruction and input."]
+    },
+    {
+      "questionId": "pe-67",
+      "questionText": "Which prompt gives the clearest simple instruction for summarization?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Summarize the paragraph below in three bullet points for a busy manager: [paragraph]"},{"id":"B","text":"Do something useful with this"},{"id":"C","text":"Make it better somehow"},{"id":"D","text":"Paragraph"}],
+      "correctAnswers": ["A"],
+      "summary": ["The strongest instruction names the action, source, audience, and useful output constraint.","Specificity makes the result easier to evaluate and reduces guesswork."]
+    },
+    {
+      "questionId": "pe-68",
+      "questionText": "Which is a zero-shot prompt for translation?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Translate 'Good morning' into Spanish."},{"id":"B","text":"English: Hello -> Spanish: Hola; English: Good morning -> Spanish:"},{"id":"C","text":"First infer the grammar rules, then translate using a hidden reasoning trace."},{"id":"D","text":"Translate the sentence using the three examples provided below."}],
+      "correctAnswers": ["A"],
+      "summary": ["Zero-shot prompting gives the task and input without worked examples.","The example with a completed pair is few-shot prompting, while an instruction to reason through steps is a reasoning-oriented prompt."]
+    },
+    {
+      "questionId": "pe-69",
+      "questionText": "Which prompt best demonstrates few-shot summarization?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Text: The service was slow. Summary: Performance degraded. Text: The report has errors. Summary:"},{"id":"B","text":"Summarize this paragraph."},{"id":"C","text":"Summarize the text with no examples."},{"id":"D","text":"Write a summary using your general knowledge."}],
+      "correctAnswers": ["A"],
+      "summary": ["Few-shot prompting shows one or more input-output demonstrations before the new input.","The examples establish the desired abstraction and concise style without changing model weights."]
+    },
+    {
+      "questionId": "pe-70",
+      "questionText": "Why does relevant context often improve prompt results?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"It gives the model information needed to interpret the task"},{"id":"B","text":"It can constrain the answer to a known source or domain"},{"id":"C","text":"It removes the need to define any task or expected output"},{"id":"D","text":"It can reduce ambiguity about terminology and audience"}],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["Relevant context supplies grounding, constraints, and shared terminology.","Context cannot compensate for an undefined task, and irrelevant or excessive context can reduce quality and consume the context window."]
+    },
+    {
+      "questionId": "pe-71",
+      "questionText": "Which context elements can be useful in a prompt?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"The model's role or perspective for the task"},{"id":"B","text":"The specific task and its purpose"},{"id":"C","text":"Required format, constraints, or acceptance criteria"},{"id":"D","text":"Unrelated background included only to make the prompt longer"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Role, task, format, constraints, and purpose provide complementary context when the task needs them.","Context should be relevant and proportionate; extra text does not automatically improve an answer."]
+    },
+    {
+      "questionId": "pe-72",
+      "questionText": "What is a good way to keep background information separate from the instruction?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Label and delimit the background, then state how the model should use it"},{"id":"B","text":"Mix background and commands into one unlabeled paragraph"},{"id":"C","text":"Place the background after the answer and never reference it"},{"id":"D","text":"Treat every sentence in the background as a higher-priority instruction"}],
+      "correctAnswers": ["A"],
+      "summary": ["Labels and delimiters make the boundary between instructions and reference material clearer.","They improve interpretation but do not make untrusted content a security boundary or authorize its instructions."]
+    },
+    {
+      "questionId": "pe-73",
+      "questionText": "What is chain-of-thought prompting intended to encourage?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"A structured, stepwise approach to solving a complex task"},{"id":"B","text":"A response with no reasoning or intermediate structure"},{"id":"C","text":"Permanent training of the model on the prompt"},{"id":"D","text":"Randomly selecting an answer before reading the input"}],
+      "correctAnswers": ["A"],
+      "summary": ["Chain-of-thought prompting asks the model to work through intermediate steps for tasks that benefit from decomposition.","A concise rationale, structured result, or verified intermediate artifact may be preferable when exposing private reasoning is unnecessary."]
+    },
+    {
+      "questionId": "pe-74",
+      "questionText": "Which workflow best illustrates self-refinement prompting?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Generate a draft, critique it against explicit criteria, and revise the draft"},{"id":"B","text":"Generate one answer and accept it without inspection"},{"id":"C","text":"Remove all constraints after generating the first draft"},{"id":"D","text":"Replace the model with a database lookup"}],
+      "correctAnswers": ["A"],
+      "summary": ["Self-refinement uses a separate critique or checking step followed by a targeted revision.","The criteria should be explicit, and the refined output should still be evaluated rather than assumed correct."]
+    },
+    {
+      "questionId": "pe-75",
+      "questionText": "What makes a few-shot prompt template reusable?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Stable instructions and examples are separated from validated runtime variables"},{"id":"B","text":"Examples use a consistent input-output format"},{"id":"C","text":"The template defines how missing or invalid variables are handled"},{"id":"D","text":"Every user value is inserted as an instruction without labeling"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Reusable templates keep the task contract stable while safely varying the input.","Validation, delimiters, and consistent demonstrations reduce ambiguity and prompt-injection risk."]
+    },
+    {
+      "questionId": "pe-76",
+      "questionText": "Which sequence is a sound prompt-chaining workflow?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Extract facts, validate the extracted fields, then use them in a focused summary prompt"},{"id":"B","text":"Send every task to one prompt and ignore intermediate results"},{"id":"C","text":"Pass unvalidated tool output directly into an irreversible action"},{"id":"D","text":"Run prompts repeatedly without a defined handoff or stopping condition"}],
+      "correctAnswers": ["A"],
+      "summary": ["Prompt chaining passes deliberate intermediate outputs between focused steps.","Validation at handoff points limits error propagation and makes the workflow easier to debug."]
+    },
+    {
+      "questionId": "pe-77",
+      "questionText": "Which description combines ReAct with an agentic workflow?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"The model plans or reasons about the next step"},{"id":"B","text":"The application executes an approved tool action and returns an observation"},{"id":"C","text":"The loop continues under bounded budgets until a stop condition is reached"},{"id":"D","text":"The model receives unrestricted authority to execute any action"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["ReAct-style agents alternate planning with actions and observations within an orchestrated loop.","Production agentic workflows require tool validation, authorization, limits, error handling, and explicit termination conditions."]
+    },
+    {
+      "questionId": "pe-78",
+      "questionText": "What is a Transformer in the context of modern language models?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"A neural-network architecture that processes token relationships using attention mechanisms"},{"id":"B","text":"A hardware device that converts electrical voltage"},{"id":"C","text":"A prompt template containing multiple examples"},{"id":"D","text":"A database that stores every prior conversation"}],
+      "correctAnswers": ["A"],
+      "summary": ["Transformers represent and process token sequences using attention and other neural-network components.","They are the architectural foundation of many current language models, but the architecture itself does not guarantee factual or safe outputs."]
+    },
+    {
+      "questionId": "pe-79",
+      "questionText": "What does self-attention help a Transformer model do?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Relate each token to other relevant tokens in the input context"},{"id":"B","text":"Execute external tools without application code"},{"id":"C","text":"Permanently store a user's conversation history"},{"id":"D","text":"Translate tokens into electrical signals for a server"}],
+      "correctAnswers": ["A"],
+      "summary": ["Self-attention lets the model assign different relevance to tokens when building contextual representations.","This helps it use relationships across a sequence, subject to context-window and model limitations."]
+    },
+    {
+      "questionId": "pe-80",
+      "questionText": "Why is positional information needed in a Transformer?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"To represent token order because attention alone does not inherently encode sequence position"},{"id":"B","text":"To authorize calls to external tools"},{"id":"C","text":"To increase the model's factual knowledge after deployment"},{"id":"D","text":"To replace tokenization with character rendering"}],
+      "correctAnswers": ["A"],
+      "summary": ["Positional encodings or related position mechanisms provide information about where tokens occur in a sequence.","Order matters for syntax, meaning, and instructions such as 'first' and 'then'."]
+    },
+    {
+      "questionId": "pe-81",
+      "questionText": "Which statements about encoder and decoder roles are generally correct?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"An encoder can build contextual representations of an input sequence"},{"id":"B","text":"A decoder can generate output tokens sequentially"},{"id":"C","text":"An encoder-decoder design can transform one sequence into another, such as translation"},{"id":"D","text":"The decoder automatically verifies every generated claim against reality"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Encoder, decoder, and encoder-decoder designs support different language-modeling tasks.","Generation remains probabilistic and requires grounding or external verification when factual accuracy matters."]
+    },
+    {
+      "questionId": "pe-82",
+      "questionText": "In an agentic workflow, what is the closest equivalent to an actuator?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"A controlled tool or integration that carries out an approved action in the external system"},{"id":"B","text":"The model's hidden attention weights"},{"id":"C","text":"The user's prompt history displayed in the interface"},{"id":"D","text":"A static example used for few-shot prompting"}],
+      "correctAnswers": ["A"],
+      "summary": ["An actuator is an action-execution concept: in an AI agent, a tool or API performs the selected operation outside the model.","The model should propose an action, while application code validates authorization, arguments, and impact before execution."]
+    },
+    {
+      "questionId": "pe-83",
+      "questionText": "Which controls should protect an agent's actuator or action-execution layer?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Validate tool arguments against a strict schema"},{"id":"B","text":"Authorize the action and apply least privilege"},{"id":"C","text":"Require confirmation or review for high-impact or irreversible actions"},{"id":"D","text":"Execute every action exactly as generated without checking it"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Action execution must be governed by normal application security and reliability controls.","Validation, authorization, least privilege, bounded retries, logging, and human approval reduce the risk of harmful side effects."]
     }
   ]
 }
