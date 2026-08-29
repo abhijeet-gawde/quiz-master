@@ -27,6 +27,13 @@
       "description": "Design reliable instructions for language models, tools, and real-world AI workflows.",
       "level": "Intermediate",
       "accent": "gold"
+    },
+    {
+      "id": "gen-ai-core-beginner",
+      "name": "Gen AI Core - Beginner",
+      "description": "Build a practical foundation in generative AI, LLMs, prompts, tools, agents, and responsible use.",
+      "level": "Beginner",
+      "accent": "mint"
     }
   ]
 }

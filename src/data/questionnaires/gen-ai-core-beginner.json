@@ -1,0 +1,165 @@
+{
+  "topicId": "gen-ai-core-beginner",
+  "questions": [
+    {
+      "questionId": "gen-ai-1",
+      "questionText": "Which prompt has the clearest basic structure for creating a short product description?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Write something good about this product"},{"id":"B","text":"Act as a product copywriter. Write a 50-word description for first-time buyers using the product details below and end with three bullet benefits."},{"id":"C","text":"Product description, please"},{"id":"D","text":"Use your creativity"}],
+      "correctAnswers": ["B"],
+      "summary": ["A useful prompt states the role, task, audience or purpose, relevant input, constraints, and desired output format."]
+    },
+    {
+      "questionId": "gen-ai-2",
+      "questionText": "Which prompt patterns can improve an LLM response?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Few-shot examples that demonstrate the desired pattern"},{"id":"B","text":"Delimiters that separate instructions from supplied data"},{"id":"C","text":"Explicit constraints and output requirements"},{"id":"D","text":"Vague instructions with no success criteria"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Examples, clear boundaries, and testable requirements reduce ambiguity.", "Prompt patterns guide behavior but do not guarantee accuracy or safety."]
+    },
+    {
+      "questionId": "gen-ai-3",
+      "questionText": "What is chain-of-thought reasoning best understood as in an application?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"A request for the model to work through intermediate steps before producing an answer"},{"id":"B","text":"A guarantee that every intermediate step is correct"},{"id":"C","text":"A way to permanently store a conversation"},{"id":"D","text":"A method for converting text into tokens"}],
+      "correctAnswers": ["A"],
+      "summary": ["Step-by-step reasoning can help with complex tasks, but its explanation may still be incorrect.", "Use concise rationales, checks, or structured intermediate outputs when transparency is needed."]
+    },
+    {
+      "questionId": "gen-ai-4",
+      "questionText": "What does an LLM primarily do during text generation?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Predict the next likely token based on the input and context"},{"id":"B","text":"Look up every answer in a live database"},{"id":"C","text":"Understand facts exactly as a human does"},{"id":"D","text":"Execute all code included in a prompt"}],
+      "correctAnswers": ["A"],
+      "summary": ["An LLM generates a sequence by estimating likely next tokens from learned patterns and the current context.", "This explains why fluent output can still contain unsupported claims."]
+    },
+    {
+      "questionId": "gen-ai-5",
+      "questionText": "Which statement correctly describes tokenization?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Text is split into tokens such as characters, word pieces, punctuation, or words"},{"id":"B","text":"A token is always exactly one English word"},{"id":"C","text":"Token counts affect context limits and often cost and latency"},{"id":"D","text":"Different models can use different tokenizers"}],
+      "correctAnswers": ["A","C","D"],
+      "summary": ["Tokenization converts text into the units processed by a model.", "Token boundaries vary by tokenizer and language, so token count is not the same as word count."]
+    },
+    {
+      "questionId": "gen-ai-6",
+      "questionText": "What is the attention mechanism in a transformer used for?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Weight relationships between tokens so the model can use relevant context"},{"id":"B","text":"Encrypt the model's training data"},{"id":"C","text":"Increase a computer's physical memory"},{"id":"D","text":"Replace tokenization with image compression"}],
+      "correctAnswers": ["A"],
+      "summary": ["Attention lets representations incorporate information from other relevant positions in the sequence.", "It is a core reason transformers can model relationships across context."]
+    },
+    {
+      "questionId": "gen-ai-7",
+      "questionText": "Which description of encoder-decoder architecture is accurate?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"An encoder represents input information and a decoder generates an output sequence from it"},{"id":"B","text":"An encoder stores user passwords and a decoder retrieves them"},{"id":"C","text":"Both parts are browser extensions with no model role"},{"id":"D","text":"The decoder only splits text into tokens"}],
+      "correctAnswers": ["A"],
+      "summary": ["In the classic architecture, the encoder processes the source and the decoder produces the target, using the encoded information.", "Many modern LLMs use decoder-only transformers, but the encoder-decoder pattern remains important for tasks such as translation."]
+    },
+    {
+      "questionId": "gen-ai-8",
+      "questionText": "Which are sensible uses of built-in AI tools in an IDE or browser?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Ask an IDE assistant to explain a selected function"},{"id":"B","text":"Ask a browser assistant to summarize an open article, subject to data policies"},{"id":"C","text":"Review generated code and test it before relying on it"},{"id":"D","text":"Assume generated code is safe because it came from the tool"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["AI tools can support explanation, drafting, summarization, and navigation.", "Users remain responsible for checking correctness, licenses, privacy, and security before adopting output."]
+    },
+    {
+      "questionId": "gen-ai-9",
+      "questionText": "What is a safe pattern for API calling through an AI workflow?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Let the model request a structured operation, then have the application validate, authorize, and execute it"},{"id":"B","text":"Place an API secret in the prompt so the model can use it freely"},{"id":"C","text":"Execute any code returned by the model without review"},{"id":"D","text":"Give every model call administrator permissions"}],
+      "correctAnswers": ["A"],
+      "summary": ["The application, not the model, should control credentials, schemas, permissions, and side effects.", "This pattern supports API integration while preserving normal security controls."]
+    },
+    {
+      "questionId": "gen-ai-10",
+      "questionText": "What is the main purpose of retrieval-augmented generation (RAG)?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Retrieve relevant external information and provide it as context before generating an answer"},{"id":"B","text":"Make the model permanently learn every retrieved document"},{"id":"C","text":"Replace evaluation with a larger prompt"},{"id":"D","text":"Generate random documents until one is useful"}],
+      "correctAnswers": ["A"],
+      "summary": ["RAG combines retrieval with generation so responses can be grounded in selected, current, or private sources.", "Retrieved text is still untrusted data and should not automatically override instructions."]
+    },
+    {
+      "questionId": "gen-ai-11",
+      "questionText": "Which practices support a reliable RAG pipeline?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Split and index source content so relevant passages can be retrieved"},{"id":"B","text":"Ask the model to cite sources or say when the context is insufficient"},{"id":"C","text":"Evaluate retrieval quality as well as the final answer"},{"id":"D","text":"Treat every retrieved passage as a trusted instruction"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["RAG quality depends on curation, retrieval, grounding instructions, and answer evaluation.", "Documents should be treated as data because they can contain errors or prompt injection."]
+    },
+    {
+      "questionId": "gen-ai-12",
+      "questionText": "Which traits are typical of an autonomous agent?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"It pursues a goal through multiple steps"},{"id":"B","text":"It can choose among approved tools or actions"},{"id":"C","text":"It observes results and can adjust its plan"},{"id":"D","text":"It has unlimited authority to act without safeguards"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Agents combine a model with goals, planning, tools, observations, and an execution loop.", "Autonomy should be bounded by permissions, budgets, monitoring, and approval for consequential actions."]
+    },
+    {
+      "questionId": "gen-ai-13",
+      "questionText": "What is a good first step when an agent receives a complex task?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Break the goal into ordered, checkable subtasks and define a stopping condition"},{"id":"B","text":"Call every available tool immediately"},{"id":"C","text":"Hide the goal from the user"},{"id":"D","text":"Repeat the same action until something changes"}],
+      "correctAnswers": ["A"],
+      "summary": ["Task planning makes progress observable and helps an agent decide what to do next.", "A stopping condition prevents unnecessary loops and uncontrolled cost or side effects."]
+    },
+    {
+      "questionId": "gen-ai-14",
+      "questionText": "How should an application handle an LLM's memory and context?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Send only the relevant context needed for the current task"},{"id":"B","text":"Summarize or retrieve older information when the context window is limited"},{"id":"C","text":"Define what information may be retained and for how long"},{"id":"D","text":"Assume the model automatically remembers every past conversation"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Context is request-scoped unless an application deliberately stores and retrieves memory.", "Relevance, retention, privacy, and context limits should be explicit design decisions."]
+    },
+    {
+      "questionId": "gen-ai-15",
+      "questionText": "What is the best response to an unsupported question in a grounded workflow?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"State that the available information is insufficient and request or retrieve better evidence"},{"id":"B","text":"Invent a plausible answer to be helpful"},{"id":"C","text":"Cite an unrelated source"},{"id":"D","text":"Increase temperature until a fact appears"}],
+      "correctAnswers": ["A"],
+      "summary": ["Abstention is safer than hallucinating when evidence is missing.", "Prompts and product behavior should make an unknown or insufficient-information outcome possible."]
+    },
+    {
+      "questionId": "gen-ai-16",
+      "questionText": "Which activities belong in model or prompt evaluation and validation?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Test representative examples and important edge cases"},{"id":"B","text":"Check correctness, relevance, groundedness, and safety"},{"id":"C","text":"Track latency, token use, and cost when they matter"},{"id":"D","text":"Evaluate only examples that already pass"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Evaluation should reflect real use, failure modes, safety, and operational constraints.", "A curated dataset and repeatable rubric help detect regressions before deployment."]
+    },
+    {
+      "questionId": "gen-ai-17",
+      "questionText": "Which controls reduce prompt-injection and data-exposure risk?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Separate trusted instructions from untrusted user or retrieved content"},{"id":"B","text":"Use least privilege and limit tools and sensitive data"},{"id":"C","text":"Validate outputs before performing side effects"},{"id":"D","text":"Rely on a delimiter as the only security boundary"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Prompt injection requires defense in depth: data-flow controls, authorization, output checks, monitoring, and human approval where needed.", "Prompt wording alone is not a complete security boundary."]
+    },
+    {
+      "questionId": "gen-ai-18",
+      "questionText": "Which is an example of responsible AI governance?",
+      "questionType": "multiple",
+      "options": [{"id":"A","text":"Document the system's purpose, limitations, and acceptable use"},{"id":"B","text":"Protect personal and confidential data and define retention rules"},{"id":"C","text":"Keep audit records for important actions and evaluations"},{"id":"D","text":"Remove human review from all high-impact decisions"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Governance connects technical controls to accountability, privacy, risk management, and organizational policy.", "High-impact uses generally need appropriate human oversight and escalation."]
+    },
+    {
+      "questionId": "gen-ai-19",
+      "questionText": "What should a team do before deploying an AI feature that generates code or recommendations?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Test it against expected and adversarial cases, review risks, and define monitoring and rollback"},{"id":"B","text":"Deploy immediately because the model was trained on many examples"},{"id":"C","text":"Measure only how impressive the demo looks"},{"id":"D","text":"Give it production write access during testing"}],
+      "correctAnswers": ["A"],
+      "summary": ["Deployment support includes validation, security review, observability, constrained permissions, and a rollback path.", "A successful demo is not evidence of production readiness."]
+    },
+    {
+      "questionId": "gen-ai-20",
+      "questionText": "Which statement best summarizes the role of a generative AI practitioner?",
+      "questionType": "single",
+      "options": [{"id":"A","text":"Design useful instructions and workflows while validating outputs and managing safety, security, and governance risks"},{"id":"B","text":"Trust model output whenever it sounds confident"},{"id":"C","text":"Focus only on increasing response creativity"},{"id":"D","text":"Treat the model as an autonomous replacement for application controls"}],
+      "correctAnswers": ["A"],
+      "summary": ["Effective generative AI work combines prompt engineering, model awareness, data and tool integration, evaluation, deployment discipline, and responsible use."]
+    }
+  ]
+}
