@@ -1,5 +1,5 @@
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
-import { Alert, Button, Container, LinearProgress, Stack, Typography } from '@mui/material';
+import { Alert, Button, Chip, Container, LinearProgress, Stack, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import QuestionCard from '../components/QuestionCard';
@@ -15,13 +15,41 @@ export default function Questionnaire() {
   const [results, setResults] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [allSkills, setAllSkills] = useState([]);
+  const [selectedSkills, setSelectedSkills] = useState([]);
 
   useEffect(() => {
     Promise.all([getTopics(), getQuestionnaire(topicId)])
-      .then(([topics, questionnaire]) => { setTopic(topics.find((item) => item.id === topicId)); setQuestions(questionnaire.questions); })
+      .then(([topics, questionnaire]) => {
+        setTopic(topics.find((item) => item.id === topicId));
+        setQuestions(questionnaire.questions);
+        // Extract all unique skills from questions
+        const skills = Array.from(new Set(questionnaire.questions.flatMap((q) => q.skills || [])));
+        setAllSkills(skills);
+        setSelectedSkills(skills); // Default: all skills selected
+      })
       .catch(() => setError('This questionnaire could not be loaded.'))
       .finally(() => setLoading(false));
   }, [topicId]);
+
+  function toggleSkillFilter(skill) {
+    setSelectedSkills((current) =>
+      current.includes(skill) ? current.filter((s) => s !== skill) : [...current, skill]
+    );
+  }
+
+  function selectAllSkills() {
+    setSelectedSkills(allSkills);
+  }
+
+  function clearAllSkills() {
+    setSelectedSkills([]);
+  }
+
+  // Filter questions based on selected skills
+  const filteredQuestions = questions.filter((question) =>
+    selectedSkills.length === 0 ? true : question.skills?.some((skill) => selectedSkills.includes(skill))
+  );
 
   function selectAnswer(question, optionId) {
     if (question.questionType === 'multiple') {
@@ -46,13 +74,63 @@ export default function Questionnaire() {
   if (error || !topic) return <Container maxWidth="md" className="page-shell"><Alert severity="error">{error || 'Topic not found.'}</Alert><Button onClick={() => navigate('/')} sx={{ mt: 2 }}>Back to topics</Button></Container>;
 
   const completed = Object.values(results).filter((result) => result === 'correct').length;
-  return <main><Container maxWidth="md" className="page-shell questionnaire-shell">
-    <Button variant="text" startIcon={<ArrowBackRoundedIcon />} onClick={() => navigate('/')} sx={{ mb: 4 }}>All topics</Button>
-    <Typography className="eyebrow">{topic.level} pathway</Typography>
-    <Typography variant="h2" component="h1" sx={{ mb: 1 }}>{topic.name}</Typography>
-    <Typography color="text.secondary" sx={{ mb: 3 }}>{topic.description}</Typography>
-    <Stack direction="row" justifyContent="space-between" sx={{ mb: 1 }}><Typography variant="body2" fontWeight={700}>Progress</Typography><Typography variant="body2" color="text.secondary">{completed} of {questions.length} complete</Typography></Stack>
-    <LinearProgress variant="determinate" value={questions.length ? (completed / questions.length) * 100 : 0} sx={{ mb: 5 }} />
-    <Stack gap={3}>{questions.map((question, index) => <QuestionCard key={question.questionId} question={question} index={index} total={questions.length} selected={answers[question.questionId] ?? []} result={results[question.questionId]} onSelect={(optionId) => selectAnswer(question, optionId)} onVerify={() => verify(question)} onRetry={() => retry(question.questionId)} />)}</Stack>
-  </Container></main>;
+  const completedInFiltered = filteredQuestions.filter((q) => results[q.questionId] === 'correct').length;
+
+  return (
+    <main>
+      <Container maxWidth="md" className="page-shell questionnaire-shell">
+        <Button variant="text" startIcon={<ArrowBackRoundedIcon />} onClick={() => navigate('/')} sx={{ mb: 4 }}>All topics</Button>
+        <Typography className="eyebrow">{topic.level} pathway</Typography>
+        <Typography variant="h2" component="h1" sx={{ mb: 1 }}>{topic.name}</Typography>
+        <Typography color="text.secondary" sx={{ mb: 3 }}>{topic.description}</Typography>
+
+        {/* Skills Filter Section */}
+        <Stack sx={{ mb: 4, p: 2, bgcolor: 'background.paper', borderRadius: 1, border: '1px solid', borderColor: 'divider' }}>
+          <Typography variant="body2" fontWeight={700} sx={{ mb: 2 }}>Filter by Skills</Typography>
+          <Stack direction="row" gap={1} flexWrap="wrap" sx={{ mb: 2 }}>
+            {allSkills.map((skill) => (
+              <Chip
+                key={skill}
+                label={skill}
+                onClick={() => toggleSkillFilter(skill)}
+                variant={selectedSkills.includes(skill) ? 'filled' : 'outlined'}
+                color={selectedSkills.includes(skill) ? 'primary' : 'default'}
+                sx={{ cursor: 'pointer' }}
+              />
+            ))}
+          </Stack>
+          <Stack direction="row" gap={1}>
+            <Button size="small" variant="outlined" onClick={selectAllSkills}>Select All</Button>
+            <Button size="small" variant="outlined" onClick={clearAllSkills}>Clear All</Button>
+          </Stack>
+        </Stack>
+
+        <Stack direction="row" justifyContent="space-between" sx={{ mb: 1 }}>
+          <Typography variant="body2" fontWeight={700}>Progress</Typography>
+          <Typography variant="body2" color="text.secondary">{completedInFiltered} of {filteredQuestions.length} complete</Typography>
+        </Stack>
+        <LinearProgress variant="determinate" value={filteredQuestions.length ? (completedInFiltered / filteredQuestions.length) * 100 : 0} sx={{ mb: 5 }} />
+
+        <Stack gap={3}>
+          {filteredQuestions.length > 0 ? (
+            filteredQuestions.map((question, index) => (
+              <QuestionCard
+                key={question.questionId}
+                question={question}
+                index={questions.indexOf(question)}
+                total={questions.length}
+                selected={answers[question.questionId] ?? []}
+                result={results[question.questionId]}
+                onSelect={(optionId) => selectAnswer(question, optionId)}
+                onVerify={() => verify(question)}
+                onRetry={() => retry(question.questionId)}
+              />
+            ))
+          ) : (
+            <Typography color="text.secondary" sx={{ py: 4, textAlign: 'center' }}>No questions match the selected skills.</Typography>
+          )}
+        </Stack>
+      </Container>
+    </main>
+  );
 }

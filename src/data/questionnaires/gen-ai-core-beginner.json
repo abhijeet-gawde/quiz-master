@@ -5,6 +5,8 @@
       "questionId": "gen-ai-1",
       "questionText": "Which prompt has the clearest basic structure for creating a short product description?",
       "questionType": "single",
+      "skills": ["Prompt Engineering"],
+      "hint": "Look for the option that specifies a role, task, audience, and clear requirements like word count and format.",
       "options": [{"id":"A","text":"Write something good about this product"},{"id":"B","text":"Act as a product copywriter. Write a 50-word description for first-time buyers using the product details below and end with three bullet benefits."},{"id":"C","text":"Product description, please"},{"id":"D","text":"Use your creativity"}],
       "correctAnswers": ["B"],
       "summary": ["A useful prompt states the role, task, audience or purpose, relevant input, constraints, and desired output format."]
@@ -13,6 +15,8 @@
       "questionId": "gen-ai-2",
       "questionText": "Which prompt patterns can improve an LLM response?",
       "questionType": "multiple",
+      "skills": ["Prompt Engineering", "Cognitive Engineering"],
+      "hint": "Think about what makes a prompt less ambiguous. Consider demonstrations, structure, and clarity.",
       "options": [{"id":"A","text":"Few-shot examples that demonstrate the desired pattern"},{"id":"B","text":"Delimiters that separate instructions from supplied data"},{"id":"C","text":"Explicit constraints and output requirements"},{"id":"D","text":"Vague instructions with no success criteria"}],
       "correctAnswers": ["A","B","C"],
       "summary": ["Examples, clear boundaries, and testable requirements reduce ambiguity.", "Prompt patterns guide behavior but do not guarantee accuracy or safety."]
@@ -21,6 +25,8 @@
       "questionId": "gen-ai-3",
       "questionText": "What is chain-of-thought reasoning best understood as in an application?",
       "questionType": "single",
+      "skills": ["Cognitive Engineering", "Prompt Engineering"],
+      "hint": "Consider what happens when you ask a model to 'think step-by-step' or show its working before giving a final answer.",
       "options": [{"id":"A","text":"A request for the model to work through intermediate steps before producing an answer"},{"id":"B","text":"A guarantee that every intermediate step is correct"},{"id":"C","text":"A way to permanently store a conversation"},{"id":"D","text":"A method for converting text into tokens"}],
       "correctAnswers": ["A"],
       "summary": ["Step-by-step reasoning can help with complex tasks, but its explanation may still be incorrect.", "Use concise rationales, checks, or structured intermediate outputs when transparency is needed."]
@@ -29,6 +35,8 @@
       "questionId": "gen-ai-4",
       "questionText": "What does an LLM primarily do during text generation?",
       "questionType": "single",
+      "skills": ["Artificial Intelligence", "Generative AI"],
+      "hint": "LLMs work with text broken into small pieces. What is the core task they perform at each step?",
       "options": [{"id":"A","text":"Predict the next likely token based on the input and context"},{"id":"B","text":"Look up every answer in a live database"},{"id":"C","text":"Understand facts exactly as a human does"},{"id":"D","text":"Execute all code included in a prompt"}],
       "correctAnswers": ["A"],
       "summary": ["An LLM generates a sequence by estimating likely next tokens from learned patterns and the current context.", "This explains why fluent output can still contain unsupported claims."]
@@ -37,6 +45,8 @@
       "questionId": "gen-ai-5",
       "questionText": "Which statement correctly describes tokenization?",
       "questionType": "multiple",
+      "skills": ["Tokenization", "Artificial Intelligence"],
+      "hint": "Tokenization is about splitting text. Not all languages split the same way, and token count affects cost and limits.",
       "options": [{"id":"A","text":"Text is split into tokens such as characters, word pieces, punctuation, or words"},{"id":"B","text":"A token is always exactly one English word"},{"id":"C","text":"Token counts affect context limits and often cost and latency"},{"id":"D","text":"Different models can use different tokenizers"}],
       "correctAnswers": ["A","C","D"],
       "summary": ["Tokenization converts text into the units processed by a model.", "Token boundaries vary by tokenizer and language, so token count is not the same as word count."]
@@ -45,6 +55,8 @@
       "questionId": "gen-ai-6",
       "questionText": "What is the attention mechanism in a transformer used for?",
       "questionType": "single",
+      "skills": ["Transformer (Machine Learning Model)", "Artificial Intelligence"],
+      "hint": "Attention helps the model focus on relevant parts. It determines how much each token influences others.",
       "options": [{"id":"A","text":"Weight relationships between tokens so the model can use relevant context"},{"id":"B","text":"Encrypt the model's training data"},{"id":"C","text":"Increase a computer's physical memory"},{"id":"D","text":"Replace tokenization with image compression"}],
       "correctAnswers": ["A"],
       "summary": ["Attention lets representations incorporate information from other relevant positions in the sequence.", "It is a core reason transformers can model relationships across context."]
@@ -53,6 +65,8 @@
       "questionId": "gen-ai-7",
       "questionText": "Which description of encoder-decoder architecture is accurate?",
       "questionType": "single",
+      "skills": ["Transformer (Machine Learning Model)", "Artificial Intelligence"],
+      "hint": "Encoder-decoder means one part processes input and another part generates output using that processed information.",
       "options": [{"id":"A","text":"An encoder represents input information and a decoder generates an output sequence from it"},{"id":"B","text":"An encoder stores user passwords and a decoder retrieves them"},{"id":"C","text":"Both parts are browser extensions with no model role"},{"id":"D","text":"The decoder only splits text into tokens"}],
       "correctAnswers": ["A"],
       "summary": ["In the classic architecture, the encoder processes the source and the decoder produces the target, using the encoded information.", "Many modern LLMs use decoder-only transformers, but the encoder-decoder pattern remains important for tasks such as translation."]
@@ -61,6 +75,8 @@
       "questionId": "gen-ai-8",
       "questionText": "Which are sensible uses of built-in AI tools in an IDE or browser?",
       "questionType": "multiple",
+      "skills": ["Customization", "Safety Systems"],
+      "hint": "AI tools can help with coding and information tasks. What's the key responsibility you always have?",
       "options": [{"id":"A","text":"Ask an IDE assistant to explain a selected function"},{"id":"B","text":"Ask a browser assistant to summarize an open article, subject to data policies"},{"id":"C","text":"Review generated code and test it before relying on it"},{"id":"D","text":"Assume generated code is safe because it came from the tool"}],
       "correctAnswers": ["A","B","C"],
       "summary": ["AI tools can support explanation, drafting, summarization, and navigation.", "Users remain responsible for checking correctness, licenses, privacy, and security before adopting output."]
@@ -69,6 +85,8 @@
       "questionId": "gen-ai-9",
       "questionText": "What is a safe pattern for API calling through an AI workflow?",
       "questionType": "single",
+      "skills": ["API Integration", "Security"],
+      "hint": "Who should be in control of API credentials and permissions? The model or the application?",
       "options": [{"id":"A","text":"Let the model request a structured operation, then have the application validate, authorize, and execute it"},{"id":"B","text":"Place an API secret in the prompt so the model can use it freely"},{"id":"C","text":"Execute any code returned by the model without review"},{"id":"D","text":"Give every model call administrator permissions"}],
       "correctAnswers": ["A"],
       "summary": ["The application, not the model, should control credentials, schemas, permissions, and side effects.", "This pattern supports API integration while preserving normal security controls."]
@@ -77,6 +95,8 @@
       "questionId": "gen-ai-10",
       "questionText": "What is the main purpose of retrieval-augmented generation (RAG)?",
       "questionType": "single",
+      "skills": ["RAG Pipelines (Retrieval-Augmented Generation)", "Generative AI"],
+      "hint": "RAG combines two things: retrieving information and then generating. What problem does this solve?",
       "options": [{"id":"A","text":"Retrieve relevant external information and provide it as context before generating an answer"},{"id":"B","text":"Make the model permanently learn every retrieved document"},{"id":"C","text":"Replace evaluation with a larger prompt"},{"id":"D","text":"Generate random documents until one is useful"}],
       "correctAnswers": ["A"],
       "summary": ["RAG combines retrieval with generation so responses can be grounded in selected, current, or private sources.", "Retrieved text is still untrusted data and should not automatically override instructions."]
@@ -85,6 +105,8 @@
       "questionId": "gen-ai-11",
       "questionText": "Which practices support a reliable RAG pipeline?",
       "questionType": "multiple",
+      "skills": ["RAG Pipelines (Retrieval-Augmented Generation)", "Data Curation", "Model Evaluation and Validation"],
+      "hint": "RAG quality depends on what you retrieve, how you present it, and how you measure success. Consider all three.",
       "options": [{"id":"A","text":"Split and index source content so relevant passages can be retrieved"},{"id":"B","text":"Ask the model to cite sources or say when the context is insufficient"},{"id":"C","text":"Evaluate retrieval quality as well as the final answer"},{"id":"D","text":"Treat every retrieved passage as a trusted instruction"}],
       "correctAnswers": ["A","B","C"],
       "summary": ["RAG quality depends on curation, retrieval, grounding instructions, and answer evaluation.", "Documents should be treated as data because they can contain errors or prompt injection."]
@@ -93,6 +115,8 @@
       "questionId": "gen-ai-12",
       "questionText": "Which traits are typical of an autonomous agent?",
       "questionType": "multiple",
+      "skills": ["Artificial Intelligence", "Safety Systems", "Security"],
+      "hint": "An agent works toward goals, makes choices, and adapts. What about limitations and safety?",
       "options": [{"id":"A","text":"It pursues a goal through multiple steps"},{"id":"B","text":"It can choose among approved tools or actions"},{"id":"C","text":"It observes results and can adjust its plan"},{"id":"D","text":"It has unlimited authority to act without safeguards"}],
       "correctAnswers": ["A","B","C"],
       "summary": ["Agents combine a model with goals, planning, tools, observations, and an execution loop.", "Autonomy should be bounded by permissions, budgets, monitoring, and approval for consequential actions."]
@@ -101,6 +125,8 @@
       "questionId": "gen-ai-13",
       "questionText": "What is a good first step when an agent receives a complex task?",
       "questionType": "single",
+      "skills": ["Cognitive Engineering", "Customization"],
+      "hint": "When a task is complex, what helps make progress visible and avoids endless loops?",
       "options": [{"id":"A","text":"Break the goal into ordered, checkable subtasks and define a stopping condition"},{"id":"B","text":"Call every available tool immediately"},{"id":"C","text":"Hide the goal from the user"},{"id":"D","text":"Repeat the same action until something changes"}],
       "correctAnswers": ["A"],
       "summary": ["Task planning makes progress observable and helps an agent decide what to do next.", "A stopping condition prevents unnecessary loops and uncontrolled cost or side effects."]
@@ -109,6 +135,8 @@
       "questionId": "gen-ai-14",
       "questionText": "How should an application handle an LLM's memory and context?",
       "questionType": "multiple",
+      "skills": ["Customization", "Data Curation"],
+      "hint": "Models don't automatically remember. How should applications decide what information to send and keep?",
       "options": [{"id":"A","text":"Send only the relevant context needed for the current task"},{"id":"B","text":"Summarize or retrieve older information when the context window is limited"},{"id":"C","text":"Define what information may be retained and for how long"},{"id":"D","text":"Assume the model automatically remembers every past conversation"}],
       "correctAnswers": ["A","B","C"],
       "summary": ["Context is request-scoped unless an application deliberately stores and retrieves memory.", "Relevance, retention, privacy, and context limits should be explicit design decisions."]
@@ -117,6 +145,8 @@
       "questionId": "gen-ai-15",
       "questionText": "What is the best response to an unsupported question in a grounded workflow?",
       "questionType": "single",
+      "skills": ["Safety Systems", "Model Evaluation and Validation"],
+      "hint": "When evidence is missing, what's safer: making up an answer or admitting uncertainty?",
       "options": [{"id":"A","text":"State that the available information is insufficient and request or retrieve better evidence"},{"id":"B","text":"Invent a plausible answer to be helpful"},{"id":"C","text":"Cite an unrelated source"},{"id":"D","text":"Increase temperature until a fact appears"}],
       "correctAnswers": ["A"],
       "summary": ["Abstention is safer than hallucinating when evidence is missing.", "Prompts and product behavior should make an unknown or insufficient-information outcome possible."]
@@ -125,6 +155,8 @@
       "questionId": "gen-ai-16",
       "questionText": "Which activities belong in model or prompt evaluation and validation?",
       "questionType": "multiple",
+      "skills": ["Model Evaluation and Validation", "Tokenization"],
+      "hint": "Evaluation means testing quality, performance, and safety. What should you measure?",
       "options": [{"id":"A","text":"Test representative examples and important edge cases"},{"id":"B","text":"Check correctness, relevance, groundedness, and safety"},{"id":"C","text":"Track latency, token use, and cost when they matter"},{"id":"D","text":"Evaluate only examples that already pass"}],
       "correctAnswers": ["A","B","C"],
       "summary": ["Evaluation should reflect real use, failure modes, safety, and operational constraints.", "A curated dataset and repeatable rubric help detect regressions before deployment."]
@@ -133,6 +165,8 @@
       "questionId": "gen-ai-17",
       "questionText": "Which controls reduce prompt-injection and data-exposure risk?",
       "questionType": "multiple",
+      "skills": ["Security", "Safety Systems"],
+      "hint": "Defense against injection needs multiple layers. Think about instructions, permissions, and validation.",
       "options": [{"id":"A","text":"Separate trusted instructions from untrusted user or retrieved content"},{"id":"B","text":"Use least privilege and limit tools and sensitive data"},{"id":"C","text":"Validate outputs before performing side effects"},{"id":"D","text":"Rely on a delimiter as the only security boundary"}],
       "correctAnswers": ["A","B","C"],
       "summary": ["Prompt injection requires defense in depth: data-flow controls, authorization, output checks, monitoring, and human approval where needed.", "Prompt wording alone is not a complete security boundary."]
@@ -141,6 +175,8 @@
       "questionId": "gen-ai-18",
       "questionText": "Which is an example of responsible AI governance?",
       "questionType": "multiple",
+      "skills": ["Governance", "Security"],
+      "hint": "Governance includes transparency, data protection, and accountability. Which options support these?",
       "options": [{"id":"A","text":"Document the system's purpose, limitations, and acceptable use"},{"id":"B","text":"Protect personal and confidential data and define retention rules"},{"id":"C","text":"Keep audit records for important actions and evaluations"},{"id":"D","text":"Remove human review from all high-impact decisions"}],
       "correctAnswers": ["A","B","C"],
       "summary": ["Governance connects technical controls to accountability, privacy, risk management, and organizational policy.", "High-impact uses generally need appropriate human oversight and escalation."]
@@ -149,6 +185,8 @@
       "questionId": "gen-ai-19",
       "questionText": "What should a team do before deploying an AI feature that generates code or recommendations?",
       "questionType": "single",
+      "skills": ["Deployment Support", "Model Evaluation and Validation", "Security"],
+      "hint": "Before going live, what preparation reduces risk? Think about testing, review, and a safety plan.",
       "options": [{"id":"A","text":"Test it against expected and adversarial cases, review risks, and define monitoring and rollback"},{"id":"B","text":"Deploy immediately because the model was trained on many examples"},{"id":"C","text":"Measure only how impressive the demo looks"},{"id":"D","text":"Give it production write access during testing"}],
       "correctAnswers": ["A"],
       "summary": ["Deployment support includes validation, security review, observability, constrained permissions, and a rollback path.", "A successful demo is not evidence of production readiness."]
@@ -157,9 +195,141 @@
       "questionId": "gen-ai-20",
       "questionText": "Which statement best summarizes the role of a generative AI practitioner?",
       "questionType": "single",
+      "skills": ["Generative AI", "Prompt Engineering", "Safety Systems", "Security", "Governance"],
+      "hint": "A practitioner designs and validates, and must consider risks. What's the central theme?",
       "options": [{"id":"A","text":"Design useful instructions and workflows while validating outputs and managing safety, security, and governance risks"},{"id":"B","text":"Trust model output whenever it sounds confident"},{"id":"C","text":"Focus only on increasing response creativity"},{"id":"D","text":"Treat the model as an autonomous replacement for application controls"}],
       "correctAnswers": ["A"],
       "summary": ["Effective generative AI work combines prompt engineering, model awareness, data and tool integration, evaluation, deployment discipline, and responsible use."]
+    },
+    {
+      "questionId": "gen-ai-21",
+      "questionText": "What is function calling (or tool calling) in a generative AI workflow?",
+      "questionType": "single",
+      "skills": ["API Integration", "Customization"],
+      "hint": "Function calling is when a model proposes an action. Who decides if the action actually happens?",
+      "options": [{"id":"A","text":"The model proposes a structured operation and arguments, which the application validates and executes"},{"id":"B","text":"The model automatically executes arbitrary functions without review"},{"id":"C","text":"A way to increase model parameters"},{"id":"D","text":"Calling a function with incorrect syntax on purpose"}],
+      "correctAnswers": ["A"],
+      "summary": ["Function calling lets models request actions while the application maintains control over execution, permissions, and outcomes.", "Argument validation and authorization must happen before any side effect occurs."]
+    },
+    {
+      "questionId": "gen-ai-22",
+      "questionText": "Which practices are essential when exposing APIs to AI models?",
+      "questionType": "multiple",
+      "skills": ["API Integration", "Security", "Governance"],
+      "hint": "Exposing APIs requires: clear input rules, a record of what happened, and per-user checks. Never share credentials in prompts.",
+      "options": [{"id":"A","text":"Define strict input schemas and validate all arguments"},{"id":"B","text":"Log all API calls made by the model for audit and debugging"},{"id":"C","text":"Apply appropriate authorization checks for each user"},{"id":"D","text":"Share API credentials directly in the system prompt"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["API security requires schema validation, logging, per-user authorization, and credential isolation.", "Sharing secrets in prompts bypasses normal access controls and increases breach risk."]
+    },
+    {
+      "questionId": "gen-ai-23",
+      "questionText": "Why is monitoring important when an AI model is deployed in production?",
+      "questionType": "multiple",
+      "skills": ["Deployment Support", "Model Evaluation and Validation"],
+      "hint": "In production, things change over time. What does monitoring help you detect and do?",
+      "options": [{"id":"A","text":"It detects unexpected behavior changes, errors, and quality degradation"},{"id":"B","text":"It captures logs for debugging and compliance audits"},{"id":"C","text":"It enables quick identification of when a model needs updating or rollback"},{"id":"D","text":"It guarantees that a model will never produce wrong answers"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Monitoring tracks latency, error rates, output quality, and user feedback in production.", "Observability enables rapid response to issues but does not prevent all failures."]
+    },
+    {
+      "questionId": "gen-ai-24",
+      "questionText": "What is a rollback strategy in the context of AI model deployment?",
+      "questionType": "single",
+      "skills": ["Deployment Support", "Safety Systems"],
+      "hint": "What happens if a new model version has problems? A good strategy lets you go back to what worked.",
+      "options": [{"id":"A","text":"A plan to quickly revert to a previous, working model version if the new version fails or degrades quality"},{"id":"B","text":"A way to prevent users from accessing any version of the model"},{"id":"C","text":"Deleting all historical versions of the model"},{"id":"D","text":"Refusing to update the model ever"}],
+      "correctAnswers": ["A"],
+      "summary": ["A rollback plan includes versioned model artifacts, fast deployment capabilities, and clear criteria for triggering a revert.", "Rollback readiness reduces the cost of deploying updates and trying new approaches."]
+    },
+    {
+      "questionId": "gen-ai-25",
+      "questionText": "What is a token limit or context window and why does it matter?",
+      "questionType": "multiple",
+      "skills": ["Tokenization", "Artificial Intelligence"],
+      "hint": "Context window is a real limit. It affects what information the model sees and the cost of running it.",
+      "options": [{"id":"A","text":"It is the maximum number of input and output tokens a model can process in a single request"},{"id":"B","text":"It determines how much conversation history or context the model can consider"},{"id":"C","text":"It affects the length of responses the model can produce"},{"id":"D","text":"Token limits are arbitrary and have no practical effect"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["A context window caps the total token budget available for input and output combined.", "Understanding token limits is essential for designing prompts, managing long documents, and controlling cost."]
+    },
+    {
+      "questionId": "gen-ai-26",
+      "questionText": "What role does positional encoding play in transformer models?",
+      "questionType": "single",
+      "skills": ["Transformer (Machine Learning Model)", "Artificial Intelligence"],
+      "hint": "Transformers see all tokens at once. Without position info, they wouldn't know which comes first. How does positional encoding solve this?",
+      "options": [{"id":"A","text":"It helps the model understand the order and position of tokens in the sequence"},{"id":"B","text":"It encrypts the model's weights"},{"id":"C","text":"It determines the model's training speed"},{"id":"D","text":"It replaces the attention mechanism"}],
+      "correctAnswers": ["A"],
+      "summary": ["Positional encodings or embeddings let transformers incorporate sequence order without recurrence.", "Without position information, a transformer would treat token order as irrelevant."]
+    },
+    {
+      "questionId": "gen-ai-27",
+      "questionText": "In a RAG pipeline, what makes a good retrieval quality metric?",
+      "questionType": "single",
+      "skills": ["RAG Pipelines (Retrieval-Augmented Generation)", "Model Evaluation and Validation"],
+      "hint": "A good metric checks: are the retrieved passages actually helpful to answering the question?",
+      "options": [{"id":"A","text":"It measures whether the top retrieved passages actually contain information relevant to the query"},{"id":"B","text":"It counts only the number of documents retrieved"},{"id":"C","text":"It ignores whether answers use the retrieved information"},{"id":"D","text":"It assumes all retrieved passages are equally useful"}],
+      "correctAnswers": ["A"],
+      "summary": ["Retrieval quality metrics assess relevance, coverage, and ranking of retrieved passages.", "High retrieval quality is necessary but not sufficient for accurate final answers."]
+    },
+    {
+      "questionId": "gen-ai-28",
+      "questionText": "Which considerations are important when curating training or evaluation data for AI systems?",
+      "questionType": "multiple",
+      "skills": ["Data Curation", "Governance", "Safety Systems"],
+      "hint": "Good data practices mean: being fair, checking quality, and knowing where data comes from.",
+      "options": [{"id":"A","text":"Identify and mitigate potential biases or underrepresented groups"},{"id":"B","text":"Ensure data quality, accuracy, and relevance to the intended task"},{"id":"C","text":"Document data provenance, licenses, and usage restrictions"},{"id":"D","text":"Use any available data without scrutiny to maximize dataset size"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Data curation affects model quality, fairness, and compliance.", "Responsible data practices require diversity, quality checks, documentation, and bias awareness."]
+    },
+    {
+      "questionId": "gen-ai-29",
+      "questionText": "What is machine learning at a fundamental level?",
+      "questionType": "single",
+      "skills": ["Artificial Intelligence", "Generative AI"],
+      "hint": "Machine learning is not about pre-written rules. It's about learning patterns from examples.",
+      "options": [{"id":"A","text":"A system that learns patterns from data and uses those patterns to make predictions or decisions on new data"},{"id":"B","text":"A human manually writing all possible rules and decisions"},{"id":"C","text":"A system that retrieves answers from a database without learning"},{"id":"D","text":"Programming a computer to follow pre-written instructions only"}],
+      "correctAnswers": ["A"],
+      "summary": ["Machine learning systems discover patterns from training examples rather than relying on explicitly programmed rules.", "This enables models to generalize to new, unseen data and adapt as more information becomes available."]
+    },
+    {
+      "questionId": "gen-ai-30",
+      "questionText": "How do neural networks and deep learning relate to the learning process?",
+      "questionType": "multiple",
+      "skills": ["Artificial Intelligence", "Transformer (Machine Learning Model)"],
+      "hint": "Deep learning means multiple layers. Each layer learns different levels of detail.",
+      "options": [{"id":"A","text":"Neural networks use multiple layers to learn hierarchical representations of complex patterns"},{"id":"B","text":"Deep learning refers to networks with many layers that can capture intricate relationships"},{"id":"C","text":"Each layer extracts increasingly abstract features from the data"},{"id":"D","text":"Neural networks only work with small, simple datasets"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Deep neural networks stack multiple layers of processing to build representations from raw input to high-level concepts.", "This layered approach enables transformers, LLMs, and other modern AI systems to handle complexity."]
+    },
+    {
+      "questionId": "gen-ai-31",
+      "questionText": "What does 'training' mean in the context of a machine learning model?",
+      "questionType": "single",
+      "skills": ["Artificial Intelligence", "Generative AI"],
+      "hint": "Training is an iterative process. The model sees data, measures how well it does, and improves.",
+      "options": [{"id":"A","text":"Exposing the model to labeled or unlabeled data and adjusting its parameters to minimize errors or improve performance"},{"id":"B","text":"Writing new code to change the model's behavior"},{"id":"C","text":"Testing a model that is already complete and frozen"},{"id":"D","text":"Running a model once and expecting it to work perfectly"}],
+      "correctAnswers": ["A"],
+      "summary": ["Training is the iterative process of feeding data through a model, measuring how well it performs, and adjusting weights and parameters.", "Well-trained models generalize better than models with random or untrained weights."]
+    },
+    {
+      "questionId": "gen-ai-32",
+      "questionText": "What is the difference between zero-shot and few-shot learning?",
+      "questionType": "single",
+      "skills": ["Prompt Engineering", "Cognitive Engineering"],
+      "hint": "Zero-shot = no examples. Few-shot = some examples shown in the prompt to teach a pattern.",
+      "options": [{"id":"A","text":"Zero-shot requires no examples; few-shot provides a small number of input-output examples before the actual task"},{"id":"B","text":"They are the same thing with different names"},{"id":"C","text":"Zero-shot means the model has zero knowledge; few-shot means it has training"},{"id":"D","text":"Few-shot is only for image classification, zero-shot only for text"}],
+      "correctAnswers": ["A"],
+      "summary": ["Zero-shot prompts describe a task without demonstrations; few-shot prompts include examples that teach the model a pattern inside the current conversation.", "Few-shot examples often improve performance on novel tasks without fine-tuning or retraining."]
+    },
+    {
+      "questionId": "gen-ai-33",
+      "questionText": "What is the relationship between pre-trained models and transfer learning?",
+      "questionType": "multiple",
+      "skills": ["Artificial Intelligence", "Generative AI", "Customization"],
+      "hint": "A pre-trained model starts with knowledge. Transfer learning reuses that knowledge for a new task.",
+      "options": [{"id":"A","text":"A pre-trained model has learned patterns from large amounts of data before being used on a new task"},{"id":"B","text":"Transfer learning means adapting a pre-trained model's knowledge to solve a different but related problem"},{"id":"C","text":"Using a pre-trained model saves time and computational resources compared to training from scratch"},{"id":"D","text":"Pre-trained models must be completely retrained from zero for every new application"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Transfer learning leverages knowledge from a pre-trained model to accelerate learning on new tasks with less data and compute.", "Large language models like GPT are pre-trained on vast amounts of text, then fine-tuned or prompted for specific applications."]
     }
   ]
 }
