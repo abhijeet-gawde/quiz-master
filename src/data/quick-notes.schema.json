@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quiz-master.example/schemas/quick-notes.schema.json",
+  "title": "Topic Quick Notes",
+  "description": "Generic topic notes with recursively nested mind-map nodes and extensible typed content blocks.",
+  "type": "object",
+  "required": ["topicId", "title", "description", "ui", "root"],
+  "properties": {
+    "topicId": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "ui": {
+      "type": "object",
+      "description": "All user-facing interface labels for this notes document.",
+      "required": ["rootLabel", "quickNotesLabel", "sectionsLabel", "mapLabel", "panHint", "expandLabel", "collapseLabel", "expandDetailsLabel", "collapseDetailsLabel", "loadingLabel", "unavailableTitle", "unavailableText"],
+      "properties": {
+        "rootLabel": { "type": "string" },
+        "quickNotesLabel": { "type": "string" },
+        "sectionsLabel": { "type": "string" },
+        "mapLabel": { "type": "string" },
+        "panHint": { "type": "string" },
+        "expandLabel": { "type": "string" },
+        "collapseLabel": { "type": "string" },
+        "expandDetailsLabel": { "type": "string" },
+        "collapseDetailsLabel": { "type": "string" },
+        "loadingLabel": { "type": "string" },
+        "unavailableTitle": { "type": "string" },
+        "unavailableText": { "type": "string" },
+        "backLabel": { "type": "string" }
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "root": { "$ref": "#/$defs/node" }
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "required": ["id", "title", "cardType"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "cardType": { "type": "string", "minLength": 1, "description": "Renderer key for the card presentation, such as term or detail." },
+        "summary": { "type": "string" },
+        "content": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/contentBlock" }
+        },
+        "children": {
+          "type": "array",
+          "description": "Nodes use the same definition recursively; there is no fixed maximum branching depth.",
+          "items": { "$ref": "#/$defs/node" }
+        },
+        "color": { "type": "string" },
+        "metadata": { "type": "object", "additionalProperties": true }
+      },
+      "additionalProperties": true
+    },
+    "contentBlock": {
+      "type": "object",
+      "required": ["type", "data"],
+      "properties": {
+        "type": { "type": "string", "minLength": 1, "description": "Registered renderer key. New block types do not require a schema change." },
+        "data": { "type": "object", "description": "Renderer-specific structured content.", "additionalProperties": true }
+      },
+      "additionalProperties": true
+    }
+  }
+}

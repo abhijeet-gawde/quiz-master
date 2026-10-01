@@ -11,4 +11,4 @@ const theme = createTheme({
   components: { MuiButton: { styleOverrides: { root: { borderRadius: 10, padding: '11px 18px' } } }, MuiLinearProgress: { styleOverrides: { root: { height: 8, borderRadius: 8, backgroundColor: '#e8ebf0' }, bar: { borderRadius: 8 } } } }
 });
 
-createRoot(document.getElementById('root')).render(<ThemeProvider theme={theme}><BrowserRouter><App /></BrowserRouter></ThemeProvider>);
+createRoot(document.getElementById('root')).render(<ThemeProvider theme={theme}><BrowserRouter basename={import.meta.env.BASE_URL}><App /></BrowserRouter></ThemeProvider>);

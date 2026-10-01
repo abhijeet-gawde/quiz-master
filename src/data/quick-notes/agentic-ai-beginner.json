@@ -1,0 +1,314 @@
+{
+  "topicId": "agentic-ai-beginner",
+  "title": "Essential ingredients",
+  "description": "Explore the components that let an AI agent perceive its environment, decide what to do, and learn from the outcome.",
+  "ui": {
+    "rootLabel": "Essential ingredients",
+    "quickNotesLabel": "Quick Notes",
+    "sectionsLabel": "Mind map topics",
+    "mapLabel": "Agent mind map",
+    "panHint": "Hold and drag to move the mind map. Use a card's arrow to expand or collapse its branches.",
+    "expandLabel": "Expand child topics",
+    "collapseLabel": "Collapse child topics",
+    "expandDetailsLabel": "Expand details",
+    "collapseDetailsLabel": "Collapse details",
+    "loadingLabel": "Loading quick notes…",
+    "unavailableTitle": "Quick Notes unavailable",
+    "unavailableText": "There are no quick notes for this topic yet.",
+    "backLabel": "Back to topics"
+  },
+  "root": {
+    "id": "essential-ingredients",
+    "title": "Essential ingredients",
+    "cardType": "root",
+    "summary": "How an agent senses, thinks, acts, and adapts.",
+    "content": [
+      { "type": "paragraph", "data": { "text": "An AI agent operates in a loop: it receives information, interprets the situation, chooses an action, changes its environment, and observes the result." } },
+      { "type": "callout", "data": { "label": "The loop", "text": "Perceive → interpret → decide → act → observe" } }
+    ],
+    "children": [
+      {
+        "id": "environment",
+        "title": "Environment",
+        "cardType": "term",
+        "summary": "The world the agent perceives and interacts with.",
+        "content": [
+          { "type": "paragraph", "data": { "text": "An environment may be physical, digital, or a combination. It contains the conditions, systems, and other actors that can affect the agent's goal." } },
+          { "type": "bulletList", "data": { "items": ["Physical: roads, vehicles, people, signs, and weather", "Digital: stores, catalogs, prices, reviews, and user preferences", "Combined: digital information alongside location, season, or local conditions"] } }
+        ],
+        "children": [
+          {
+            "id": "environment-dynamic",
+            "title": "Dynamic conditions",
+            "cardType": "detail",
+            "summary": "The world can change while the agent is working.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "Agents often work in environments where relevant facts change over time. A plan based on an earlier observation can become stale before it is carried out." } },
+              { "type": "orderedList", "data": { "items": ["Identify which conditions can change.", "Decide how often the agent needs fresh observations.", "Re-check important facts before consequential actions."] } },
+              { "type": "callout", "data": { "label": "Example", "text": "A shopping assistant should check current stock and price before it recommends a product as available." } }
+            ],
+            "children": [
+              {
+                "id": "environment-boundaries",
+                "title": "Define the boundary",
+                "cardType": "term",
+                "summary": "Specify which parts of the world are relevant to this task.",
+                "content": [
+                  { "type": "paragraph", "data": { "text": "A clear boundary identifies the systems, people, time horizon, and conditions that matter. It also helps exclude unrelated or sensitive information." } }
+                ],
+                "children": [
+                  {
+                    "id": "environment-scope-checklist",
+                    "title": "Scope checklist",
+                    "cardType": "detail",
+                    "summary": "Make the operating context explicit before choosing sensors or tools.",
+                    "content": [
+                      { "type": "bulletList", "data": { "items": ["What entities and conditions can affect the goal?", "Which sources are authoritative and current?", "What information is unnecessary or sensitive?", "Which changes require the agent to reassess its plan?"] } }
+                    ],
+                    "children": [
+                      {
+                        "id": "environment-scope-test",
+                        "title": "Test a missing-context case",
+                        "cardType": "term",
+                        "summary": "Define what the agent does when a required fact is unavailable.",
+                        "content": [
+                          { "type": "paragraph", "data": { "text": "A robust environment model identifies missing or stale context as a condition to handle. The agent can retrieve updated information, ask the user, or stop before taking an unsafe action." } }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "environment-examples",
+            "title": "Physical and digital examples",
+            "cardType": "term",
+            "summary": "Different tasks place the agent in different kinds of worlds.",
+            "content": [
+              { "type": "heading", "data": { "text": "Self-driving car" } },
+              { "type": "paragraph", "data": { "text": "Road layout, traffic, pedestrians, weather, and traffic signs all form part of the car's environment." } },
+              { "type": "heading", "data": { "text": "Shopping assistant" } },
+              { "type": "paragraph", "data": { "text": "Product catalogs, user preferences, prices, reviews, promotions, weather, and season can all influence a recommendation." } }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sensors",
+        "title": "Sensors",
+        "cardType": "term",
+        "summary": "The channels through which the agent gathers input.",
+        "content": [
+          { "type": "paragraph", "data": { "text": "Sensors are the means by which an agent receives information from its environment. They turn signals into observations the agent can process." } },
+          { "type": "bulletList", "data": { "items": ["Web scrapers and search tools", "APIs and database connections", "Cameras, microphones, LiDAR, and GPS", "IoT devices and other live data integrations"] } }
+        ],
+        "children": [
+          {
+            "id": "sensor-physical",
+            "title": "Physical sensors",
+            "cardType": "detail",
+            "summary": "Devices that measure the physical world.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "Physical agents combine sensors because each captures different evidence and has different limitations." } },
+              { "type": "bulletList", "data": { "items": ["Cameras capture visual scenes and signs.", "LiDAR estimates distance and surrounding geometry.", "GPS provides location signals.", "Microphones capture audio; vehicle systems provide additional state readings."] } },
+              { "type": "callout", "data": { "label": "Design check", "text": "Consider sensor coverage, delay, calibration, obstruction, and what the agent should do when a signal is unreliable." } }
+            ]
+          },
+          {
+            "id": "sensor-digital",
+            "title": "Digital inputs",
+            "cardType": "term",
+            "summary": "Software tools that retrieve information from online systems.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "A shopping agent may use web scrapers for product information, APIs for browsing history, comparison modules for prices, and integrations for live weather." } }
+            ],
+            "children": [
+              {
+                "id": "sensor-quality",
+                "title": "Input quality and freshness",
+                "cardType": "detail",
+                "summary": "Collected data can be incomplete, delayed, or contradictory.",
+                "content": [
+                  { "type": "paragraph", "data": { "text": "The model can only reason from the evidence it receives. Sources, timestamps, permissions, and validation all affect how much an observation should be trusted." } },
+                  { "type": "bulletList", "data": { "items": ["Track where an observation came from.", "Check whether it is recent enough for the task.", "Detect missing or conflicting values.", "Ask for clarification or pause if critical inputs are uncertain."] } }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "model",
+        "title": "Model",
+        "cardType": "term",
+        "summary": "The component that interprets observations and forms an understanding.",
+        "content": [
+          { "type": "paragraph", "data": { "text": "Collecting data is only the first step. A model processes perceptions, recognizes context, and helps the agent understand what may be happening." } },
+          { "type": "bulletList", "data": { "items": ["Machine-learning algorithms for focused tasks", "Neural networks for complex patterns", "Large language models for language-based reasoning", "Multimodal models that combine text, images, audio, or video"] } }
+        ],
+        "children": [
+          {
+            "id": "model-types",
+            "title": "Model capability",
+            "cardType": "detail",
+            "summary": "Choose a model that fits the information and task.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "Models range in sophistication. A focused classifier may be enough for a narrow decision, while a multimodal language model can interpret several kinds of information together." } },
+              { "type": "callout", "data": { "label": "Remember", "text": "A model's interpretation is evidence for a decision, not proof that an action is safe, authorized, or correct." } }
+            ]
+          },
+          {
+            "id": "model-multimodal",
+            "title": "Multimodal context",
+            "cardType": "term",
+            "summary": "Use multiple input forms to build a richer understanding.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "Text, images, audio, and video can be considered together. This can improve context awareness in complex environments, but each modality also introduces uncertainty." } }
+            ]
+          },
+          {
+            "id": "model-limits",
+            "title": "Context and uncertainty",
+            "cardType": "detail",
+            "summary": "Treat model output as an interpretation that may need checking.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "Models may lack current facts, misunderstand ambiguous inputs, or produce plausible but unsupported answers. Important claims should be grounded in trusted evidence." } },
+              { "type": "bulletList", "data": { "items": ["Retrieve current information when freshness matters.", "Keep source evidence available for review.", "Escalate uncertain, high-impact cases."] } }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "decision-logic",
+        "title": "Decision logic",
+        "cardType": "term",
+        "summary": "Rules and objectives that guide the agent's choice of action.",
+        "content": [
+          { "type": "paragraph", "data": { "text": "Decision logic evaluates options and turns model output into a choice. It can be a structured algorithm, explicit rules, or a thin external layer around an LLM." } },
+          { "type": "callout", "data": { "label": "Why add a layer?", "text": "External checks can enforce safety, legal, and business constraints that a model's own instructions should not override." } }
+        ],
+        "children": [
+          {
+            "id": "decision-thresholds",
+            "title": "Rules and thresholds",
+            "cardType": "detail",
+            "summary": "Translate probabilistic model output into consistent actions.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "A spam filter can classify a message as spam only when the model's estimated probability exceeds a chosen threshold. A trading rule can reject investments outside specified return or volatility limits." } },
+              { "type": "bulletList", "data": { "items": ["Make the condition explicit.", "Measure the cost of false positives and false negatives.", "Provide review for uncertain cases."] } }
+            ]
+          },
+          {
+            "id": "decision-safety",
+            "title": "Safety and authorization",
+            "cardType": "term",
+            "summary": "Verify constraints independently before consequential actions.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "An external logic layer can verify transaction limits, authentication, permissions, or legal requirements before an action is allowed." } }
+            ],
+            "children": [
+              {
+                "id": "decision-escalation",
+                "title": "Human confirmation",
+                "cardType": "detail",
+                "summary": "Pause for a person when the action is unclear or high impact.",
+                "content": [
+                  { "type": "paragraph", "data": { "text": "The agent can request confirmation when it cannot confidently distinguish among actions or when consequences require human authority." } },
+                  { "type": "orderedList", "data": { "items": ["Explain the proposed action.", "Show the relevant evidence and consequences.", "Wait for explicit approval before execution."] } }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "actions-tools",
+        "title": "Actions & tools",
+        "cardType": "term",
+        "summary": "The mechanisms the agent uses to affect its environment.",
+        "content": [
+          { "type": "paragraph", "data": { "text": "Agents interact with their environment through actuators or tools. Physical agents may move a robotic arm or control steering and braking; digital agents may use functions, APIs, browsers, and integrations." } },
+          { "type": "bulletList", "data": { "items": ["Read-only tools retrieve information.", "Write tools change external state.", "Some actions have side effects that are difficult to undo."] } }
+        ],
+        "children": [
+          {
+            "id": "action-tool-use",
+            "title": "Tool use",
+            "cardType": "detail",
+            "summary": "Connect the selected action to a well-defined tool.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "The model may propose an action, but the agent needs a tool with an explicit interface to carry it out and return an observable result." } },
+              { "type": "callout", "data": { "label": "Email example", "text": "An email agent can classify a message, move it to spam, flag an attachment, or ask the user when the correct action is unclear." } }
+            ]
+          },
+          {
+            "id": "action-permissions",
+            "title": "Permissions and side effects",
+            "cardType": "term",
+            "summary": "Limit what each tool can access and change.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "Use the least access needed, validate tool inputs, and distinguish a requested operation from one that has actually succeeded." } }
+            ],
+            "children": [
+              {
+                "id": "action-verify",
+                "title": "Verify the result",
+                "cardType": "detail",
+                "summary": "Observe the external state after an action.",
+                "content": [
+                  { "type": "paragraph", "data": { "text": "Tool calls can fail, partially complete, time out, or be repeated. Check the resulting state before telling the user an operation is complete." } },
+                  { "type": "bulletList", "data": { "items": ["Handle retries carefully.", "Confirm important state changes.", "Report partial completion honestly."] } }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "feedback-loop",
+        "title": "Feedback loop",
+        "cardType": "term",
+        "summary": "How the agent observes outcomes and improves future behavior.",
+        "content": [
+          { "type": "paragraph", "data": { "text": "Actions create new conditions. Sensors receive fresh information about the updated environment, which can reveal whether the agent achieved its intended goal." } },
+          { "type": "callout", "data": { "label": "Core idea", "text": "The agent does not stop at acting: it observes the outcome and decides whether another step is needed." } }
+        ],
+        "children": [
+          {
+            "id": "feedback-observation",
+            "title": "Observe the updated state",
+            "cardType": "detail",
+            "summary": "Collect new input after acting.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "The updated environment provides new observations. These are processed and compared with the intended result, closing the basic agent loop." } },
+              { "type": "orderedList", "data": { "items": ["Perform the action.", "Receive updated sensor input.", "Check the result against the goal.", "Choose another action or stop."] } }
+            ]
+          },
+          {
+            "id": "feedback-adaptation",
+            "title": "Learning and adaptation",
+            "cardType": "term",
+            "summary": "Use relevant outcomes to improve later choices.",
+            "content": [
+              { "type": "paragraph", "data": { "text": "Repeated observations can help refine behavior over time. Adaptation may be as simple as remembering a preference, or as involved as evaluating and updating a model." } }
+            ],
+            "children": [
+              {
+                "id": "feedback-examples",
+                "title": "Everyday examples",
+                "cardType": "detail",
+                "summary": "Feedback makes future behavior more relevant to the user.",
+                "content": [
+                  { "type": "paragraph", "data": { "text": "A thermostat can learn from manual temperature changes. A recommendation system can use what a person watches, skips, pauses, or rates to tailor future suggestions." } },
+                  { "type": "bulletList", "data": { "items": ["Decide what information is retained.", "Respect privacy and user preferences.", "Measure whether adaptation improves outcomes."] } }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

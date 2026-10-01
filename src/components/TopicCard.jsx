@@ -1,5 +1,6 @@
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
+import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import { Button, Card, CardContent, Chip, Stack, Typography } from '@mui/material';
 
 const accentColors = {
@@ -8,7 +9,7 @@ const accentColors = {
   gold: { background: '#fff4d6', color: '#b17b13' }
 };
 
-export default function TopicCard({ topic, onStart }) {
+export default function TopicCard({ topic, onStart, onQuickNotes }) {
   const accent = accentColors[topic.accent] ?? accentColors.coral;
 
   return (
@@ -22,9 +23,16 @@ export default function TopicCard({ topic, onStart }) {
         </Stack>
         <Typography variant="h5" component="h2" sx={{ mt: 3, mb: 1, fontWeight: 800 }}>{topic.name}</Typography>
         <Typography color="text.secondary" sx={{ minHeight: 52, lineHeight: 1.6 }}>{topic.description}</Typography>
-        <Button fullWidth onClick={onStart} endIcon={<ArrowForwardRoundedIcon />} sx={{ mt: 3 }}>
-          Start quiz
-        </Button>
+        <Stack className="topic-card-actions" direction={onQuickNotes ? 'row' : 'column'} spacing={1.25} sx={{ mt: 3 }}>
+          <Button fullWidth onClick={onStart} endIcon={<ArrowForwardRoundedIcon />}>
+            Start quiz
+          </Button>
+          {onQuickNotes && (
+            <Button fullWidth variant="outlined" onClick={onQuickNotes} startIcon={<MenuBookOutlinedIcon />}>
+              Quick Notes
+            </Button>
+          )}
+        </Stack>
       </CardContent>
     </Card>
   );

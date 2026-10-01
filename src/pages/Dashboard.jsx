@@ -3,6 +3,7 @@ import { Alert, Container, InputAdornment, Skeleton, Stack, TextField, Typograph
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TopicCard from '../components/TopicCard';
+import { hasQuickNotes } from '../services/quickNotesService';
 import { getTopics } from '../services/topicService';
 
 export default function Dashboard() {
@@ -34,7 +35,7 @@ export default function Dashboard() {
           <TextField size="small" placeholder="Search topics" value={search} onChange={(event) => setSearch(event.target.value)} InputProps={{ startAdornment: <InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment> }} sx={{ width: { xs: '100%', sm: 230 } }} />
         </Stack>
         {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
-        {loading ? <div className="topic-grid">{[1, 2, 3].map((item) => <Skeleton key={item} variant="rounded" height={290} />)}</div> : filteredTopics.length > 0 ? <div className="topic-grid">{filteredTopics.map((topic) => <TopicCard key={topic.id} topic={topic} onStart={() => navigate(`/quiz/${topic.id}`)} />)}</div> : <Typography color="text.secondary">No topics match your search.</Typography>}
+        {loading ? <div className="topic-grid">{[1, 2, 3].map((item) => <Skeleton key={item} variant="rounded" height={290} />)}</div> : filteredTopics.length > 0 ? <div className="topic-grid">{filteredTopics.map((topic) => <TopicCard key={topic.id} topic={topic} onStart={() => navigate(`/quiz/${topic.id}`)} onQuickNotes={hasQuickNotes(topic.id) ? () => navigate(`/quick-notes/${topic.id}`) : undefined} />)}</div> : <Typography color="text.secondary">No topics match your search.</Typography>}
       </Container>
     </main>
   );
