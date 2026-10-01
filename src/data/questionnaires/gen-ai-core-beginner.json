@@ -255,7 +255,7 @@
       "questionId": "gen-ai-26",
       "questionText": "What role does positional encoding play in transformer models?",
       "questionType": "single",
-      "skills": ["Transformer (Machine Learning Model)", "Artificial Intelligence"],
+      "skills": ["Transformers", "Transformer (Machine Learning Model)", "Artificial Intelligence"],
       "hint": "Transformers see all tokens at once. Without position info, they wouldn't know which comes first. How does positional encoding solve this?",
       "options": [{"id":"A","text":"It helps the model understand the order and position of tokens in the sequence"},{"id":"B","text":"It encrypts the model's weights"},{"id":"C","text":"It determines the model's training speed"},{"id":"D","text":"It replaces the attention mechanism"}],
       "correctAnswers": ["A"],
@@ -295,7 +295,7 @@
       "questionId": "gen-ai-30",
       "questionText": "How do neural networks and deep learning relate to the learning process?",
       "questionType": "multiple",
-      "skills": ["Artificial Intelligence", "Transformer (Machine Learning Model)"],
+      "skills": ["Neural Networks", "Deep Learning", "Artificial Intelligence", "Transformer (Machine Learning Model)"],
       "hint": "Deep learning means multiple layers. Each layer learns different levels of detail.",
       "options": [{"id":"A","text":"Neural networks use multiple layers to learn hierarchical representations of complex patterns"},{"id":"B","text":"Deep learning refers to networks with many layers that can capture intricate relationships"},{"id":"C","text":"Each layer extracts increasingly abstract features from the data"},{"id":"D","text":"Neural networks only work with small, simple datasets"}],
       "correctAnswers": ["A","B","C"],
@@ -330,6 +330,450 @@
       "options": [{"id":"A","text":"A pre-trained model has learned patterns from large amounts of data before being used on a new task"},{"id":"B","text":"Transfer learning means adapting a pre-trained model's knowledge to solve a different but related problem"},{"id":"C","text":"Using a pre-trained model saves time and computational resources compared to training from scratch"},{"id":"D","text":"Pre-trained models must be completely retrained from zero for every new application"}],
       "correctAnswers": ["A","B","C"],
       "summary": ["Transfer learning leverages knowledge from a pre-trained model to accelerate learning on new tasks with less data and compute.", "Large language models like GPT are pre-trained on vast amounts of text, then fine-tuned or prompted for specific applications."]
-    }
+    },
+    {
+      "questionId": "gen-ai-34",
+      "questionText": "What is the primary purpose of an artificial neuron in a neural network?",
+      "questionType": "single",
+      "skills": ["Neural Networks", "Deep Learning"],
+      "hint": "An artificial neuron combines incoming signals, applies a transformation, and passes the result onward.",
+      "options": [{"id":"A","text":"To receive weighted inputs, apply an activation function, and produce an output signal"},{"id":"B","text":"To store a database of training examples"},{"id":"C","text":"To directly compare documents without learning"},{"id":"D","text":"To replace the optimizer in a deep learning model"}],
+      "correctAnswers": ["A"],
+      "summary": ["A neuron computes a weighted sum of its inputs, adds a bias, applies a nonlinear activation, and forwards the result.", "This simple operation is the core building block of neural networks."]
+    },
+    {
+      "questionId": "gen-ai-35",
+      "questionText": "Why are Convolutional Neural Networks (CNNs) especially effective for image data?",
+      "questionType": "single",
+      "skills": ["Convolutional Neural Networks (CNNs)", "Deep Learning"],
+      "hint": "Think about local patterns: edges, corners, and textures often appear in small regions of an image.",
+      "options": [{"id":"A","text":"They use local filters and shared weights to detect patterns like edges and textures across an image"},{"id":"B","text":"They process one pixel at a time with no spatial relationship"},{"id":"C","text":"They only work on text and not on images"},{"id":"D","text":"They replace all human labeling in datasets"}],
+      "correctAnswers": ["A"],
+      "summary": ["CNNs exploit spatial locality and weight sharing, allowing them to detect visual features efficiently.", "Pooling and convolution layers progressively reduce dimensionality while preserving important patterns."]
+    },
+    {
+      "questionId": "gen-ai-36",
+      "questionText": "What makes Recurrent Neural Networks (RNNs) useful for sequential data such as time series or sentences?",
+      "questionType": "single",
+      "skills": ["Recurrent Neural Networks (RNNs)", "Deep Learning"],
+      "hint": "RNNs keep a memory of prior inputs as they process each new step in the sequence.",
+      "options": [{"id":"A","text":"They maintain a hidden state that carries information from earlier time steps to later ones"},{"id":"B","text":"They process every time step independently without memory"},{"id":"C","text":"They only work with fixed-length vectors"},{"id":"D","text":"They convert sequences into image patches automatically"}],
+      "correctAnswers": ["A"],
+      "summary": ["RNNs process sequences step by step, letting them model temporal dependencies and context over time.", "Their hidden state allows them to carry relevant information forward, though they are often outperformed by transformers on long-range tasks."]
+    },
+    {
+      "questionId": "gen-ai-37",
+      "questionText": "Which component is central to the Transformer architecture and helps it model relationships between tokens?",
+      "questionType": "single",
+      "skills": ["Transformers", "Deep Learning"],
+      "hint": "Look for the mechanism that asks, 'How relevant is each token to every other token in the sequence?'",
+      "options": [{"id":"A","text":"Self-attention, which weights relationships between tokens in the same input sequence"},{"id":"B","text":"Manual feature extraction by a developer"},{"id":"C","text":"A fixed-length RNN memory buffer"},{"id":"D","text":"A convolution kernel that only works on images"}],
+      "correctAnswers": ["A"],
+      "summary": ["Self-attention lets a transformer assess the importance of each token relative to the others in the sequence.", "This allows transformers to model long-range dependencies efficiently and scale well to large language tasks."]
+    },
+    {
+      "questionId": "gen-ai-38",
+      "questionText": "What is the main idea behind Reinforcement Learning with Human Feedback (RLHF)?",
+      "questionType": "single",
+      "skills": ["Reinforcement Learning with Human Feedback (RLHF)", "Generative AI", "Safety Systems"],
+      "hint": "RLHF uses human preferences to shape the model's behavior instead of relying only on raw next-token prediction.",
+      "options": [{"id":"A","text":"Train a model using human preference data so it learns responses that better match human values and quality expectations"},{"id":"B","text":"Randomly fine-tune the model until it becomes safe"},{"id":"C","text":"Use human labels only for data collection without model updates"},{"id":"D","text":"Replace prompt engineering with a simpler static template"}],
+      "correctAnswers": ["A"],
+      "summary": ["RLHF aligns model behavior using human preference judgments or rankings.", "This process helps improve helpfulness, safety, and politeness beyond the base pretraining objective."]
+    },
+    {
+      "questionId": "gen-ai-39",
+      "questionText": "What is a reward model typically used for in an RLHF workflow?",
+      "questionType": "single",
+      "skills": ["Reinforcement Learning with Human Feedback (RLHF)", "Model Evaluation and Validation"],
+      "hint": "The reward model estimates which response humans would prefer, giving learning signal to the policy.",
+      "options": [{"id":"A","text":"To score candidate responses according to human preference or quality so the model can learn from those scores"},{"id":"B","text":"To replace all prompts with fixed outputs"},{"id":"C","text":"To calculate token counts only"},{"id":"D","text":"To disable safety checks during generation"}],
+      "correctAnswers": ["A"],
+      "summary": ["A reward model learns to approximate human preferences for different outputs.", "It provides a training signal that guides the model toward more preferred and safer responses."]
+    },
+    {
+      "questionId": "gen-ai-40",
+      "questionText": "Why is human feedback important in aligning an LLM with user expectations?",
+      "questionType": "multiple",
+      "skills": ["Reinforcement Learning with Human Feedback (RLHF)", "Safety Systems", "Governance"],
+      "hint": "Human feedback helps the model learn what feels helpful, safe, and appropriate in real use.",
+      "options": [{"id":"A","text":"It captures preferences that raw training text may not reflect"},{"id":"B","text":"It helps reduce harmful, unhelpful, or low-quality outputs"},{"id":"C","text":"It can support alignment with human values and product goals"},{"id":"D","text":"It eliminates the need for model evaluation after deployment"}],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Human feedback adds a preference layer beyond next-token prediction.", "It is a practical way to improve quality, safety, and usefulness while acknowledging that alignment is not perfect."]
+    },
+    {
+      "questionId": "gen-ai-21",
+      "questionText": "Why do LLM providers typically charge based on token usage?",
+      "questionType": "multiple",
+      "skills": [
+        "Tokenization",
+        "LLM Cost Management"
+      ],
+      "hint": "Tokens are the basic processing unit for inference.",
+      "options": [
+        {
+          "id": "A",
+          "text": "More tokens require more computation"
+        },
+        {
+          "id": "B",
+          "text": "Input and output tokens consume resources"
+        },
+        {
+          "id": "C",
+          "text": "Token count impacts model workload"
+        },
+        {
+          "id": "D",
+          "text": "Tokens are only used for storage purposes"
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "summary": [
+        "LLMs process text as tokens.",
+        "Higher token counts typically increase processing cost and latency."
+      ]
+    },
+{
+    "questionId": "gen-ai-001",
+    "questionText": "What is the primary purpose of Generative AI?",
+    "questionType": "single",
+    "skills": [
+      "Generative AI Fundamentals"
+    ],
+    "hint": "Think creation rather than classification.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Generate new content such as text, images, audio, or code"
+      },
+      {
+        "id": "B",
+        "text": "Only store data"
+      },
+      {
+        "id": "C",
+        "text": "Only classify records"
+      },
+      {
+        "id": "D",
+        "text": "Only perform calculations"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "summary": [
+      "Generative AI creates new content from learned patterns."
+    ]
+  },
+  {
+    "questionId": "gen-ai-002",
+    "questionText": "Which are common Generative AI outputs?",
+    "questionType": "multiple",
+    "skills": [
+      "Generative AI Fundamentals"
+    ],
+    "hint": "Think multimodal content.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Text"
+      },
+      {
+        "id": "B",
+        "text": "Images"
+      },
+      {
+        "id": "C",
+        "text": "Code"
+      },
+      {
+        "id": "D",
+        "text": "Audio"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "summary": [
+      "Modern GenAI can generate multiple content types."
+    ]
+  },
+  {
+    "questionId": "gen-ai-003",
+    "questionText": "What does LLM stand for?",
+    "questionType": "single",
+    "skills": [
+      "Large Language Models"
+    ],
+    "hint": "A common GenAI acronym.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Large Language Model"
+      },
+      {
+        "id": "B",
+        "text": "Logical Learning Machine"
+      },
+      {
+        "id": "C",
+        "text": "Language Logic Model"
+      },
+      {
+        "id": "D",
+        "text": "Large Learning Matrix"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "summary": [
+      "LLM stands for Large Language Model."
+    ]
+  },
+  {
+    "questionId": "gen-ai-004",
+    "questionText": "What is a token?",
+    "questionType": "single",
+    "skills": [
+      "Tokenization"
+    ],
+    "hint": "The basic unit processed by an LLM.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A unit of text processed by a model"
+      },
+      {
+        "id": "B",
+        "text": "A CPU core"
+      },
+      {
+        "id": "C",
+        "text": "A database record"
+      },
+      {
+        "id": "D",
+        "text": "A network cable"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "summary": [
+      "Models process tokens rather than complete documents."
+    ]
+  },
+  {
+    "questionId": "gen-ai-005",
+    "questionText": "Why is tokenization important?",
+    "questionType": "multiple",
+    "skills": [
+      "Tokenization"
+    ],
+    "hint": "Think processing, context and cost.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Converts text into processable units"
+      },
+      {
+        "id": "B",
+        "text": "Affects context window consumption"
+      },
+      {
+        "id": "C",
+        "text": "Influences inference cost"
+      },
+      {
+        "id": "D",
+        "text": "Guarantees correct answers"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "summary": [
+      "Tokenization impacts processing and cost."
+    ]
+  },
+  {
+    "questionId": "gen-ai-006",
+    "questionText": "What is an embedding?",
+    "questionType": "single",
+    "skills": [
+      "Embeddings"
+    ],
+    "hint": "A numeric representation of meaning.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A vector representation capturing semantic meaning"
+      },
+      {
+        "id": "B",
+        "text": "A document format"
+      },
+      {
+        "id": "C",
+        "text": "A security certificate"
+      },
+      {
+        "id": "D",
+        "text": "A software license"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "summary": [
+      "Embeddings capture semantic relationships in vector space."
+    ]
+  },
+  {
+    "questionId": "gen-ai-007",
+    "questionText": "Which use cases commonly use embeddings?",
+    "questionType": "multiple",
+    "skills": [
+      "Embeddings"
+    ],
+    "hint": "Think similarity.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Semantic search"
+      },
+      {
+        "id": "B",
+        "text": "Recommendations"
+      },
+      {
+        "id": "C",
+        "text": "Document retrieval"
+      },
+      {
+        "id": "D",
+        "text": "Printer management"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "summary": [
+      "Embeddings power similarity-based applications."
+    ]
+  },
+  {
+    "questionId": "gen-ai-008",
+    "questionText": "What is RAG?",
+    "questionType": "single",
+    "skills": [
+      "RAG"
+    ],
+    "hint": "Retrieval before generation.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Retrieval-Augmented Generation"
+      },
+      {
+        "id": "B",
+        "text": "Random AI Generator"
+      },
+      {
+        "id": "C",
+        "text": "Response Analysis Grid"
+      },
+      {
+        "id": "D",
+        "text": "Recursive Agent Gateway"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "summary": [
+      "RAG combines retrieval with generation."
+    ]
+  },
+  {
+    "questionId": "gen-ai-009",
+    "questionText": "What does temperature control?",
+    "questionType": "single",
+    "skills": [
+      "LLM Configuration"
+    ],
+    "hint": "Creativity versus determinism.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Randomness of output generation"
+      },
+      {
+        "id": "B",
+        "text": "Hardware temperature"
+      },
+      {
+        "id": "C",
+        "text": "Model size"
+      },
+      {
+        "id": "D",
+        "text": "Training data volume"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "summary": [
+      "Higher temperature increases variability."
+    ]
+  },
+  {
+    "questionId": "gen-ai-010",
+    "questionText": "What is hallucination in AI?",
+    "questionType": "single",
+    "skills": [
+      "Responsible AI"
+    ],
+    "hint": "Confident but wrong output.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Generation of inaccurate or fabricated information"
+      },
+      {
+        "id": "B",
+        "text": "Model shutdown"
+      },
+      {
+        "id": "C",
+        "text": "Data encryption"
+      },
+      {
+        "id": "D",
+        "text": "Model retraining"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "summary": [
+      "Hallucinations are plausible but incorrect outputs."
+    ]
+  }
   ]
 }

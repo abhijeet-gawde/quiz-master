@@ -1,0 +1,485 @@
+{
+  "topicId": "agentic-ai-beginner",
+  "questions": [
+    {
+      "questionId": "agentic-ai-1",
+      "questionText": "Which description best captures an AI agent?",
+      "questionType": "single",
+      "skills": ["Agent-Based Model", "Architecture"],
+      "hint": "An agent is more than a model response: consider its goal, actions, and feedback.",
+      "options": [
+        {"id":"A","text":"A system that pursues a goal by observing information and choosing from available actions"},
+        {"id":"B","text":"A static document containing answers to common questions"},
+        {"id":"C","text":"A language model that always has unrestricted access to every tool"},
+        {"id":"D","text":"A program that can only return the same fixed output"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An agent combines a model with a goal, available actions, and a process for using results to decide what to do next.", "Agent behavior should remain bounded by application rules and permissions."]
+    },
+    {
+      "questionId": "agentic-ai-2",
+      "questionText": "A user asks an agent to prepare a weekly report from a spreadsheet. What is a sensible first planning step?",
+      "questionType": "single",
+      "skills": ["Task Planning", "Requirements Traceability"],
+      "hint": "Make the requested outcome and its success criteria explicit before choosing actions.",
+      "options": [
+        {"id":"A","text":"Clarify the report requirements, then list ordered steps such as inspect, summarize, and check the data"},
+        {"id":"B","text":"Call every available API and decide later which results matter"},
+        {"id":"C","text":"Ask the model to keep working until it has nothing else to say"},
+        {"id":"D","text":"Skip the requested format and produce a generic summary"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A plan translates a goal into ordered, verifiable steps and a clear completion condition.", "Mapping each requirement to a step or check makes it easier to confirm that the final result meets the request."]
+    },
+    {
+      "questionId": "agentic-ai-3",
+      "questionText": "When is a simple hardcoded sequence of agent steps a reasonable choice?",
+      "questionType": "single",
+      "skills": ["Automation and Orchestration", "Architecture"],
+      "hint": "Consider whether the workflow is predictable and whether each step has a known input and output.",
+      "options": [
+        {"id":"A","text":"When the workflow is small and predictable, with clear checks between steps"},
+        {"id":"B","text":"When the task must adapt to any possible situation without limits"},
+        {"id":"C","text":"When no one can describe what successful completion means"},
+        {"id":"D","text":"When the agent must hide its actions from operators"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A linear workflow is easy to understand and test when the steps are known in advance.", "More variable tasks may need conditional planning, but added flexibility should come with clear limits and checks."]
+    },
+    {
+      "questionId": "agentic-ai-4",
+      "questionText": "Why break a complex agent task into smaller steps?",
+      "questionType": "multiple",
+      "skills": ["Task Planning", "Requirements Traceability"],
+      "hint": "Good subtasks make progress and failures easier to see.",
+      "options": [
+        {"id":"A","text":"Each step can have a clear input and expected result"},
+        {"id":"B","text":"Intermediate outputs can be checked before they are used"},
+        {"id":"C","text":"It guarantees that the model will never make a mistake"},
+        {"id":"D","text":"The plan can connect requested requirements to completion checks"}
+      ],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["Decomposition makes a task easier to execute, inspect, and test against its requirements.", "It improves control but does not guarantee that individual steps are correct."]
+    },
+    {
+      "questionId": "agentic-ai-5",
+      "questionText": "A model proposes calling a weather API with a city name. What should the application do before making the request?",
+      "questionType": "single",
+      "skills": ["API Integration", "Security"],
+      "hint": "The model can suggest an operation, but the application controls execution.",
+      "options": [
+        {"id":"A","text":"Validate the proposed arguments, check authorization, and call only the approved endpoint"},
+        {"id":"B","text":"Let the model choose the endpoint and provide credentials in its prompt"},
+        {"id":"C","text":"Execute any operation as an administrator to avoid permission errors"},
+        {"id":"D","text":"Run the request without checking the city or the response"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A model may request a structured tool action, while the application validates inputs, enforces permissions, and performs the call.", "Credentials should stay in secure application infrastructure and never be exposed in prompts."]
+    },
+    {
+      "questionId": "agentic-ai-6",
+      "questionText": "What is a key limitation of using a fixed API call with hardcoded parameters for every task?",
+      "questionType": "single",
+      "skills": ["API Integration", "Architecture"],
+      "hint": "A fixed call is predictable, but user requests and required inputs can vary.",
+      "options": [
+        {"id":"A","text":"It may not reflect the user's request or handle changing inputs"},
+        {"id":"B","text":"It automatically grants the agent durable memory"},
+        {"id":"C","text":"It prevents the application from validating the response"},
+        {"id":"D","text":"It guarantees that the external service is always available"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Static parameters are simple to test but cannot represent requests that need different validated values.", "Dynamic inputs should be parsed and checked against an explicit schema before use."]
+    },
+    {
+      "questionId": "agentic-ai-7",
+      "questionText": "An agent needs to read a manually uploaded CSV before summarizing it. Which approach is most reliable?",
+      "questionType": "single",
+      "skills": ["Data Ingestion"],
+      "hint": "Treat uploaded data as input that needs parsing and validation, not as trusted instructions.",
+      "options": [
+        {"id":"A","text":"Parse the file using an expected format, validate required columns, and report malformed rows"},
+        {"id":"B","text":"Append the raw file contents to the system instructions without checking them"},
+        {"id":"C","text":"Assume every row has the expected number and type of values"},
+        {"id":"D","text":"Let the model silently discard rows it cannot interpret"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Reliable ingestion starts with explicit format expectations, parsing, and validation of required fields.", "User-supplied content should be treated as data and may need error reporting or human correction."]
+    },
+    {
+      "questionId": "agentic-ai-8",
+      "questionText": "What does a stateless agent interaction mean?",
+      "questionType": "single",
+      "skills": ["Memory Management", "Architecture"],
+      "hint": "Ask whether earlier requests are available automatically in a later request.",
+      "options": [
+        {"id":"A","text":"Each request uses only the context supplied for that request unless the application adds stored information"},
+        {"id":"B","text":"The model automatically remembers every past conversation forever"},
+        {"id":"C","text":"The agent stores every user message in its model weights"},
+        {"id":"D","text":"The application cannot pass context to the model"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A model call does not by itself provide durable memory between requests.", "If an application adds memory, it must decide what to store, retrieve, protect, and delete."]
+    },
+    {
+      "questionId": "agentic-ai-9",
+      "questionText": "Which design is a good starting point for agent memory?",
+      "questionType": "multiple",
+      "skills": ["Memory Management", "Security", "Governance and Compliance Strategy"],
+      "hint": "Memory is stored user data, so usefulness, access, and retention all matter.",
+      "options": [
+        {"id":"A","text":"Store only information needed for a defined purpose"},
+        {"id":"B","text":"Set access and retention rules for stored information"},
+        {"id":"C","text":"Keep sensitive conversation details forever in a shared store"},
+        {"id":"D","text":"Allow a user to correct or remove stored information when appropriate"}
+      ],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["Useful memory requires a clear purpose, minimal retention, suitable access controls, and lifecycle rules.", "Persistent memory increases privacy and security responsibilities compared with stateless requests."]
+    },
+    {
+      "questionId": "agentic-ai-10",
+      "questionText": "A workflow's request volume increases. Which change helps it scale while keeping resource use controlled?",
+      "questionType": "single",
+      "skills": ["Scalability", "Automation and Orchestration"],
+      "hint": "More workers can help, but unbounded parallel work can overwhelm dependent services.",
+      "options": [
+        {"id":"A","text":"Use a queue and bounded concurrency, then observe latency and failure rates"},
+        {"id":"B","text":"Launch unlimited parallel model and API calls for every request"},
+        {"id":"C","text":"Retry every failure immediately without a limit"},
+        {"id":"D","text":"Remove task limits so each agent can run indefinitely"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Queues and bounded concurrency help absorb demand while protecting model and API capacity.", "Retries, timeouts, and per-task budgets should also be controlled to prevent overload and runaway work."]
+    },
+    {
+      "questionId": "agentic-ai-11",
+      "questionText": "Which information is most appropriate for basic operational logging of an agent workflow?",
+      "questionType": "multiple",
+      "skills": ["Monitoring", "Security", "Governance and Compliance Strategy"],
+      "hint": "Logs should help operators understand system behavior without unnecessarily exposing private content.",
+      "options": [
+        {"id":"A","text":"Request or trace identifier and workflow step"},
+        {"id":"B","text":"Tool outcome, error category, latency, and retry count"},
+        {"id":"C","text":"API secrets and full sensitive prompts for every request"},
+        {"id":"D","text":"A minimal, policy-approved record of important actions"}
+      ],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["Operational logs can record workflow steps, timing, errors, and important actions for debugging and oversight.", "Minimize or redact personal data and secrets, and apply access and retention policies to logs."]
+    },
+    {
+      "questionId": "agentic-ai-12",
+      "questionText": "What is the best way to limit an agent's tool-related security risk?",
+      "questionType": "multiple",
+      "skills": ["Security", "API Integration"],
+      "hint": "Use the same core principles as other applications: narrow permissions and validate inputs and actions.",
+      "options": [
+        {"id":"A","text":"Expose only the tools needed for the task"},
+        {"id":"B","text":"Validate arguments and authorize each action in application code"},
+        {"id":"C","text":"Give the model broad credentials so it can solve unexpected problems"},
+        {"id":"D","text":"Require confirmation for sensitive or consequential side effects"}
+      ],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["Least privilege, validated inputs, application-enforced authorization, and confirmation for consequential actions reduce risk.", "The model should not be the security boundary or directly control unrestricted credentials."]
+    },
+    {
+      "questionId": "agentic-ai-13",
+      "questionText": "A task will send an email to a customer. When should a human be involved?",
+      "questionType": "single",
+      "skills": ["Human Intelligence", "Governance and Compliance Strategy"],
+      "hint": "Consider the impact of an incorrect or unintended external action.",
+      "options": [
+        {"id":"A","text":"When policy or risk requires review, show the proposed message and recipient before sending"},
+        {"id":"B","text":"Never; an agent should always send external messages without review"},
+        {"id":"C","text":"Only after the agent has already sent the message"},
+        {"id":"D","text":"Only when the model requests more tokens"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Human review is valuable when actions have meaningful consequences, uncertainty is high, or policy requires approval.", "The review should provide enough context for a person to make an informed decision before the action occurs."]
+    },
+    {
+      "questionId": "agentic-ai-14",
+      "questionText": "Which practice best supports governance and compliance for an agent workflow?",
+      "questionType": "multiple",
+      "skills": ["Governance and Compliance Strategy", "Requirements Traceability", "Monitoring"],
+      "hint": "Connect the intended use and rules to the checks and records maintained by the system.",
+      "options": [
+        {"id":"A","text":"Document the workflow's purpose, limitations, and applicable rules"},
+        {"id":"B","text":"Map important requirements to implementation checks and reviewable records"},
+        {"id":"C","text":"Monitor failures and important actions under an appropriate retention policy"},
+        {"id":"D","text":"Assume that using an LLM removes the need for accountability"}
+      ],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Governance makes responsibilities and constraints explicit, while traceability links requirements to controls and evidence.", "Monitoring and audit records should follow applicable privacy, security, and retention requirements."]
+    },
+    {
+      "questionId": "agentic-ai-15",
+      "questionText": "What should a basic agent workflow do when a tool call fails or returns unusable data?",
+      "questionType": "single",
+      "skills": ["Monitoring", "Task Planning", "Human Intelligence"],
+      "hint": "A reliable workflow should have a defined response for failure, not pretend the step succeeded.",
+      "options": [
+        {"id":"A","text":"Record the failure, stop or retry within defined limits, and ask for help when needed"},
+        {"id":"B","text":"Treat the failure as a successful result and continue"},
+        {"id":"C","text":"Retry forever until a response arrives"},
+        {"id":"D","text":"Invent replacement data without telling the user"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A failure path should be explicit: record what happened, use bounded retries when appropriate, and stop or escalate when recovery is not safe.", "The agent should communicate uncertainty instead of presenting missing or invalid tool output as fact."]
+    },
+    {
+      "questionId": "agentic-ai-16",
+      "questionText": "A basic rule-based goal parser receives: 'Find the order status for order 4821.' Which structured goal is the best result?",
+      "questionType": "single",
+      "skills": ["Task Planning", "Agent-Based Model"],
+      "hint": "Separate the action the user wants from the value needed to carry it out.",
+      "options": [
+        {"id":"A","text":"Intent: look up order status; order ID: 4821"},
+        {"id":"B","text":"Intent: cancel every order; order ID: unknown"},
+        {"id":"C","text":"Intent: send an email; order ID: 4821"},
+        {"id":"D","text":"Intent: perform any available tool action"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A rule-based parser can map recognized phrases to a known intent and extract required fields such as an order ID.", "The application should validate the extracted values and ask for clarification when required information is missing or ambiguous."]
+    },
+    {
+      "questionId": "agentic-ai-17",
+      "questionText": "Which sequence best represents a basic agent execution loop?",
+      "questionType": "single",
+      "skills": ["Agent-Based Model", "Architecture", "Automation and Orchestration"],
+      "hint": "An agent uses the result of an action to decide whether another step is needed.",
+      "options": [
+        {"id":"A","text":"Observe the request or result, choose a bounded next action, execute it, and inspect the outcome"},
+        {"id":"B","text":"Execute every tool, ignore the results, and repeat indefinitely"},
+        {"id":"C","text":"Generate a final answer before receiving the task"},
+        {"id":"D","text":"Store the request in model weights, then stop"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A basic agent loop uses observations to choose an action, then uses the action's result to guide the next step or completion.", "A bounded loop needs limits and a stopping condition so it cannot act indefinitely."]
+    },
+    {
+      "questionId": "agentic-ai-18",
+      "questionText": "A user writes, 'Please book a meeting with Sam next week.' What should a basic text parser do before scheduling?",
+      "questionType": "single",
+      "skills": ["Data Ingestion", "Task Planning", "Human Intelligence"],
+      "hint": "The request leaves important details unspecified; identify what is known and what is missing.",
+      "options": [
+        {"id":"A","text":"Extract the booking intent and known details, then ask for missing information such as a time and which Sam"},
+        {"id":"B","text":"Choose a time and recipient without telling the user"},
+        {"id":"C","text":"Treat the sentence as a complete, validated calendar request"},
+        {"id":"D","text":"Ignore the text and schedule a default meeting"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Basic parsing identifies intent and available fields, then checks whether required information is missing or ambiguous.", "Clarifying before an external action avoids silently inventing details that could cause an unintended booking."]
+    },
+    {
+      "questionId": "agentic-ai-19",
+      "questionText": "In a simple workflow that uses one LLM and no retrieval, where does the model get information for its answer?",
+      "questionType": "single",
+      "skills": ["Architecture", "Task Planning"],
+      "hint": "Think about what is included in the model request when no external search or retrieval step exists.",
+      "options": [
+        {"id":"A","text":"From its trained patterns and the prompt context supplied for that request"},
+        {"id":"B","text":"Automatically from every current company database"},
+        {"id":"C","text":"From documents retrieved by a retrieval step that the workflow does not have"},
+        {"id":"D","text":"From permanent memory of every previous user conversation"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Without retrieval or another data integration, the model can use its learned patterns and the context sent in the current request.", "A single-LLM workflow does not automatically provide current private data, durable memory, or verified facts; the application must add those capabilities deliberately."]
+    },
+    {
+      "questionId": "agentic-ai-20",
+      "questionText": "An agent must remember a user's preferred report format for later sessions. What is the basic application-level memory flow?",
+      "questionType": "single",
+      "skills": ["Memory Management", "Security", "Governance and Compliance Strategy"],
+      "hint": "A later model call can only use stored information if the application retrieves and supplies it.",
+      "options": [
+        {"id":"A","text":"With an appropriate purpose and permission, store the preference, retrieve it later when relevant, and allow it to be updated or removed"},
+        {"id":"B","text":"Assume the model will remember it without application storage"},
+        {"id":"C","text":"Save the entire conversation forever and include it in every request"},
+        {"id":"D","text":"Add the preference to the model's trained weights after each chat"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Application-managed memory requires explicit storage and retrieval; the model does not automatically retain a preference across separate requests.", "Store only appropriate information, protect it, and define how users or operators can update or delete it."]
+    },
+    {
+      "questionId": "agentic-ai-21",
+      "questionText": "Which signals are useful for basic monitoring of an agent workflow?",
+      "questionType": "multiple",
+      "skills": ["Monitoring", "Scalability", "Governance and Compliance Strategy"],
+      "hint": "Monitor both system operation and whether tool steps complete as expected, while respecting data policies.",
+      "options": [
+        {"id":"A","text":"Workflow and tool-call error rates"},
+        {"id":"B","text":"End-to-end latency and retry counts"},
+        {"id":"C","text":"Whether tasks complete or repeatedly stop at the same step"},
+        {"id":"D","text":"Unredacted secrets and private prompt content in every dashboard"}
+      ],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Error rates, latency, retries, and task outcomes help operators detect failures and bottlenecks in an agent workflow.", "Monitoring should collect only appropriate data and protect sensitive content according to policy."]
+    },
+    {
+      "questionId": "agentic-ai-22",
+      "questionText": "A shopping assistant considers product listings, a user's preferences, and local weather. What is its environment?",
+      "questionType": "single",
+      "skills": ["Agent-Based Model", "Architecture"],
+      "hint": "The environment is the external world and information the agent interacts with, not just one database.",
+      "options": [
+        {"id":"A","text":"The digital information and relevant real-world conditions the agent observes and acts within"},
+        {"id":"B","text":"Only the language model that generates recommendations"},
+        {"id":"C","text":"Only the user's original prompt"},
+        {"id":"D","text":"The agent's final recommendation, with no surrounding data or conditions"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An agent's environment is the external context it perceives and affects; it can include digital data, physical conditions, or both.", "Environments can change, so an agent may need to incorporate updated information before acting."]
+    },
+    {
+      "questionId": "agentic-ai-23",
+      "questionText": "Which statement best describes sensors in an AI agent?",
+      "questionType": "single",
+      "skills": ["Data Ingestion", "Architecture"],
+      "hint": "Sensors are the means by which the agent receives information about its environment.",
+      "options": [
+        {"id":"A","text":"They collect input, for example through APIs, web data, cameras, GPS, microphones, or IoT devices"},
+        {"id":"B","text":"They decide which action is legally allowed"},
+        {"id":"C","text":"They execute every action the model suggests"},
+        {"id":"D","text":"They are the model's stored training parameters"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Sensors are input channels that let an agent perceive its environment; in software, they can include APIs, web integrations, and data feeds.", "Collecting information is distinct from interpreting it, deciding what to do, and carrying out an action."]
+    },
+    {
+      "questionId": "agentic-ai-24",
+      "questionText": "In an agent that reads a camera image, interprets it with a model, checks a safety rule, and then operates a control, which part interprets the image?",
+      "questionType": "single",
+      "skills": ["Architecture", "Agent-Based Model"],
+      "hint": "The sensor collects the perception; another component makes sense of that input.",
+      "options": [
+        {"id":"A","text":"The model"},
+        {"id":"B","text":"The camera sensor"},
+        {"id":"C","text":"The external safety rule"},
+        {"id":"D","text":"The actuator"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["The sensor captures input, while the model interprets it. Decision logic can then apply rules, and an actuator carries out an allowed action.", "These roles may be implemented together in some systems, but distinguishing them clarifies responsibilities and safeguards."]
+    },
+    {
+      "questionId": "agentic-ai-25",
+      "questionText": "What does it mean for an agent's model to be multimodal?",
+      "questionType": "single",
+      "skills": ["Architecture", "Data Ingestion"],
+      "hint": "Consider whether the model can handle more than text as input or context.",
+      "options": [
+        {"id":"A","text":"It can process multiple data types, such as text, images, audio, or video"},
+        {"id":"B","text":"It must use several agents at the same time"},
+        {"id":"C","text":"It can act without receiving any sensor input"},
+        {"id":"D","text":"It automatically verifies every decision against external rules"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A multimodal model can work with more than one modality, such as text, images, audio, or video.", "Multimodal capability concerns interpreting input; it does not by itself provide safe action execution or external validation."]
+    },
+    {
+      "questionId": "agentic-ai-26",
+      "questionText": "A model estimates that an investment has a 9% expected return and 12% volatility. A policy allows investments only when return is above 7% and volatility is below 15%. What should the decision layer do?",
+      "questionType": "single",
+      "skills": ["Architecture", "Security", "Governance and Compliance Strategy"],
+      "hint": "Apply both stated conditions to the model's estimates before allowing the action.",
+      "options": [
+        {"id":"A","text":"Allow it under these stated checks because both thresholds are met"},
+        {"id":"B","text":"Allow it because the model's estimate always overrides policy"},
+        {"id":"C","text":"Reject it because its return is below 15%"},
+        {"id":"D","text":"Skip the checks and let the actuator decide"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Decision logic can apply explicit rules to model outputs: 9% is above 7%, and 12% is below 15%.", "External checks provide a structured constraint on model-proposed decisions; real financial actions also require appropriate authorization and safeguards."]
+    },
+    {
+      "questionId": "agentic-ai-27",
+      "questionText": "Which pair correctly matches an agent action with its actuator or tool?",
+      "questionType": "single",
+      "skills": ["API Integration", "Agent-Based Model"],
+      "hint": "An action is what the agent does; an actuator or tool is the mechanism that carries it out.",
+      "options": [
+        {"id":"A","text":"Send a support reply using a messaging API"},
+        {"id":"B","text":"Interpret an image using a camera sensor"},
+        {"id":"C","text":"Apply an approval threshold using a decision rule"},
+        {"id":"D","text":"Collect a GPS position using a model"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Sending a support reply is an action; the messaging API is the digital tool or actuator that performs it.", "Physical agents can use actuators such as steering or robotic arms, while digital agents commonly use APIs, functions, or browsers."]
+    },
+    {
+      "questionId": "agentic-ai-28",
+      "questionText": "An email agent classifies a message, applies a rule, moves it to spam, and receives confirmation from the email system. What should it do with that confirmation?",
+      "questionType": "single",
+      "skills": ["Agent-Based Model", "Automation and Orchestration", "Monitoring"],
+      "hint": "The result is a new observation that can determine whether the goal was completed or another step is needed.",
+      "options": [
+        {"id":"A","text":"Inspect the result and use it to decide whether the task is complete or needs another bounded step"},
+        {"id":"B","text":"Ignore it because the action itself guarantees success"},
+        {"id":"C","text":"Repeat the move-to-spam action indefinitely"},
+        {"id":"D","text":"Assume the confirmation permanently changes the model's weights"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["After acting, an agent observes the updated environment and checks the outcome against its goal; this closes the basic perception-decision-action-feedback loop.", "If the action or outcome is unclear, a workflow can stop and request human confirmation instead of guessing."]
+    },
+    {
+      "questionId": "agentic-ai-29",
+      "questionText": "A thermostat observes that a user repeatedly changes its temperature setting. Which statement about feedback is most accurate?",
+      "questionType": "single",
+      "skills": ["Memory Management", "Agent-Based Model"],
+      "hint": "Observing feedback can inform future behavior, but persistence or model updates require an implementation mechanism.",
+      "options": [
+        {"id":"A","text":"The feedback may help personalize future behavior if the system stores or learns from it; observation alone does not guarantee a model update"},
+        {"id":"B","text":"Every observation automatically changes the model's trained parameters"},
+        {"id":"C","text":"Feedback is only the original sensor input and never includes action outcomes"},
+        {"id":"D","text":"The system should ignore outcomes once an action has been issued"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Feedback is information about outcomes or user responses that can support later improvement.", "Persistent memory, preference updates, or model training are separate mechanisms; an agent does not necessarily learn permanently just because it observed a result."]
+    },
+    {
+      "questionId": "agentic-ai-30",
+      "questionText": "Which statement best describes the kinds of models that may interpret an agent's perceptions?",
+      "questionType": "single",
+      "skills": ["Agent-Based Model", "Architecture"],
+      "hint": "The model layer is not limited to one model family or level of complexity.",
+      "options": [
+        {"id":"A","text":"Agents may use simpler machine-learning models, neural networks, or LLMs to interpret input"},
+        {"id":"B","text":"Every agent must use an LLM, because other models cannot interpret input"},
+        {"id":"C","text":"The model is the sensor that physically collects every kind of input"},
+        {"id":"D","text":"A model is only the actuator that changes the environment"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Agent models vary in sophistication, from simpler machine-learning algorithms to neural networks and large language models.", "The model interprets perceptions; sensing, decision enforcement, and action execution are distinct roles in the architecture."]
+    },
+    {
+      "questionId": "agentic-ai-31",
+      "questionText": "An LLM proposes approving a financial transaction. Which approach provides an enforceable safety check?",
+      "questionType": "single",
+      "skills": ["Architecture", "Security", "Governance and Compliance Strategy"],
+      "hint": "Prompt instructions can guide a model, but ask which control the application itself can enforce before acting.",
+      "options": [
+        {"id":"A","text":"Have application logic verify authentication and transaction limits before approval"},
+        {"id":"B","text":"Rely only on a prompt asking the LLM to be careful"},
+        {"id":"C","text":"Approve automatically whenever the LLM sounds confident"},
+        {"id":"D","text":"Let the LLM change the transaction limits when they block its proposal"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["External decision logic can enforce requirements such as authentication and transaction limits that the LLM cannot override.", "Prompting can guide model behavior, but application-enforced validation and authorization are needed for dependable controls."]
+    },
+    {
+      "questionId": "agentic-ai-32",
+      "questionText": "Which is an example of a physical actuator through which an agent can affect its environment?",
+      "questionType": "single",
+      "skills": ["Agent-Based Model", "Automation and Orchestration"],
+      "hint": "A physical actuator carries out movement or another physical change, rather than collecting input or interpreting it.",
+      "options": [
+        {"id":"A","text":"A vehicle's steering or braking system"},
+        {"id":"B","text":"A camera that captures an image"},
+        {"id":"C","text":"A model that classifies a road scene"},
+        {"id":"D","text":"A rule that checks whether a proposed turn is allowed"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Physical actuators such as steering, brakes, and robotic arms execute actions that affect the environment.", "Sensors collect input, models interpret it, and decision logic determines which actions are allowed."]
+    }
+  ]
+}

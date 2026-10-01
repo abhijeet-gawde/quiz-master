@@ -34,6 +34,13 @@
       "description": "Build a practical foundation in generative AI, LLMs, prompts, tools, agents, and responsible use.",
       "level": "Beginner",
       "accent": "mint"
+    },
+    {
+      "id": "agentic-ai-beginner",
+      "name": "Agentic AI Beginner",
+      "description": "Learn agent architecture, task planning, tools, memory, reliability, and responsible oversight.",
+      "level": "Beginner",
+      "accent": "coral"
     }
   ]
 }
