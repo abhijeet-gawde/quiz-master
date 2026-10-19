@@ -480,6 +480,126 @@
       ],
       "correctAnswers": ["A"],
       "summary": ["Physical actuators such as steering, brakes, and robotic arms execute actions that affect the environment.", "Sensors collect input, models interpret it, and decision logic determines which actions are allowed."]
+    },
+    {
+      "questionId": "agentic-ai-33",
+      "questionText": "Why is explainability useful when an AI system produces an answer?",
+      "questionType": "single",
+      "skills": ["Explainable AI", "Governance and Compliance Strategy"],
+      "hint": "Consider how understanding an output can help people evaluate and use it.",
+      "options": [
+        {"id":"A","text":"It can help people understand the factors behind an output and make more informed decisions"},
+        {"id":"B","text":"It guarantees that every output is correct"},
+        {"id":"C","text":"It removes the need to check AI outputs"},
+        {"id":"D","text":"It automatically prevents all bias"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Explainability can support understanding, trust, accountability, and informed decisions.", "An explanation does not by itself prove that an output is correct or unbiased."]
+    },
+    {
+      "questionId": "agentic-ai-34",
+      "questionText": "What does LIME mainly help explain?",
+      "questionType": "single",
+      "skills": ["Explainable AI", "Monitoring"],
+      "hint": "LIME focuses on one prediction rather than explaining every decision the model could make.",
+      "options": [
+        {"id":"A","text":"Which input features influenced a particular prediction"},
+        {"id":"B","text":"How to retrain a model on new data"},
+        {"id":"C","text":"How to grant an agent access to a tool"},
+        {"id":"D","text":"Whether a model can remember every past conversation"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["LIME provides a local explanation that helps show which input features influenced an individual prediction.", "A local explanation is about a particular example, not necessarily the model's overall behavior."]
+    },
+    {
+      "questionId": "agentic-ai-35",
+      "questionText": "Which statement best describes SHAP explanations?",
+      "questionType": "single",
+      "skills": ["Explainable AI", "Monitoring"],
+      "hint": "The transcripts describe SHAP using feature contributions and supporting both local and global views.",
+      "options": [
+        {"id":"A","text":"They estimate how features contribute to predictions and can support local or global explanations"},
+        {"id":"B","text":"They guarantee that the model's training data is unbiased"},
+        {"id":"C","text":"They replace the model with a database lookup"},
+        {"id":"D","text":"They automatically verify every generated fact"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["SHAP uses feature contributions to explain predictions and can be used for local or global interpretability.", "An explanation describes model behavior; it does not automatically establish that the data or output is correct."]
+    },
+    {
+      "questionId": "agentic-ai-36",
+      "questionText": "An AI assistant provides a confident answer with a citation. What is a sensible next step before relying on it?",
+      "questionType": "single",
+      "skills": ["Security", "Human Intelligence"],
+      "hint": "Generative models can produce plausible-sounding but incorrect details.",
+      "options": [
+        {"id":"A","text":"Check that the cited source exists and supports the claim"},
+        {"id":"B","text":"Assume the answer is correct because it includes a citation"},
+        {"id":"C","text":"Ask the model to repeat the answer until it sounds more certain"},
+        {"id":"D","text":"Treat confidence of wording as proof"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Generative AI can produce hallucinated facts or citations, so important claims should be checked against reliable sources.", "Fluent or confident wording is not evidence that a claim is true."]
+    },
+    {
+      "questionId": "agentic-ai-37",
+      "questionText": "Which practices can help reduce the risk of bias in an AI system?",
+      "questionType": "multiple",
+      "skills": ["Governance and Compliance Strategy", "Monitoring"],
+      "hint": "Bias can come from data, human decisions, and repeated feedback.",
+      "options": [
+        {"id":"A","text":"Review whether training data represents the people and situations the system will encounter"},
+        {"id":"B","text":"Run regular fairness or explainability checks"},
+        {"id":"C","text":"Assume that using more data always removes bias"},
+        {"id":"D","text":"Consider how human labeling and feedback loops may affect outputs"}
+      ],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["Bias can enter through training data, human choices, and feedback loops.", "Reviewing data and regularly auditing system behavior can help identify risks, but no single practice guarantees fairness."]
+    },
+    {
+      "questionId": "agentic-ai-38",
+      "questionText": "In a document-question-answering workflow, what is the purpose of converting document chunks and a user query into embeddings?",
+      "questionType": "single",
+      "skills": ["Data Ingestion", "Architecture"],
+      "hint": "Embeddings help compare meaning rather than relying only on exact word matches.",
+      "options": [
+        {"id":"A","text":"To support semantic search for document chunks relevant to the query"},
+        {"id":"B","text":"To prove that every document is accurate"},
+        {"id":"C","text":"To give the model permanent memory of all documents"},
+        {"id":"D","text":"To send the documents to the user automatically"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Embeddings represent text as vectors that can be compared to find semantically relevant chunks.", "Search results can provide context to an LLM, but they still need appropriate validation."]
+    },
+    {
+      "questionId": "agentic-ai-39",
+      "questionText": "A workflow retrieves relevant document passages before asking an LLM to answer a question. What is a key benefit of this approach?",
+      "questionType": "single",
+      "skills": ["Task Planning", "Data Ingestion", "Architecture"],
+      "hint": "The model receives selected information from the documents as context for its answer.",
+      "options": [
+        {"id":"A","text":"The answer can use retrieved context instead of relying only on the model's trained patterns"},
+        {"id":"B","text":"The workflow guarantees that the answer cannot contain errors"},
+        {"id":"C","text":"The model automatically stores all retrieved documents in its weights"},
+        {"id":"D","text":"The workflow no longer needs to check whether retrieved passages are relevant"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Retrieval supplies document context to the LLM, which can help ground an answer in relevant material.", "Retrieval does not guarantee correctness; the passages and resulting answer may still need review."]
+    },
+    {
+      "questionId": "agentic-ai-40",
+      "questionText": "An agent proposes a consequential action and provides an explanation of its recommendation. What is the safest way to use that explanation?",
+      "questionType": "single",
+      "skills": ["Explainable AI", "Human Intelligence", "Governance and Compliance Strategy"],
+      "hint": "An explanation can inform review, but it is not a substitute for controls.",
+      "options": [
+        {"id":"A","text":"Use it to inform review, while applying authorization rules and human approval where required"},
+        {"id":"B","text":"Treat the explanation as proof that the action is safe"},
+        {"id":"C","text":"Skip policy checks if the explanation sounds reasonable"},
+        {"id":"D","text":"Allow the agent to change its own limits based on the explanation"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Explanations can help people understand a proposal, but application-enforced safeguards and required approvals should still apply.", "An explanation alone does not establish that an action is safe or authorized."]
     }
   ]
 }
