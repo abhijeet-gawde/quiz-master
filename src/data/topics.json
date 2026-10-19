@@ -41,6 +41,13 @@
       "description": "Learn agent architecture, task planning, tools, memory, reliability, and responsible oversight.",
       "level": "Beginner",
       "accent": "coral"
+    },
+    {
+      "id": "explainable-ai-beginner",
+      "name": "Explainable AI (XAI)",
+      "description": "Learn how to understand, explain, and govern AI and generative AI decisions.",
+      "level": "Beginner",
+      "accent": "gold"
     }
   ]
 }

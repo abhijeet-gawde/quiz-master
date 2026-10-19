@@ -1,0 +1,1655 @@
+{
+  "topicId": "explainable-ai-beginner",
+  "questions": [
+    {
+      "questionId": "xai-1",
+      "questionText": "What is Explainable AI (XAI)?",
+      "questionType": "single",
+      "skills": ["XAI Foundations", "Must-Know Certification"],
+      "hint": "Think about helping people understand how an AI system reaches or supports an output.",
+      "options": [{"id":"A","text":"Methods and practices that make AI outputs and behavior understandable to people"},{"id":"B","text":"A type of AI that never makes mistakes"},{"id":"C","text":"A technique that removes the need for human review"},{"id":"D","text":"A guarantee that every model decision is simple"}],
+      "correctAnswers": ["A"],
+      "summary": ["XAI makes an AI system's behavior, outputs, or decisions understandable to relevant people.", "An explanation can help evaluate a result, but does not prove that the result is correct."]
+    },
+    {
+      "questionId": "xai-2",
+      "questionText": "Why is explainability important in AI systems?",
+      "questionType": "single",
+      "skills": ["XAI Foundations"],
+      "hint": "People need more than a prediction when they must decide whether to rely on it.",
+      "options": [{"id":"A","text":"It helps people assess, challenge, and appropriately use AI outputs"},{"id":"B","text":"It guarantees that the model's training data is unbiased"},{"id":"C","text":"It makes every AI system legally compliant automatically"},{"id":"D","text":"It prevents the model from needing monitoring"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanations help users and reviewers understand why an output may be relevant and what limits apply.", "Explainability complements, rather than replaces, testing, monitoring, and governance."]
+    },
+    {
+      "questionId": "xai-3",
+      "questionText": "What problem does XAI solve?",
+      "questionType": "single",
+      "skills": ["XAI Foundations"],
+      "hint": "Consider the difficulty of evaluating a result when the system's behavior is opaque.",
+      "options": [{"id":"A","text":"The difficulty of understanding and evaluating how AI systems produce outputs"},{"id":"B","text":"The need to provide data to an AI model"},{"id":"C","text":"The computational cost of training all models"},{"id":"D","text":"The need to define a system's intended use"}],
+      "correctAnswers": ["A"],
+      "summary": ["XAI addresses opacity by providing useful information about model behavior and individual results.", "It does not eliminate other challenges such as poor data, model errors, or unclear objectives."]
+    },
+    {
+      "questionId": "xai-4",
+      "questionText": "What is the difference between AI, ML, Deep Learning, and Generative AI?",
+      "questionType": "single",
+      "skills": ["XAI Foundations"],
+      "hint": "Think of these terms as overlapping categories rather than four unrelated technologies.",
+      "options": [{"id":"A","text":"AI is the broad field; ML learns from data; deep learning uses multi-layer neural networks; generative AI creates new content"},{"id":"B","text":"They are four names for the same specific algorithm"},{"id":"C","text":"Generative AI is a subset of deep learning, which is a subset of ML, but AI excludes all three"},{"id":"D","text":"Machine learning is broader than AI and does not use data"}],
+      "correctAnswers": ["A"],
+      "summary": ["AI is the broad area of creating systems that perform intelligent tasks; ML is one approach within AI.", "Deep learning is a family of ML methods based on neural networks, and generative AI describes systems that generate content; categories can overlap."]
+    },
+    {
+      "questionId": "xai-5",
+      "questionText": "Why are modern AI models often called \"black boxes\"?",
+      "questionType": "single",
+      "skills": ["XAI Foundations", "Must-Know Certification"],
+      "hint": "A model can have many complex internal computations that are not easy to describe in plain language.",
+      "options": [{"id":"A","text":"Their internal computations can be too complex or opaque for people to follow directly"},{"id":"B","text":"Their source code is always secret"},{"id":"C","text":"They accept only encrypted input"},{"id":"D","text":"They cannot produce explanations of any kind"}],
+      "correctAnswers": ["A"],
+      "summary": ["The black-box label describes difficulty interpreting a model's internal behavior, especially in large or complex models.", "It does not necessarily mean the model is proprietary or that no explanation method can be applied."]
+    },
+    {
+      "questionId": "xai-6",
+      "questionText": "What are the risks of non-explainable AI?",
+      "questionType": "multiple",
+      "skills": ["XAI Foundations"],
+      "hint": "Think about unfair outcomes, mistakes that go unnoticed, and difficulty assigning responsibility.",
+      "options": [{"id":"A","text":"Errors or harmful patterns may be harder to detect"},{"id":"B","text":"People may be unable to challenge an important decision effectively"},{"id":"C","text":"It guarantees that decisions will be biased"},{"id":"D","text":"Audits and accountability can become more difficult"}],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["Opacity can make errors, unfair effects, and responsibility harder to investigate or contest.", "A non-explainable system is not automatically biased, but its behavior may be harder to assess."]
+    },
+    {
+      "questionId": "xai-7",
+      "questionText": "How does explainability improve trust?",
+      "questionType": "single",
+      "skills": ["XAI Foundations"],
+      "hint": "Trust should be based on evidence and appropriate expectations, not simply confidence.",
+      "options": [{"id":"A","text":"It gives people information to judge a result's basis, limits, and suitability"},{"id":"B","text":"It persuades users to accept every AI recommendation"},{"id":"C","text":"It makes a model's output true by describing it"},{"id":"D","text":"It replaces independent evaluation with user confidence"}],
+      "correctAnswers": ["A"],
+      "summary": ["Clear, evidence-based explanations can support calibrated trust: relying on the system where appropriate and questioning it where needed.", "The aim is not blind trust or automatic acceptance."]
+    },
+    {
+      "questionId": "xai-8",
+      "questionText": "What is transparency in AI?",
+      "questionType": "single",
+      "skills": ["XAI Foundations"],
+      "hint": "Transparency concerns how much relevant information about a system is made available.",
+      "options": [{"id":"A","text":"Making relevant information about an AI system, its design, data, or operation available"},{"id":"B","text":"Showing every internal model computation to every user"},{"id":"C","text":"Publishing source code regardless of privacy or security"},{"id":"D","text":"Explaining only the final prediction"}],
+      "correctAnswers": ["A"],
+      "summary": ["Transparency is about disclosure of relevant information about a system and its operation.", "What should be disclosed depends on the audience, context, and legitimate confidentiality or security needs."]
+    },
+    {
+      "questionId": "xai-9",
+      "questionText": "What is interpretability?",
+      "questionType": "single",
+      "skills": ["XAI Foundations", "Must-Know Certification"],
+      "hint": "Ask whether a person can make sense of the model's behavior or structure.",
+      "options": [{"id":"A","text":"The degree to which a person can understand how a model behaves or reaches outputs"},{"id":"B","text":"The accuracy of a model on a test set"},{"id":"C","text":"The process of encrypting model parameters"},{"id":"D","text":"A synonym for publishing training data"}],
+      "correctAnswers": ["A"],
+      "summary": ["Interpretability concerns how readily people can understand a model's operation or behavior.", "It is related to explainability, but an explanation may also be generated for a model that is not inherently interpretable."]
+    },
+    {
+      "questionId": "xai-10",
+      "questionText": "What is traceability?",
+      "questionType": "single",
+      "skills": ["XAI Foundations"],
+      "hint": "Traceability lets an investigator follow the path from inputs and actions to an outcome.",
+      "options": [{"id":"A","text":"The ability to follow relevant data, model versions, steps, and decisions through a system"},{"id":"B","text":"The ability to predict every future model output"},{"id":"C","text":"The process of hiding a model's operational history"},{"id":"D","text":"A score that measures only model accuracy"}],
+      "correctAnswers": ["A"],
+      "summary": ["Traceability connects inputs, system versions, intermediate actions, and outcomes so they can be reconstructed.", "Good records support audits and investigations, subject to privacy and retention controls."]
+    },
+    {
+      "questionId": "xai-11",
+      "questionText": "What is accountability in AI?",
+      "questionType": "single",
+      "skills": ["XAI Foundations", "Must-Know Certification"],
+      "hint": "An AI system cannot take organizational responsibility for its use.",
+      "options": [{"id":"A","text":"People and organizations are responsible for AI systems and their impacts"},{"id":"B","text":"The model independently accepts legal responsibility for its outputs"},{"id":"C","text":"A model's ability to explain itself without human involvement"},{"id":"D","text":"A guarantee that every output can be reversed"}],
+      "correctAnswers": ["A"],
+      "summary": ["Accountability means identifiable people or organizations answer for how AI is developed, deployed, and used.", "An explanation can support accountability but does not transfer responsibility to the model."]
+    },
+    {
+      "questionId": "xai-12",
+      "questionText": "How are transparency and explainability different?",
+      "questionType": "single",
+      "skills": ["XAI Foundations", "Must-Know Certification"],
+      "hint": "One is about information being available; the other is about making behavior or an output understandable.",
+      "options": [{"id":"A","text":"Transparency discloses relevant system information; explainability helps people understand a system's behavior or result"},{"id":"B","text":"Transparency applies only to open-source models; explainability applies only to closed models"},{"id":"C","text":"They are identical terms and always mean publishing source code"},{"id":"D","text":"Explainability concerns data privacy, while transparency concerns accuracy"}],
+      "correctAnswers": ["A"],
+      "summary": ["Transparency makes relevant details available, while explainability provides understandable reasons or accounts of behavior.", "They reinforce one another but are not interchangeable."]
+    },
+    {
+      "questionId": "xai-13",
+      "questionText": "Why is explainability critical in regulated industries?",
+      "questionType": "single",
+      "skills": ["XAI Foundations"],
+      "hint": "Organizations may need to justify consequential decisions and demonstrate appropriate controls.",
+      "options": [{"id":"A","text":"It can help organizations justify decisions, investigate outcomes, and demonstrate governance"},{"id":"B","text":"It automatically satisfies every legal requirement"},{"id":"C","text":"It allows regulated organizations to avoid keeping records"},{"id":"D","text":"It guarantees that regulators will approve a model"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanations and records can support oversight, dispute handling, and evidence of responsible processes.", "Legal obligations depend on jurisdiction and use; XAI alone does not ensure compliance."]
+    },
+    {
+      "questionId": "xai-14",
+      "questionText": "What business value does explainable AI provide?",
+      "questionType": "single",
+      "skills": ["XAI Foundations"],
+      "hint": "Consider how understanding an output can help teams use, improve, and defend a system.",
+      "options": [{"id":"A","text":"It can support adoption, troubleshooting, risk control, and better-informed decisions"},{"id":"B","text":"It guarantees immediate cost savings for every project"},{"id":"C","text":"It eliminates the need to measure business outcomes"},{"id":"D","text":"It makes all data and models publicly accessible"}],
+      "correctAnswers": ["A"],
+      "summary": ["When explanations fit the audience and task, they can help teams diagnose issues and use outputs responsibly.", "Value should be measured in context rather than assumed."]
+    },
+    {
+      "questionId": "xai-15",
+      "questionText": "How does XAI support responsible AI?",
+      "questionType": "single",
+      "skills": ["XAI Foundations"],
+      "hint": "Responsible systems need ways to scrutinize behavior and correct problems.",
+      "options": [{"id":"A","text":"It can help people assess fairness, safety, limitations, and accountability"},{"id":"B","text":"It removes the need for privacy and security safeguards"},{"id":"C","text":"It ensures that humans never need to review outputs"},{"id":"D","text":"It guarantees that model decisions are ethical"}],
+      "correctAnswers": ["A"],
+      "summary": ["XAI can give stakeholders evidence to assess and challenge system behavior as part of responsible AI practices.", "It is one part of a broader program that includes governance, testing, security, and human oversight."]
+    },
+    {
+      "questionId": "xai-16",
+      "questionText": "What is Generative AI?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "These systems create new content based on patterns learned from data and the provided context.",
+      "options": [{"id":"A","text":"AI that generates new content such as text, images, audio, or code"},{"id":"B","text":"AI that only sorts records into fixed categories"},{"id":"C","text":"A database that returns only exact stored copies"},{"id":"D","text":"Any software that uses a graphical interface"}],
+      "correctAnswers": ["A"],
+      "summary": ["Generative AI produces content in response to inputs, often by learning patterns from training data.", "Generated content can be plausible without being factually correct."]
+    },
+    {
+      "questionId": "xai-17",
+      "questionText": "How does Generative AI differ from traditional AI?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "Compare creating content with tasks such as classification, ranking, or prediction.",
+      "options": [{"id":"A","text":"Generative AI creates new content, while many traditional AI systems predict, classify, rank, or detect"},{"id":"B","text":"Generative AI never uses machine learning"},{"id":"C","text":"Traditional AI always produces explanations, while generative AI cannot"},{"id":"D","text":"There is no difference in the types of tasks they perform"}],
+      "correctAnswers": ["A"],
+      "summary": ["Generative systems produce content; other AI systems often estimate labels, scores, or decisions.", "The distinction is about common tasks, not a strict separation of underlying methods."]
+    },
+    {
+      "questionId": "xai-18",
+      "questionText": "What are Large Language Models (LLMs)?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "They are trained on large collections of text and work with sequences of tokens.",
+      "options": [{"id":"A","text":"Neural language models trained at scale to process and generate text"},{"id":"B","text":"Search engines that always retrieve verified facts"},{"id":"C","text":"Rule lists written entirely by human experts"},{"id":"D","text":"Small databases that store one answer per question"}],
+      "correctAnswers": ["A"],
+      "summary": ["LLMs learn statistical patterns in language and generate or transform text based on context.", "Their fluency does not mean they have verified every claim they produce."]
+    },
+    {
+      "questionId": "xai-19",
+      "questionText": "Why are LLMs difficult to explain?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "Think about their scale, distributed representations, and context-dependent token generation.",
+      "options": [{"id":"A","text":"Their many interacting parameters and computation steps make behavior hard to summarize faithfully"},{"id":"B","text":"They never use input context when generating text"},{"id":"C","text":"Their training data is always fully known and traceable"},{"id":"D","text":"They use only one simple human-readable rule"}],
+      "correctAnswers": ["A"],
+      "summary": ["Large neural networks encode patterns across many parameters and layers, so a short explanation of an output is challenging.", "Available explanation methods provide partial evidence, not a complete map of internal cognition."]
+    },
+    {
+      "questionId": "xai-20",
+      "questionText": "What makes transformer architectures complex?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "Transformers combine many layers and attention operations over token representations.",
+      "options": [{"id":"A","text":"Many interacting layers, attention heads, parameters, and token representations contribute to outputs"},{"id":"B","text":"They contain no learned parameters"},{"id":"C","text":"Each output is determined by one directly readable rule"},{"id":"D","text":"They process every word independently with no context"}],
+      "correctAnswers": ["A"],
+      "summary": ["Transformer outputs arise from many learned operations that combine contextual information across tokens.", "Visualizing one component, such as attention, does not by itself explain the full model."]
+    },
+    {
+      "questionId": "xai-21",
+      "questionText": "What is emergent behavior in LLMs?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "Some capabilities appear as models scale, even when they were not explicitly programmed as separate features.",
+      "options": [{"id":"A","text":"A capability or behavior that appears from interactions in a model, sometimes becoming more apparent at scale"},{"id":"B","text":"A feature that was manually coded as a fixed rule"},{"id":"C","text":"An error caused only by a broken network connection"},{"id":"D","text":"A guarantee that larger models are always safer"}],
+      "correctAnswers": ["A"],
+      "summary": ["Emergent behavior refers to capabilities or patterns arising from complex learned interactions, often observed as scale changes.", "The term does not imply that a capability is reliable, beneficial, or truly unpredictable."]
+    },
+    {
+      "questionId": "xai-22",
+      "questionText": "Why can GenAI produce unexpected outputs?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "Generation depends on learned patterns, prompt context, and sometimes sampling.",
+      "options": [{"id":"A","text":"It generates from probabilistic learned patterns and may interpret ambiguous context in unintended ways"},{"id":"B","text":"It always looks up one fixed answer in a trusted database"},{"id":"C","text":"Its output is manually written in advance for every prompt"},{"id":"D","text":"It is unable to use information from its prompt"}],
+      "correctAnswers": ["A"],
+      "summary": ["Outputs depend on learned distributions, prompting, decoding settings, and system context.", "Unexpected results should be anticipated and checked, especially in consequential uses."]
+    },
+    {
+      "questionId": "xai-23",
+      "questionText": "What are hallucinations?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals", "Must-Know Certification"],
+      "hint": "A fluent answer may sound confident but lack factual support.",
+      "options": [{"id":"A","text":"Generated claims that are false, unsupported, or not grounded in reliable evidence"},{"id":"B","text":"Any answer that contains a new sentence"},{"id":"C","text":"A model's correct refusal to answer"},{"id":"D","text":"A type of database index used by an LLM"}],
+      "correctAnswers": ["A"],
+      "summary": ["A hallucination is generated content that is inaccurate or unsupported, despite possibly sounding plausible.", "The term is commonly used for language models but the same concern applies to other generative systems."]
+    },
+    {
+      "questionId": "xai-24",
+      "questionText": "Why do hallucinations occur?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "An LLM is optimized to generate likely text, not automatically to verify every statement.",
+      "options": [{"id":"A","text":"The model can generate plausible continuations without reliable evidence or a fact-checking mechanism"},{"id":"B","text":"Every answer is copied from an authoritative live source"},{"id":"C","text":"Hallucinations occur only when users type spelling errors"},{"id":"D","text":"The model's confidence score always confirms factual truth"}],
+      "correctAnswers": ["A"],
+      "summary": ["Language-model training encourages likely continuations, which may not correspond to verified facts.", "Gaps in context, ambiguous prompts, or weak retrieval can raise the chance of unsupported claims."]
+    },
+    {
+      "questionId": "xai-25",
+      "questionText": "How can explainability reduce hallucination risks?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "Expose evidence and uncertainty so a person can check claims rather than relying on fluent phrasing.",
+      "options": [{"id":"A","text":"Show supporting sources, disclose uncertainty, and make claims easier to verify"},{"id":"B","text":"Add confident-sounding reasoning to every answer"},{"id":"C","text":"Hide retrieved evidence to avoid confusing users"},{"id":"D","text":"Treat every generated explanation as proof"}],
+      "correctAnswers": ["A"],
+      "summary": ["Grounding, citations, and uncertainty indicators can make unsupported claims easier to notice and investigate.", "An explanation does not eliminate hallucinations; source quality and claim verification still matter."]
+    },
+    {
+      "questionId": "xai-26",
+      "questionText": "Why is explainability more challenging in GenAI than traditional ML?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "Generative systems produce long, context-sensitive content rather than one fixed label or score.",
+      "options": [{"id":"A","text":"A response can contain many claims and tokens influenced by complex context and decoding choices"},{"id":"B","text":"Traditional ML models always reveal their full reasoning"},{"id":"C","text":"Generative models do not take inputs"},{"id":"D","text":"GenAI produces only one numeric prediction"}],
+      "correctAnswers": ["A"],
+      "summary": ["A generated response may have many parts with different evidence, and its wording can vary with context and sampling.", "This makes faithful, useful explanation harder than explaining a single prediction in some traditional tasks."]
+    },
+    {
+      "questionId": "xai-27",
+      "questionText": "What is probabilistic generation?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "At each step, the model assigns likelihoods to possible next tokens.",
+      "options": [{"id":"A","text":"Choosing generated tokens according to probability distributions conditioned on the context"},{"id":"B","text":"Selecting only a verified fact from a fixed database"},{"id":"C","text":"Producing the same output for every prompt"},{"id":"D","text":"Randomly choosing words without using model predictions"}],
+      "correctAnswers": ["A"],
+      "summary": ["An LLM estimates probabilities for possible next tokens and a decoding method selects one or more of them.", "Sampling settings affect variation, but high probability does not establish factual correctness."]
+    },
+    {
+      "questionId": "xai-28",
+      "questionText": "What role does training data play in explainability?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "Training data shapes what patterns a model learns, even when an exact source cannot be identified.",
+      "options": [{"id":"A","text":"Its quality, coverage, and provenance influence learned behavior and what can be explained about it"},{"id":"B","text":"It has no influence once a model has been trained"},{"id":"C","text":"Every output can always be traced to one exact training example"},{"id":"D","text":"It guarantees that all learned associations are fair"}],
+      "correctAnswers": ["A"],
+      "summary": ["Training data influences model capabilities, errors, and biases, so provenance and dataset documentation are important.", "A generated output usually cannot be reliably attributed to one specific training item without additional evidence."]
+    },
+    {
+      "questionId": "xai-29",
+      "questionText": "What is model uncertainty?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "Uncertainty describes limits in confidence or knowledge; it is not always captured by one simple score.",
+      "options": [{"id":"A","text":"A measure or indication that a model's prediction or generated answer may be unreliable or ambiguous"},{"id":"B","text":"Proof that the model's output is false"},{"id":"C","text":"The amount of disk space used by model weights"},{"id":"D","text":"A guarantee that the model will refuse to answer"}],
+      "correctAnswers": ["A"],
+      "summary": ["Uncertainty signals that evidence, prediction, or interpretation may be limited or ambiguous.", "Model confidence may be poorly calibrated, so uncertainty estimates should be validated for the task."]
+    },
+    {
+      "questionId": "xai-30",
+      "questionText": "Why should users understand AI limitations?",
+      "questionType": "single",
+      "skills": ["Generative AI Fundamentals"],
+      "hint": "Knowing what a tool may get wrong helps people decide when to verify or escalate.",
+      "options": [{"id":"A","text":"To use outputs appropriately, verify important claims, and seek human expertise when needed"},{"id":"B","text":"To avoid questioning the AI once it provides an explanation"},{"id":"C","text":"To make every task suitable for automation"},{"id":"D","text":"To replace system testing with user awareness"}],
+      "correctAnswers": ["A"],
+      "summary": ["Users who understand limits can spot unsuitable tasks, verify high-impact claims, and apply human judgment.", "Training users is valuable but does not replace building and governing the system responsibly."]
+    },
+    {
+      "questionId": "xai-31",
+      "questionText": "Why does GenAI require explainability?",
+      "questionType": "single",
+      "skills": ["Need for XAI in GenAI", "Must-Know Certification"],
+      "hint": "Generated content can be persuasive while being wrong, unsafe, or unsupported.",
+      "options": [{"id":"A","text":"People need ways to assess evidence, limitations, and risks behind generated content"},{"id":"B","text":"GenAI outputs are always factual and need no scrutiny"},{"id":"C","text":"Explainability prevents a model from generating creative content"},{"id":"D","text":"Only non-generative models can make consequential errors"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanations help users evaluate how a generated answer was produced and what evidence supports it.", "They should be paired with source checks, evaluations, and safeguards."]
+    },
+    {
+      "questionId": "xai-32",
+      "questionText": "Why do enterprises demand explainability?",
+      "questionType": "single",
+      "skills": ["Need for XAI in GenAI"],
+      "hint": "Organizations need to understand performance, control risk, and answer stakeholder questions.",
+      "options": [{"id":"A","text":"To support operational oversight, compliance work, debugging, and stakeholder confidence"},{"id":"B","text":"To avoid establishing ownership for AI systems"},{"id":"C","text":"To guarantee that models never change"},{"id":"D","text":"To disclose confidential data to every employee"}],
+      "correctAnswers": ["A"],
+      "summary": ["Organizations need evidence to oversee systems, understand failures, and justify uses to affected stakeholders.", "Disclosure should be appropriate to each audience and protect confidential information."]
+    },
+    {
+      "questionId": "xai-33",
+      "questionText": "How does explainability support AI governance?",
+      "questionType": "single",
+      "skills": ["Need for XAI in GenAI"],
+      "hint": "Governance requires practical oversight of how systems are built, deployed, and changed.",
+      "options": [{"id":"A","text":"It provides information that helps owners monitor, review, and challenge AI behavior"},{"id":"B","text":"It removes the need for policies and assigned owners"},{"id":"C","text":"It proves that a system is safe under every condition"},{"id":"D","text":"It prevents the need to document model changes"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanations, documentation, and traces give governance teams evidence for review and intervention.", "Governance also needs roles, policies, risk controls, and ongoing monitoring."]
+    },
+    {
+      "questionId": "xai-34",
+      "questionText": "Why is explainability important for decision support systems?",
+      "questionType": "single",
+      "skills": ["Need for XAI in GenAI"],
+      "hint": "A decision-maker needs to understand what evidence or factors the recommendation reflects.",
+      "options": [{"id":"A","text":"It helps decision-makers assess recommendations and retain responsibility for the final decision"},{"id":"B","text":"It automatically makes the system the final decision-maker"},{"id":"C","text":"It eliminates the need to consider contextual information"},{"id":"D","text":"It guarantees the recommendation is optimal"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanations let people compare recommendations with available evidence and domain context.", "Decision-support systems should not obscure who has authority or responsibility."]
+    },
+    {
+      "questionId": "xai-35",
+      "questionText": "How does explainability improve adoption?",
+      "questionType": "single",
+      "skills": ["Need for XAI in GenAI"],
+      "hint": "People are more able to use a tool when they can understand its recommendations and limitations.",
+      "options": [{"id":"A","text":"It helps users judge when outputs are relevant and when they should be checked"},{"id":"B","text":"It forces users to accept every recommendation"},{"id":"C","text":"It removes the need for onboarding or evaluation"},{"id":"D","text":"It ensures that every user has identical needs"}],
+      "correctAnswers": ["A"],
+      "summary": ["Useful explanations can make system behavior easier to understand and integrate into existing work.", "Adoption also depends on utility, reliability, usability, and fit with workflows."]
+    },
+    {
+      "questionId": "xai-36",
+      "questionText": "What are the legal implications of unexplained AI decisions?",
+      "questionType": "single",
+      "skills": ["Need for XAI in GenAI"],
+      "hint": "Consider challenges in meeting duties to justify, document, or allow review of consequential decisions.",
+      "options": [{"id":"A","text":"They may make it harder to demonstrate compliance, respond to challenges, or investigate harm"},{"id":"B","text":"They automatically make every decision unlawful"},{"id":"C","text":"They remove all legal responsibility from the organization"},{"id":"D","text":"They always violate the same law in every jurisdiction"}],
+      "correctAnswers": ["A"],
+      "summary": ["Opacity can hinder organizations when they need to explain, document, or review a decision.", "Legal duties differ by jurisdiction, sector, and use; obtain qualified advice for specific obligations."]
+    },
+    {
+      "questionId": "xai-37",
+      "questionText": "Why is explainability important in healthcare GenAI?",
+      "questionType": "single",
+      "skills": ["Need for XAI in GenAI"],
+      "hint": "Clinical outputs can affect patient care, and clinicians need to check sources and uncertainty.",
+      "options": [{"id":"A","text":"It helps clinicians assess evidence and limitations before using outputs in care"},{"id":"B","text":"It allows a chatbot to replace clinical judgment without review"},{"id":"C","text":"It guarantees that generated diagnoses are correct"},{"id":"D","text":"It removes the need for patient privacy controls"}],
+      "correctAnswers": ["A"],
+      "summary": ["Healthcare explanations should help qualified professionals verify the basis and limits of an output.", "They do not replace clinical validation, privacy protections, or professional responsibility."]
+    },
+    {
+      "questionId": "xai-38",
+      "questionText": "Why is explainability important in financial services?",
+      "questionType": "single",
+      "skills": ["Need for XAI in GenAI"],
+      "hint": "Financial decisions may affect access, pricing, fraud review, or customer outcomes.",
+      "options": [{"id":"A","text":"It supports review of consequential decisions, potential bias, and applicable controls"},{"id":"B","text":"It guarantees that all customers receive identical outcomes"},{"id":"C","text":"It eliminates the need for fraud monitoring"},{"id":"D","text":"It makes a model's score a legally sufficient explanation in every case"}],
+      "correctAnswers": ["A"],
+      "summary": ["Financial organizations need to assess decision factors, errors, and disparate effects in context.", "The explanation required depends on the product, decision, and applicable rules."]
+    },
+    {
+      "questionId": "xai-39",
+      "questionText": "How does explainability help risk management?",
+      "questionType": "single",
+      "skills": ["Need for XAI in GenAI"],
+      "hint": "Useful explanations help identify what can fail and where controls may be needed.",
+      "options": [{"id":"A","text":"It can reveal factors, assumptions, and failure patterns that inform mitigations"},{"id":"B","text":"It removes the possibility of operational risk"},{"id":"C","text":"It replaces incident response with model confidence scores"},{"id":"D","text":"It guarantees that a model will not drift"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explainability can help teams understand contributing factors and prioritize controls or monitoring.", "Risk management remains an ongoing process, not a one-time explanation."]
+    },
+    {
+      "questionId": "xai-40",
+      "questionText": "How does explainability improve customer trust?",
+      "questionType": "single",
+      "skills": ["Need for XAI in GenAI"],
+      "hint": "Customers should be able to understand relevant reasons and available ways to ask for review.",
+      "options": [{"id":"A","text":"It can provide understandable reasons, limits, and routes to question or correct an outcome"},{"id":"B","text":"It asks customers to trust the system without evidence"},{"id":"C","text":"It guarantees the organization will never make an error"},{"id":"D","text":"It conceals the use of AI from affected people"}],
+      "correctAnswers": ["A"],
+      "summary": ["Clear communication and meaningful recourse help customers understand how AI affects them.", "Trust is earned through reliable behavior and accountability, not explanations alone."]
+    },
+    {
+      "questionId": "xai-41",
+      "questionText": "What is the difference between local and global explainability?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts", "Must-Know Certification"],
+      "hint": "One focuses on an individual prediction; the other summarizes behavior across many cases.",
+      "options": [{"id":"A","text":"Local explains one prediction; global summarizes general behavior across many inputs"},{"id":"B","text":"Local summarizes the whole model; global explains one individual prediction"},{"id":"C","text":"Both describe only the model's training process"},{"id":"D","text":"They are different names for a model's accuracy score"}],
+      "correctAnswers": ["A"],
+      "summary": ["Local explanations describe one case, while global explanations summarize broader model behavior.", "A global trend may not explain an individual result, and a local explanation may not generalize."]
+    },
+    {
+      "questionId": "xai-42",
+      "questionText": "What is global explainability?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "Global explanations summarize behavior across a model or a broad set of inputs.",
+      "options": [{"id":"A","text":"An account of general model behavior, patterns, or important features across many cases"},{"id":"B","text":"An explanation of only one customer's result"},{"id":"C","text":"A list of all possible outputs for every input"},{"id":"D","text":"A translation of a model into a single natural-language sentence"}],
+      "correctAnswers": ["A"],
+      "summary": ["Global explainability summarizes general patterns or behavior across a population or input space.", "A global summary can hide important differences in particular cases."]
+    },
+    {
+      "questionId": "xai-43",
+      "questionText": "What is model-level explainability?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "This level concerns the model's design or general operation, not one decision.",
+      "options": [{"id":"A","text":"Information about how a model is structured or generally behaves"},{"id":"B","text":"A reason shown for one specific output only"},{"id":"C","text":"A record of a single user's prompt"},{"id":"D","text":"A measure of the model's response time"}],
+      "correctAnswers": ["A"],
+      "summary": ["Model-level explanations describe general behavior, architecture, features, or limitations.", "They complement case-level explanations when users need to understand a particular result."]
+    },
+    {
+      "questionId": "xai-44",
+      "questionText": "What is prediction-level explainability?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "It explains an individual prediction or output in relation to its specific input.",
+      "options": [{"id":"A","text":"An explanation of the factors or evidence associated with one model result"},{"id":"B","text":"A summary of the model's architecture and training history only"},{"id":"C","text":"A comparison of all models in a company"},{"id":"D","text":"A guarantee that the prediction is correct"}],
+      "correctAnswers": ["A"],
+      "summary": ["Prediction-level explainability focuses on a particular model output and the input that produced it.", "A plausible explanation is not proof that the prediction is accurate or fair."]
+    },
+    {
+      "questionId": "xai-45",
+      "questionText": "What is feature importance?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "It estimates how much input variables matter to a model, globally or for a particular prediction.",
+      "options": [{"id":"A","text":"A measure or ranking of how much input features contribute to model behavior or predictions"},{"id":"B","text":"A list of features that are legally allowed to be used"},{"id":"C","text":"A guarantee that important features cause the outcome"},{"id":"D","text":"A count of how many fields appear in a database"}],
+      "correctAnswers": ["A"],
+      "summary": ["Feature importance estimates the influence or contribution of inputs using a chosen method.", "Importance is method-dependent and does not by itself show causation."]
+    },
+    {
+      "questionId": "xai-46",
+      "questionText": "What is attribution?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "Attribution assigns some portion of an output to inputs, features, or sources.",
+      "options": [{"id":"A","text":"Assigning estimated contribution to parts of an input or evidence for a model output"},{"id":"B","text":"Assigning legal ownership of a model to its users"},{"id":"C","text":"Encrypting the model's input features"},{"id":"D","text":"Replacing a prediction with a rule"}],
+      "correctAnswers": ["A"],
+      "summary": ["Attribution methods estimate how input components or sources relate to a particular output.", "Attribution depends on methodological choices and should not be mistaken for a causal account."]
+    },
+    {
+      "questionId": "xai-47",
+      "questionText": "What is model transparency?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "It concerns what people can know about the model's design, data, and operation.",
+      "options": [{"id":"A","text":"The availability of relevant information about a model's design, data, behavior, and limitations"},{"id":"B","text":"A visual display of one prediction only"},{"id":"C","text":"The guarantee that a model has no hidden bias"},{"id":"D","text":"The requirement to reveal private training records"}],
+      "correctAnswers": ["A"],
+      "summary": ["Model transparency provides relevant information about a model and its development or operation.", "It should be balanced with privacy, security, and legitimate confidentiality."]
+    },
+    {
+      "questionId": "xai-48",
+      "questionText": "What is decision transparency?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "This focuses on making the basis and process of a decision clear to affected people.",
+      "options": [{"id":"A","text":"Clarity about how a decision was made, what factors mattered, and who is responsible"},{"id":"B","text":"Publishing every model parameter"},{"id":"C","text":"Showing a model's source code without explaining an outcome"},{"id":"D","text":"Keeping a decision's criteria secret"}],
+      "correctAnswers": ["A"],
+      "summary": ["Decision transparency communicates relevant criteria, process, and responsibility for an outcome.", "The appropriate detail depends on the audience and the nature of the decision."]
+    },
+    {
+      "questionId": "xai-49",
+      "questionText": "What is reasoning transparency?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "It makes the basis or rationale for a system's response more visible, without assuming that text is a faithful record of internal computation.",
+      "options": [{"id":"A","text":"Providing an understandable account of the considerations or evidence behind an output"},{"id":"B","text":"Revealing every hidden neural activation to every end user"},{"id":"C","text":"Showing a confident explanation whether or not it is accurate"},{"id":"D","text":"Replacing evidence with a longer answer"}],
+      "correctAnswers": ["A"],
+      "summary": ["Reasoning transparency presents useful rationale, evidence, or decision steps in a form people can assess.", "A generated rationale may not faithfully describe the model's internal computation."]
+    },
+    {
+      "questionId": "xai-50",
+      "questionText": "What is causal explainability?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "Causal explanations ask what would change if a factor were intervened on, not merely correlated.",
+      "options": [{"id":"A","text":"An explanation that uses cause-and-effect relationships to describe how changes may affect an outcome"},{"id":"B","text":"A ranking of correlated features with no causal assumptions"},{"id":"C","text":"A description of the model's training cost"},{"id":"D","text":"A list of inputs that appeared before an output"}],
+      "correctAnswers": ["A"],
+      "summary": ["Causal explainability reasons about interventions and cause-effect relationships under stated assumptions.", "Correlation or feature importance alone does not establish causation."]
+    },
+    {
+      "questionId": "xai-51",
+      "questionText": "What is counterfactual explainability?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "It asks how an outcome might differ under a small, meaningful change to the input.",
+      "options": [{"id":"A","text":"Showing what changes to an input could have led to a different model outcome"},{"id":"B","text":"Showing the same output repeatedly"},{"id":"C","text":"Explaining only the model's training data"},{"id":"D","text":"Claiming that changing a feature guarantees a real-world outcome"}],
+      "correctAnswers": ["A"],
+      "summary": ["A counterfactual describes a nearby alternative input that would change the model's prediction.", "Such a model-based scenario is not necessarily a causal or feasible real-world recommendation."]
+    },
+    {
+      "questionId": "xai-52",
+      "questionText": "What is post-hoc explainability?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "The explanation is generated after a model has already been trained.",
+      "options": [{"id":"A","text":"Methods applied to an existing trained model to explain its behavior or outputs"},{"id":"B","text":"A model designed to be transparent by construction"},{"id":"C","text":"A method for deleting model outputs after delivery"},{"id":"D","text":"A guarantee that an explanation exactly matches internal computation"}],
+      "correctAnswers": ["A"],
+      "summary": ["Post-hoc methods analyze a trained model or its predictions without changing the model's basic design.", "Their explanations may be approximate and should be assessed for fidelity."]
+    },
+    {
+      "questionId": "xai-53",
+      "questionText": "What is intrinsic explainability?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "Some models are easier to understand because their structure is transparent by design.",
+      "options": [{"id":"A","text":"Interpretability that comes from the model's design, such as a small decision tree or linear model"},{"id":"B","text":"An explanation attached to any model after training"},{"id":"C","text":"A model whose parameters are hidden from its developers"},{"id":"D","text":"A claim that all simple models are accurate"}],
+      "correctAnswers": ["A"],
+      "summary": ["Intrinsically interpretable models have structures people can inspect directly, such as a small rule set.", "Simplicity can aid understanding but does not guarantee accuracy, fairness, or suitability."]
+    },
+    {
+      "questionId": "xai-54",
+      "questionText": "What is model inspection?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "Inspection examines components, behavior, or records to understand a system.",
+      "options": [{"id":"A","text":"Examining a model's structure, parameters, behavior, or documentation using suitable methods"},{"id":"B","text":"Accepting outputs without review"},{"id":"C","text":"Changing every prediction by hand"},{"id":"D","text":"Measuring only how quickly a model responds"}],
+      "correctAnswers": ["A"],
+      "summary": ["Model inspection uses tools and evidence to examine model components or behavior.", "Inspection should be designed for the question being asked and may not reveal every internal mechanism."]
+    },
+    {
+      "questionId": "xai-55",
+      "questionText": "What is explanation fidelity?",
+      "questionType": "single",
+      "skills": ["Explainability Concepts"],
+      "hint": "A faithful explanation should accurately reflect the model behavior it claims to describe.",
+      "options": [{"id":"A","text":"How accurately an explanation represents the behavior of the model or output it describes"},{"id":"B","text":"How attractive an explanation looks in a dashboard"},{"id":"C","text":"How many words an explanation contains"},{"id":"D","text":"Whether users agree with an explanation"}],
+      "correctAnswers": ["A"],
+      "summary": ["Fidelity measures how well an explanation matches the model's actual behavior for the relevant scope.", "An explanation can be easy to read yet low-fidelity, so both accuracy and usability matter."]
+    },
+    {
+      "questionId": "xai-56",
+      "questionText": "What is SHAP?",
+      "questionType": "single",
+      "skills": ["XAI Techniques", "Must-Know Certification"],
+      "hint": "It uses ideas from cooperative game theory to assign contributions to features.",
+      "options": [{"id":"A","text":"A framework that assigns feature contributions to a prediction using Shapley-value ideas"},{"id":"B","text":"A method that trains language models from scratch"},{"id":"C","text":"A measure of model latency"},{"id":"D","text":"A rule that guarantees causal explanations"}],
+      "correctAnswers": ["A"],
+      "summary": ["SHAP methods estimate how features contribute to a model output relative to a baseline.", "The result depends on choices such as the background data and the SHAP variant used."]
+    },
+    {
+      "questionId": "xai-57",
+      "questionText": "What does SHAP stand for?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "The name refers to SHapley Additive exPlanations.",
+      "options": [{"id":"A","text":"SHapley Additive exPlanations"},{"id":"B","text":"Statistical Heuristic Analysis for Predictions"},{"id":"C","text":"Systematic Human Assessment of Probabilistic models"},{"id":"D","text":"Secure Heuristic Attribution Protocol"}],
+      "correctAnswers": ["A"],
+      "summary": ["SHAP expands to SHapley Additive exPlanations.", "It is a family of feature-attribution methods based on Shapley values."]
+    },
+    {
+      "questionId": "xai-58",
+      "questionText": "How does SHAP explain model outputs?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "It compares feature contributions with a baseline prediction.",
+      "options": [{"id":"A","text":"It estimates each feature's contribution relative to a baseline and combines contributions into the prediction"},{"id":"B","text":"It reads the model's private thoughts as natural language"},{"id":"C","text":"It proves that each feature causes the outcome"},{"id":"D","text":"It replaces the model with a fixed rule"}],
+      "correctAnswers": ["A"],
+      "summary": ["SHAP values allocate a prediction difference from a baseline among input features under a chosen formulation.", "They describe model attribution, not necessarily real-world causality."]
+    },
+    {
+      "questionId": "xai-59",
+      "questionText": "What are advantages of SHAP?",
+      "questionType": "multiple",
+      "skills": ["XAI Techniques"],
+      "hint": "Consider its consistent additive feature attributions and its use for both individual and overall analyses.",
+      "options": [{"id":"A","text":"It provides a common additive attribution framework"},{"id":"B","text":"It can support local explanations and aggregate global summaries"},{"id":"C","text":"It guarantees fast computation for every model and dataset"},{"id":"D","text":"Its assumptions and baseline can be inspected and discussed"}],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["SHAP offers a principled, widely used way to attribute predictions and summarize patterns across cases.", "Computation can be expensive, and results depend on the model, data, and assumptions."]
+    },
+    {
+      "questionId": "xai-60",
+      "questionText": "What are limitations of SHAP?",
+      "questionType": "multiple",
+      "skills": ["XAI Techniques"],
+      "hint": "Attributions can be costly and depend on how the baseline and feature relationships are handled.",
+      "options": [{"id":"A","text":"Some variants can be computationally expensive"},{"id":"B","text":"Attributions may be sensitive to background data and assumptions"},{"id":"C","text":"A feature contribution automatically proves causation"},{"id":"D","text":"Correlated features can make contributions harder to interpret"}],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["SHAP can be resource-intensive and its interpretation depends on the reference distribution and feature dependence treatment.", "Its attributions explain model behavior under assumptions; they are not causal proof."]
+    },
+    {
+      "questionId": "xai-61",
+      "questionText": "What is LIME?",
+      "questionType": "single",
+      "skills": ["XAI Techniques", "Must-Know Certification"],
+      "hint": "It fits a simpler explanation around one prediction, even when the original model is complex.",
+      "options": [{"id":"A","text":"Local Interpretable Model-agnostic Explanations, a technique for approximating local model behavior"},{"id":"B","text":"A neural network architecture for image generation"},{"id":"C","text":"A database that stores model decisions"},{"id":"D","text":"A metric for measuring training data volume"}],
+      "correctAnswers": ["A"],
+      "summary": ["LIME fits a simple interpretable surrogate near a particular instance to approximate a model's behavior there.", "The local approximation may not reflect the model well outside the sampled neighborhood."]
+    },
+    {
+      "questionId": "xai-62",
+      "questionText": "How does LIME work?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "It perturbs an input, observes the model's responses, and weights nearby examples.",
+      "options": [{"id":"A","text":"It samples nearby variations, queries the model, and fits a weighted simple model around the case"},{"id":"B","text":"It retrains the original model using all possible inputs"},{"id":"C","text":"It translates model parameters directly into verified facts"},{"id":"D","text":"It finds the exact training example behind a prediction"}],
+      "correctAnswers": ["A"],
+      "summary": ["LIME creates perturbed samples around an input, queries the model, and weights close samples more heavily when fitting a local surrogate.", "Sampling and perturbation choices can affect the explanation."]
+    },
+    {
+      "questionId": "xai-63",
+      "questionText": "What are advantages of LIME?",
+      "questionType": "multiple",
+      "skills": ["XAI Techniques"],
+      "hint": "It is flexible and can explain one prediction without requiring direct access to model internals.",
+      "options": [{"id":"A","text":"It can be used with different model types through input-output queries"},{"id":"B","text":"Its local explanation can be represented with a simple interpretable model"},{"id":"C","text":"It guarantees the same explanation across every run and setup"},{"id":"D","text":"It can be applied to an individual prediction"}],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["LIME is model-agnostic in common settings and provides an understandable local approximation.", "Its explanations can vary with sampling and may be unreliable beyond the selected neighborhood."]
+    },
+    {
+      "questionId": "xai-64",
+      "questionText": "What are limitations of LIME?",
+      "questionType": "multiple",
+      "skills": ["XAI Techniques"],
+      "hint": "A local surrogate depends on how the neighborhood is generated and which samples are weighted.",
+      "options": [{"id":"A","text":"Results may vary with random sampling and configuration"},{"id":"B","text":"The simple surrogate may not faithfully approximate the model"},{"id":"C","text":"A local explanation always describes global model behavior"},{"id":"D","text":"Perturbed samples may be unrealistic or unrepresentative"}],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["LIME's sampling, neighborhood, and surrogate choices can affect fidelity and stability.", "A local explanation should not be generalized to all cases without separate evaluation."]
+    },
+    {
+      "questionId": "xai-65",
+      "questionText": "What is the difference between SHAP and LIME?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "Both can explain individual predictions, but their underlying approaches differ.",
+      "options": [{"id":"A","text":"SHAP allocates contributions using Shapley-value ideas; LIME fits a weighted local surrogate around an input"},{"id":"B","text":"SHAP is only for images, while LIME is only for text"},{"id":"C","text":"SHAP is a training algorithm, while LIME is a database"},{"id":"D","text":"They are identical methods with different names"}],
+      "correctAnswers": ["A"],
+      "summary": ["SHAP is based on additive feature attribution and Shapley values; LIME locally approximates behavior with a simpler model.", "Both depend on assumptions and implementation choices and neither is automatically causal."]
+    },
+    {
+      "questionId": "xai-66",
+      "questionText": "What are saliency maps?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "For an image model, they highlight pixels or regions associated with a prediction.",
+      "options": [{"id":"A","text":"Visualizations that highlight input regions estimated to influence a model output"},{"id":"B","text":"Maps showing the physical locations of model servers"},{"id":"C","text":"A guarantee that highlighted pixels caused the prediction"},{"id":"D","text":"A list of all images in the training set"}],
+      "correctAnswers": ["A"],
+      "summary": ["Saliency methods visualize input areas associated with a model's output, often as a heat map.", "Artifacts and sensitivity to method choices mean a saliency map should not be treated as definitive evidence."]
+    },
+    {
+      "questionId": "xai-67",
+      "questionText": "What are attention visualizations?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "They display attention weights between tokens or other representations inside a transformer.",
+      "options": [{"id":"A","text":"Diagrams of attention weights or patterns across model positions"},{"id":"B","text":"A complete record of every cause behind a model output"},{"id":"C","text":"A user-interface feature that prevents hallucinations"},{"id":"D","text":"A chart of the model's financial costs"}],
+      "correctAnswers": ["A"],
+      "summary": ["Attention visualizations show selected attention weights or patterns in transformer layers and heads.", "They reveal one part of computation but not necessarily the model's full basis for an answer."]
+    },
+    {
+      "questionId": "xai-68",
+      "questionText": "Can attention be considered an explanation?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "Attention patterns may be informative, but researchers caution against treating them as a complete causal account.",
+      "options": [{"id":"A","text":"It can provide a useful diagnostic view, but attention weights alone are not a complete or guaranteed faithful explanation"},{"id":"B","text":"Yes; each attention weight directly measures causal importance"},{"id":"C","text":"No; attention has no relationship to model computation"},{"id":"D","text":"Yes; one attention map fully explains every generated token"}],
+      "correctAnswers": ["A"],
+      "summary": ["Attention can help inspect information flow, but its relationship to feature importance and causal influence is limited.", "Validate explanations with other evidence and methods."]
+    },
+    {
+      "questionId": "xai-69",
+      "questionText": "What are surrogate models?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "A simpler model is trained to approximate the behavior of a more complex model.",
+      "options": [{"id":"A","text":"Interpretable models fitted to approximate a complex model's outputs or behavior"},{"id":"B","text":"Models that replace all training data with synthetic data"},{"id":"C","text":"Copies of model parameters used for backup"},{"id":"D","text":"Models that guarantee the original system is correct"}],
+      "correctAnswers": ["A"],
+      "summary": ["A surrogate approximates a target model, globally or locally, using a simpler representation.", "Its usefulness depends on how faithfully it represents the target over the region of interest."]
+    },
+    {
+      "questionId": "xai-70",
+      "questionText": "What are rule-based explanations?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "They express a decision as human-readable conditions and outcomes.",
+      "options": [{"id":"A","text":"Explanations expressed as understandable if-then rules or conditions"},{"id":"B","text":"A neural network's hidden weights displayed as source code"},{"id":"C","text":"A list of outputs without decision criteria"},{"id":"D","text":"An automatic proof that a decision is fair"}],
+      "correctAnswers": ["A"],
+      "summary": ["Rules can describe conditions associated with a prediction or a decision process in readable form.", "Approximate rules may omit behavior, so their coverage and fidelity should be checked."]
+    },
+    {
+      "questionId": "xai-71",
+      "questionText": "What are example-based explanations?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "They use similar, contrasting, or representative cases to make a result easier to understand.",
+      "options": [{"id":"A","text":"Explanations that show relevant examples, such as similar cases or counterexamples"},{"id":"B","text":"Explanations that publish every training record"},{"id":"C","text":"A method that always reveals causal relationships"},{"id":"D","text":"A numeric confidence score with no context"}],
+      "correctAnswers": ["A"],
+      "summary": ["Example-based methods explain behavior through representative, similar, or contrasting cases.", "Examples must be selected carefully to avoid privacy leakage or misleading comparisons."]
+    },
+    {
+      "questionId": "xai-72",
+      "questionText": "What is concept-based explainability?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "It asks whether human-understandable concepts are represented in a model's response.",
+      "options": [{"id":"A","text":"Explaining model behavior using meaningful concepts rather than only raw input features"},{"id":"B","text":"Replacing concepts with random labels"},{"id":"C","text":"A way to train a model without any data"},{"id":"D","text":"A guarantee that model concepts match human concepts exactly"}],
+      "correctAnswers": ["A"],
+      "summary": ["Concept-based methods relate internal representations or predictions to higher-level concepts people can understand.", "The selected concepts and their measurements must be validated; alignment is not automatic."]
+    },
+    {
+      "questionId": "xai-73",
+      "questionText": "What is feature attribution?",
+      "questionType": "single",
+      "skills": ["XAI Techniques", "Must-Know Certification"],
+      "hint": "It estimates how individual input features contribute to a model result.",
+      "options": [{"id":"A","text":"Assigning estimated contribution values to input features for a model output"},{"id":"B","text":"Proving which feature caused an outcome in the real world"},{"id":"C","text":"Selecting which data fields to collect"},{"id":"D","text":"Giving ownership of a feature to a user"}],
+      "correctAnswers": ["A"],
+      "summary": ["Feature attribution assigns estimated influence or contribution to inputs under a particular method.", "Attribution describes model behavior and does not alone demonstrate causal effect."]
+    },
+    {
+      "questionId": "xai-74",
+      "questionText": "What are influence functions?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "They estimate how training examples might affect a model's prediction or parameters.",
+      "options": [{"id":"A","text":"Techniques that estimate the effect of training data points on model behavior or a prediction"},{"id":"B","text":"Functions that increase a model's sampling temperature"},{"id":"C","text":"A dashboard for tracking user clicks"},{"id":"D","text":"A guarantee that an exact training source can always be recovered"}],
+      "correctAnswers": ["A"],
+      "summary": ["Influence functions use approximations to estimate how changes to training examples may affect a model or prediction.", "They can be computationally demanding and may be unreliable for some modern deep networks."]
+    },
+    {
+      "questionId": "xai-75",
+      "questionText": "What are explanation dashboards?",
+      "questionType": "single",
+      "skills": ["XAI Techniques"],
+      "hint": "They bring selected explanation, evidence, and monitoring views together for users.",
+      "options": [{"id":"A","text":"Interfaces that present explanation and model-monitoring information for review"},{"id":"B","text":"A model-training algorithm that guarantees fairness"},{"id":"C","text":"A replacement for audit processes"},{"id":"D","text":"A system that shows predictions but hides all relevant context"}],
+      "correctAnswers": ["A"],
+      "summary": ["Dashboards organize useful information such as feature contributions, evidence, uncertainty, and performance.", "They should be tailored to users and clearly communicate what the displayed explanations can and cannot establish."]
+    },
+    {
+      "questionId": "xai-76",
+      "questionText": "Why are LLMs considered black-box models?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "Their distributed parameters and layers make a simple, faithful explanation of each response difficult.",
+      "options": [{"id":"A","text":"Complex learned representations make it difficult to trace a response to a small set of understandable rules"},{"id":"B","text":"They never use data or learned parameters"},{"id":"C","text":"All their internal operations are ordinary human-readable rules"},{"id":"D","text":"They always conceal outputs from their users"}],
+      "correctAnswers": ["A"],
+      "summary": ["LLMs rely on distributed representations across many parameters and computations.", "Tools such as source citations or attribution reveal useful evidence, but not necessarily every internal influence."]
+    },
+    {
+      "questionId": "xai-77",
+      "questionText": "What is token-level explainability?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "It examines how input or output tokens relate to a model's next-token choices.",
+      "options": [{"id":"A","text":"Analyzing how individual tokens or token positions relate to generated probabilities or outputs"},{"id":"B","text":"Explaining a model's full training history with one token"},{"id":"C","text":"A guarantee that each token is factually verified"},{"id":"D","text":"Counting the words in a prompt"}],
+      "correctAnswers": ["A"],
+      "summary": ["Token-level analysis examines associations or contributions of individual tokens in a particular model computation.", "It is a narrow view and does not establish the complete reason for a response."]
+    },
+    {
+      "questionId": "xai-78",
+      "questionText": "What is attention analysis?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "It inspects attention patterns among tokens across a model's layers or heads.",
+      "options": [{"id":"A","text":"Examining attention weights or patterns to study how token representations interact"},{"id":"B","text":"Verifying every factual claim against a database"},{"id":"C","text":"Measuring only the size of an LLM's training corpus"},{"id":"D","text":"A method that guarantees causal explanations"}],
+      "correctAnswers": ["A"],
+      "summary": ["Attention analysis visualizes or measures parts of the information-mixing operations in transformers.", "Attention patterns are informative diagnostics, not a complete explanation of an answer."]
+    },
+    {
+      "questionId": "xai-79",
+      "questionText": "What is prompt explainability?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "A clear record of instructions and context can help explain why an application elicited a response.",
+      "options": [{"id":"A","text":"Making the prompt, relevant context, and instruction roles understandable and reviewable"},{"id":"B","text":"Showing only the final response while hiding all instructions"},{"id":"C","text":"A method that guarantees a prompt has no ambiguity"},{"id":"D","text":"Explaining the model's training data through prompt wording"}],
+      "correctAnswers": ["A"],
+      "summary": ["Prompt explainability documents the instructions and context supplied to a model and their intended roles.", "A prompt record supports investigation but does not reveal all internal model behavior."]
+    },
+    {
+      "questionId": "xai-80",
+      "questionText": "How can prompt design improve explainability?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "Clear constraints and separated evidence make it easier to understand and evaluate what the model was asked to do.",
+      "options": [{"id":"A","text":"State the task, delimit supplied data, specify evidence requirements, and request a structured result"},{"id":"B","text":"Mix instructions and untrusted content without boundaries"},{"id":"C","text":"Ask for confident answers without sources"},{"id":"D","text":"Remove context and keep no record of the prompt"}],
+      "correctAnswers": ["A"],
+      "summary": ["Well-structured prompts make system behavior easier to reproduce and inspect, and can request evidence or uncertainty.", "Prompt quality improves clarity but cannot guarantee correct responses."]
+    },
+    {
+      "questionId": "xai-81",
+      "questionText": "What is output attribution?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "It links parts of an output to the evidence, inputs, or sources that support them.",
+      "options": [{"id":"A","text":"Connecting generated claims or segments to relevant input context, retrieved passages, or other evidence"},{"id":"B","text":"Assigning a score to the model's writing style only"},{"id":"C","text":"Proving which training sentence caused every generated word"},{"id":"D","text":"A way to remove citations from a response"}],
+      "correctAnswers": ["A"],
+      "summary": ["Output attribution associates generated content with relevant evidence or context where that relationship can be supported.", "A citation may be relevant without fully entailing the claim, so the association requires validation."]
+    },
+    {
+      "questionId": "xai-82",
+      "questionText": "How can we trace generated content?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "Preserve a privacy-aware record of the model version, prompt, retrieved sources, and output.",
+      "options": [{"id":"A","text":"Record relevant prompts, model and configuration versions, retrieval sources, tool actions, and outputs"},{"id":"B","text":"Assume the output came from one known training example"},{"id":"C","text":"Store user credentials in prompts for later lookup"},{"id":"D","text":"Rely on memory instead of keeping an auditable record"}],
+      "correctAnswers": ["A"],
+      "summary": ["A trace can preserve the model version, settings, inputs, retrieved evidence, tool calls, and output needed to reconstruct a run.", "Logging should minimize sensitive data and follow access and retention policies."]
+    },
+    {
+      "questionId": "xai-83",
+      "questionText": "What is retrieval explainability?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "It makes visible what information was retrieved and why it was included in the response context.",
+      "options": [{"id":"A","text":"Showing which sources or passages were retrieved and how they relate to the answer"},{"id":"B","text":"Showing all documents in a company's private database to every user"},{"id":"C","text":"Explaining only the model's attention weights"},{"id":"D","text":"Guaranteeing that retrieval found every relevant source"}],
+      "correctAnswers": ["A"],
+      "summary": ["Retrieval explainability documents selected documents or passages, their provenance, and their link to generated claims.", "It should respect access controls and does not guarantee retrieval completeness."]
+    },
+    {
+      "questionId": "xai-84",
+      "questionText": "How does Retrieval Augmented Generation (RAG) improve explainability?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs", "Must-Know Certification"],
+      "hint": "RAG can ground an answer in passages that the user can inspect.",
+      "options": [{"id":"A","text":"It can provide relevant retrieved evidence alongside a generated answer for checking"},{"id":"B","text":"It makes the language model's internal reasoning fully transparent"},{"id":"C","text":"It guarantees all retrieved documents are correct and current"},{"id":"D","text":"It removes the need to evaluate generated claims"}],
+      "correctAnswers": ["A"],
+      "summary": ["RAG supplies retrieved context that can be cited or shown as evidence, helping users verify claims.", "Retrieval can fail and the model may misrepresent sources, so both retrieval and grounding need evaluation."]
+    },
+    {
+      "questionId": "xai-85",
+      "questionText": "How do citations improve explainability?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "Citations give users a route to inspect evidence behind a claim.",
+      "options": [{"id":"A","text":"They let users locate and review sources associated with claims"},{"id":"B","text":"They guarantee that every linked source supports the claim"},{"id":"C","text":"They reveal the model's full internal computation"},{"id":"D","text":"They make source quality irrelevant"}],
+      "correctAnswers": ["A"],
+      "summary": ["Citations provide a path to inspect source material and can make provenance clearer.", "Citations must be checked for accuracy, relevance, and whether the source actually supports the statement."]
+    },
+    {
+      "questionId": "xai-86",
+      "questionText": "Why is source grounding important?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "Grounding connects a response to evidence rather than relying only on fluent generation.",
+      "options": [{"id":"A","text":"It helps users verify that claims are supported by relevant, accessible evidence"},{"id":"B","text":"It guarantees the model will never make an unsupported inference"},{"id":"C","text":"It allows the system to ignore source dates and quality"},{"id":"D","text":"It proves that a response is unbiased"}],
+      "correctAnswers": ["A"],
+      "summary": ["Source grounding helps connect generated claims to evidence that a reviewer can inspect.", "It reduces some risks but cannot guarantee source completeness, accuracy, or faithful use."]
+    },
+    {
+      "questionId": "xai-87",
+      "questionText": "How can chain-of-thought improve transparency?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "A concise sequence of intermediate steps may make a task's approach easier to inspect.",
+      "options": [{"id":"A","text":"It may present intermediate steps that help users inspect the approach to a task"},{"id":"B","text":"It always reveals a faithful record of internal model computation"},{"id":"C","text":"It proves that the final answer is correct"},{"id":"D","text":"It removes the need for evidence or external verification"}],
+      "correctAnswers": ["A"],
+      "summary": ["A stepwise account can expose assumptions or intermediate results for checking.", "A model-generated reasoning trace can be incomplete or post-hoc and should not be treated as ground truth."]
+    },
+    {
+      "questionId": "xai-88",
+      "questionText": "What are the limitations of chain-of-thought explanations?",
+      "questionType": "multiple",
+      "skills": ["Explainability in LLMs"],
+      "hint": "A plausible verbal rationale may not match the computations that actually shaped the answer.",
+      "options": [{"id":"A","text":"The trace may not faithfully represent internal computation"},{"id":"B","text":"A persuasive trace may still contain errors"},{"id":"C","text":"Longer reasoning always makes an answer correct"},{"id":"D","text":"Detailed traces can expose sensitive information or enable misuse"}],
+      "correctAnswers": ["A","B","D"],
+      "summary": ["Chain-of-thought text may be unfaithful, incorrect, or unnecessarily disclose sensitive details.", "Use appropriate evidence, concise rationales, and validation rather than assuming a reasoning trace proves correctness."]
+    },
+    {
+      "questionId": "xai-89",
+      "questionText": "Can model explanations be inaccurate?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "Explanation methods can approximate behavior, and generated rationales can be plausible but unfaithful.",
+      "options": [{"id":"A","text":"Yes; explanations can omit factors, misstate evidence, or poorly approximate model behavior"},{"id":"B","text":"No; any explanation produced by an AI is inherently true"},{"id":"C","text":"No; a fluent explanation proves its own accuracy"},{"id":"D","text":"Only explanations written by humans can be inaccurate"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanations are claims that need evaluation: they may be incomplete, unstable, or inconsistent with model behavior.", "Validate them against the system, evidence, and the decision context."]
+    },
+    {
+      "questionId": "xai-90",
+      "questionText": "How should AI-generated explanations be validated?",
+      "questionType": "single",
+      "skills": ["Explainability in LLMs"],
+      "hint": "Check the explanation against sources, model behavior, and expert review rather than trusting its fluency.",
+      "options": [{"id":"A","text":"Test fidelity and stability, verify cited evidence, and obtain domain review where appropriate"},{"id":"B","text":"Accept the explanation whenever it sounds confident"},{"id":"C","text":"Compare only its length with the original output"},{"id":"D","text":"Ask the same model to confirm its explanation and stop there"}],
+      "correctAnswers": ["A"],
+      "summary": ["Validation can measure fidelity, stability, usefulness, and agreement with evidence or expert judgment.", "A model's self-confirmation alone is not independent verification."]
+    },
+    {
+      "questionId": "xai-91",
+      "questionText": "Why is explainability important for AI agents?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "Agents can take multiple steps and cause real effects through tools.",
+      "options": [{"id":"A","text":"People need to understand the agent's plan, tool use, decisions, and resulting actions"},{"id":"B","text":"Agents never affect external systems"},{"id":"C","text":"Explainability allows an agent to bypass permissions"},{"id":"D","text":"A final answer fully describes every action an agent took"}],
+      "correctAnswers": ["A"],
+      "summary": ["Agents can plan, call tools, and take actions, so their decisions and side effects need traceable explanations.", "Human and system controls should remain in place for consequential actions."]
+    },
+    {
+      "questionId": "xai-92",
+      "questionText": "How do autonomous agents make decisions?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "They use goals, current context, observations, policies, and available actions to choose a next step.",
+      "options": [{"id":"A","text":"They evaluate context and goals, select an action, observe its result, and may update their plan"},{"id":"B","text":"They make decisions without any input or system configuration"},{"id":"C","text":"They always follow a single fixed script regardless of feedback"},{"id":"D","text":"They act only after a human writes every tool call"}],
+      "correctAnswers": ["A"],
+      "summary": ["An agent commonly combines a goal, model, instructions, observations, and available actions in an action-feedback loop.", "The application should constrain which actions are available and when approval is required."]
+    },
+    {
+      "questionId": "xai-93",
+      "questionText": "How can agent reasoning be explained?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "Record concise rationales along with the plan, evidence, decisions, and outcomes.",
+      "options": [{"id":"A","text":"Provide a trace of goals, selected steps, evidence, tool results, and decision rationales"},{"id":"B","text":"Show only the final answer and delete all intermediate records"},{"id":"C","text":"Publish hidden credentials used by the agent"},{"id":"D","text":"Assume a generated chain of thought is a complete audit record"}],
+      "correctAnswers": ["A"],
+      "summary": ["An agent trace can record its plan, relevant evidence, tool calls, results, approvals, and outcomes.", "A concise action rationale is more dependable for auditing than treating private model reasoning as a perfect transcript."]
+    },
+    {
+      "questionId": "xai-94",
+      "questionText": "What is tool-call transparency?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "Make clear which tool was called, with what authorized inputs, and what it returned.",
+      "options": [{"id":"A","text":"Making tool selection, validated arguments, execution status, and results visible to appropriate reviewers"},{"id":"B","text":"Allowing tools to run without logging or authorization"},{"id":"C","text":"Showing a tool's name but concealing all relevant activity"},{"id":"D","text":"Giving the model unrestricted access to every tool"}],
+      "correctAnswers": ["A"],
+      "summary": ["Tool-call transparency provides an inspectable record of what action was requested, validated, executed, and returned.", "Sensitive arguments and results still require appropriate access controls."]
+    },
+    {
+      "questionId": "xai-95",
+      "questionText": "Why should agent actions be logged?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "Logs can help reconstruct what happened during debugging, incident review, or an audit.",
+      "options": [{"id":"A","text":"To reconstruct actions, investigate failures, verify authorization, and support oversight"},{"id":"B","text":"To retain all personal data forever"},{"id":"C","text":"To make the agent's actions impossible to challenge"},{"id":"D","text":"To replace validation before executing tools"}],
+      "correctAnswers": ["A"],
+      "summary": ["Action logs support debugging, monitoring, accountability, and incident investigation.", "Logging should be proportionate, protected, and governed by retention and privacy rules."]
+    },
+    {
+      "questionId": "xai-96",
+      "questionText": "What is action traceability?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents", "Must-Know Certification"],
+      "hint": "Traceability connects a request to the action an agent took and what happened next.",
+      "options": [{"id":"A","text":"The ability to follow an agent action from its initiating request through execution and outcome"},{"id":"B","text":"The ability to generate an unlimited number of actions"},{"id":"C","text":"A measure of how many tools an agent knows about"},{"id":"D","text":"A way to hide an agent's tool activity"}],
+      "correctAnswers": ["A"],
+      "summary": ["Action traceability links intent, chosen tool, validated inputs, approval, execution, and result.", "This helps determine whether an action was authorized and what impact it had."]
+    },
+    {
+      "questionId": "xai-97",
+      "questionText": "How do agents use external tools?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "A model proposes a structured call, while the application should control and validate execution.",
+      "options": [{"id":"A","text":"An agent selects an allowed tool and proposes arguments that the application validates and executes"},{"id":"B","text":"The model should receive raw production credentials and run any code"},{"id":"C","text":"Tools automatically know the user's goal without arguments"},{"id":"D","text":"Every tool result is trusted without validation"}],
+      "correctAnswers": ["A"],
+      "summary": ["Agents may request a tool call; application code should enforce schemas, permissions, and execution policy.", "Tool results are external inputs and should be checked before they influence later actions."]
+    },
+    {
+      "questionId": "xai-98",
+      "questionText": "Why should external data sources be explainable?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "People need to know where information came from and whether it was current and trustworthy.",
+      "options": [{"id":"A","text":"Provenance and quality help reviewers judge whether an agent's evidence is relevant and reliable"},{"id":"B","text":"External data is always more accurate than internal data"},{"id":"C","text":"A source name guarantees the content is current"},{"id":"D","text":"Data lineage is unnecessary once a model uses a tool"}],
+      "correctAnswers": ["A"],
+      "summary": ["Source provenance, timestamp, access path, and quality help reviewers interpret evidence used by an agent.", "External sources may be stale, incomplete, or untrusted and need appropriate validation."]
+    },
+    {
+      "questionId": "xai-99",
+      "questionText": "What is workflow explainability?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "It covers how an overall process flows through steps, decisions, tools, and handoffs.",
+      "options": [{"id":"A","text":"Making workflow stages, decision points, dependencies, and outcomes understandable"},{"id":"B","text":"Explaining only one model parameter"},{"id":"C","text":"Showing the final result without any process information"},{"id":"D","text":"A guarantee that workflows never fail"}],
+      "correctAnswers": ["A"],
+      "summary": ["Workflow explainability makes the sequence and control points of a process visible to reviewers.", "It helps identify where an error, delay, or unauthorized action occurred."]
+    },
+    {
+      "questionId": "xai-100",
+      "questionText": "How does ReAct improve explainability?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "ReAct interleaves reasoning-oriented steps with actions and observations.",
+      "options": [{"id":"A","text":"It structures agent behavior around reasoning, actions, and observations that can be traced"},{"id":"B","text":"It removes the need to log tool calls"},{"id":"C","text":"It guarantees every reasoning trace is faithful"},{"id":"D","text":"It is a method for training image classifiers"}],
+      "correctAnswers": ["A"],
+      "summary": ["ReAct combines reasoning-oriented steps with actions and observations, making the interaction cycle easier to inspect.", "Visible traces do not guarantee correctness and should be designed with privacy and safety in mind."]
+    },
+    {
+      "questionId": "xai-101",
+      "questionText": "What is ReWOO?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "The name refers to Reasoning WithOut Observation, a pattern that plans tool use before execution.",
+      "options": [{"id":"A","text":"An agent approach that separates planning from tool execution and later combines tool results"},{"id":"B","text":"A database protocol for storing model weights"},{"id":"C","text":"A method that requires the model to observe every tool result before planning"},{"id":"D","text":"A technique for explaining feature importance"}],
+      "correctAnswers": ["A"],
+      "summary": ["ReWOO (Reasoning WithOut Observation) separates a plan from tool execution, allowing tool calls to be prepared and run before results are integrated.", "The structure can reduce repeated model calls but may need recovery when results differ from expectations."]
+    },
+    {
+      "questionId": "xai-102",
+      "questionText": "How is ReWOO different from ReAct?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "Compare interleaved action-observation loops with planning first and observing tool results later.",
+      "options": [{"id":"A","text":"ReAct commonly alternates reasoning and observations; ReWOO separates planning from tool execution and later uses results"},{"id":"B","text":"ReWOO never uses tools, while ReAct only uses tools"},{"id":"C","text":"ReAct is a database; ReWOO is a neural network layer"},{"id":"D","text":"There is no difference in their workflow patterns"}],
+      "correctAnswers": ["A"],
+      "summary": ["ReAct typically iterates through action and observation steps, while ReWOO plans tool calls before incorporating their outputs.", "Each pattern has trade-offs in adaptability, latency, and handling unexpected observations."]
+    },
+    {
+      "questionId": "xai-103",
+      "questionText": "How can multi-agent systems remain explainable?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "Record each agent's role, handoffs, inputs, outputs, and decisions in a shared trace.",
+      "options": [{"id":"A","text":"Define agent responsibilities and log handoffs, evidence, decisions, tool calls, and outcomes"},{"id":"B","text":"Let agents communicate through unrecorded channels"},{"id":"C","text":"Hide which agent produced each result"},{"id":"D","text":"Assume consensus among agents proves correctness"}],
+      "correctAnswers": ["A"],
+      "summary": ["Clear roles and end-to-end traces make contributions and handoffs between agents reviewable.", "Agreement among agents is not independent proof because they may share data, models, or failure modes."]
+    },
+    {
+      "questionId": "xai-104",
+      "questionText": "What is agent orchestration transparency?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "It explains how an orchestrator assigns work and coordinates participating agents or tools.",
+      "options": [{"id":"A","text":"Visibility into how tasks are routed, agents are selected, and their results are combined"},{"id":"B","text":"Giving each agent unrestricted authority"},{"id":"C","text":"Showing only the final response from a system"},{"id":"D","text":"A method for increasing model parameter counts"}],
+      "correctAnswers": ["A"],
+      "summary": ["Orchestration transparency describes task routing, delegation rules, permissions, and how outputs are combined.", "These details help reviewers identify gaps, conflicts, and responsibility."]
+    },
+    {
+      "questionId": "xai-105",
+      "questionText": "How do audit trails support explainability?",
+      "questionType": "single",
+      "skills": ["Explainability in AI Agents"],
+      "hint": "An audit trail is a sequence of records that can reconstruct actions and changes.",
+      "options": [{"id":"A","text":"They preserve a reviewable history of inputs, decisions, approvals, actions, and outcomes"},{"id":"B","text":"They guarantee that recorded decisions were fair"},{"id":"C","text":"They replace the need to control access to logs"},{"id":"D","text":"They store only model confidence and no other context"}],
+      "correctAnswers": ["A"],
+      "summary": ["Audit trails provide evidence for reconstructing how a system operated and who approved consequential actions.", "Records must be accurate, protected from tampering, and retained appropriately."]
+    },
+    {
+      "questionId": "xai-106",
+      "questionText": "What is Chain-of-Thought (CoT)?",
+      "questionType": "single",
+      "skills": ["Chain-of-Thought & Reasoning Transparency", "Must-Know Certification"],
+      "hint": "It prompts a model to produce intermediate steps before or while giving a final answer.",
+      "options": [{"id":"A","text":"A prompting approach that asks a model to work through intermediate reasoning steps"},{"id":"B","text":"A cryptographic chain that stores training examples"},{"id":"C","text":"A guarantee that all intermediate statements are correct"},{"id":"D","text":"A method for retrieving current web pages"}],
+      "correctAnswers": ["A"],
+      "summary": ["Chain-of-thought prompting asks a model to produce stepwise intermediate content for a task.", "The produced text is not necessarily a faithful or complete record of internal computations."]
+    },
+    {
+      "questionId": "xai-107",
+      "questionText": "Why does CoT improve explainability?",
+      "questionType": "single",
+      "skills": ["Chain-of-Thought & Reasoning Transparency"],
+      "hint": "Intermediate steps can make assumptions or calculations easier to inspect.",
+      "options": [{"id":"A","text":"It can expose intermediate steps that a reviewer may check for errors or assumptions"},{"id":"B","text":"It guarantees faithful access to a model's hidden reasoning"},{"id":"C","text":"It ensures that every output is evidence-based"},{"id":"D","text":"It eliminates the need for external validation"}],
+      "correctAnswers": ["A"],
+      "summary": ["A stepwise response can help a reviewer inspect an approach, identify a faulty step, or ask for supporting evidence.", "A chain of thought is not, by itself, proof of correctness or internal faithfulness."]
+    },
+    {
+      "questionId": "xai-108",
+      "questionText": "How does CoT improve reasoning quality?",
+      "questionType": "single",
+      "skills": ["Chain-of-Thought & Reasoning Transparency"],
+      "hint": "Breaking a complex task into explicit stages can help a model organize intermediate calculations.",
+      "options": [{"id":"A","text":"It can encourage decomposition into intermediate steps that are easier to evaluate"},{"id":"B","text":"It guarantees flawless reasoning for every task"},{"id":"C","text":"It supplies missing facts from verified sources automatically"},{"id":"D","text":"It prevents errors caused by ambiguous instructions"}],
+      "correctAnswers": ["A"],
+      "summary": ["Stepwise prompting may improve performance on some tasks by encouraging structured decomposition.", "Benefits are task-dependent and should be measured; the method does not guarantee correctness."]
+    },
+    {
+      "questionId": "xai-109",
+      "questionText": "What are intermediate reasoning steps?",
+      "questionType": "single",
+      "skills": ["Chain-of-Thought & Reasoning Transparency"],
+      "hint": "They are the supporting substeps between a task's input and final result.",
+      "options": [{"id":"A","text":"Subtasks, calculations, or decisions presented between the input and final answer"},{"id":"B","text":"The final answer repeated with different wording"},{"id":"C","text":"Model parameters that users always see directly"},{"id":"D","text":"External sources that are retrieved after a response"}],
+      "correctAnswers": ["A"],
+      "summary": ["Intermediate steps describe a sequence of subproblems or calculations used to reach a result.", "When exposed, they are generated content and may need independent checking."]
+    },
+    {
+      "questionId": "xai-110",
+      "questionText": "How does CoT support debugging?",
+      "questionType": "single",
+      "skills": ["Chain-of-Thought & Reasoning Transparency"],
+      "hint": "Visible steps may show where a calculation, assumption, or inference went wrong.",
+      "options": [{"id":"A","text":"It can help reviewers locate questionable assumptions or steps in a task solution"},{"id":"B","text":"It identifies every bug in a system automatically"},{"id":"C","text":"It replaces logs, tests, and reproducible examples"},{"id":"D","text":"It prevents a model from making mistakes"}],
+      "correctAnswers": ["A"],
+      "summary": ["Intermediate output can make some failures easier to localize and reproduce.", "Debugging still needs independent checks, system logs, and tests because the trace may omit the true cause."]
+    },
+    {
+      "questionId": "xai-111",
+      "questionText": "What is self-reflection in AI?",
+      "questionType": "single",
+      "skills": ["Chain-of-Thought & Reasoning Transparency"],
+      "hint": "A model may review or critique an earlier output, but that review is not automatically objective.",
+      "options": [{"id":"A","text":"A process in which a model evaluates or revises its own earlier response or plan"},{"id":"B","text":"A guarantee of independent expert review"},{"id":"C","text":"A method for encrypting the model's memory"},{"id":"D","text":"A type of human oversight that requires no people"}],
+      "correctAnswers": ["A"],
+      "summary": ["Self-reflection asks a model to inspect, critique, or revise a prior output.", "The same model can repeat or reinforce its own errors, so important checks should use independent evidence or reviewers."]
+    },
+    {
+      "questionId": "xai-112",
+      "questionText": "What is self-consistency prompting?",
+      "questionType": "single",
+      "skills": ["Chain-of-Thought & Reasoning Transparency"],
+      "hint": "Generate multiple reasoning paths and compare their final answers.",
+      "options": [{"id":"A","text":"Sampling multiple candidate reasoning paths and selecting an answer based on agreement or another decision rule"},{"id":"B","text":"Running one model output once and assuming it is correct"},{"id":"C","text":"Combining outputs from unrelated tasks without comparison"},{"id":"D","text":"A way to guarantee independent opinions from identical model calls"}],
+      "correctAnswers": ["A"],
+      "summary": ["Self-consistency samples multiple candidate solutions and uses their agreement to select or assess an answer.", "Candidates may share systematic errors, so agreement is a signal rather than proof."]
+    },
+    {
+      "questionId": "xai-113",
+      "questionText": "What is reasoning trace analysis?",
+      "questionType": "single",
+      "skills": ["Chain-of-Thought & Reasoning Transparency"],
+      "hint": "Review the recorded sequence of steps and evidence rather than looking only at the final answer.",
+      "options": [{"id":"A","text":"Examining a sequence of recorded reasoning-oriented steps, actions, and evidence for patterns or errors"},{"id":"B","text":"Reading only the final output and discarding its context"},{"id":"C","text":"A technique that proves hidden reasoning is fully visible"},{"id":"D","text":"Measuring only how long a model took to respond"}],
+      "correctAnswers": ["A"],
+      "summary": ["Trace analysis reviews a system's recorded steps, evidence, and actions to understand behavior or diagnose failures.", "A trace may be incomplete and should be interpreted alongside system behavior and logs."]
+    },
+    {
+      "questionId": "xai-114",
+      "questionText": "What are hidden reasoning limitations?",
+      "questionType": "single",
+      "skills": ["Chain-of-Thought & Reasoning Transparency"],
+      "hint": "Some internal model processes are not directly observable, and generated rationales may not faithfully represent them.",
+      "options": [{"id":"A","text":"Internal computation may be inaccessible, while verbal rationales can be incomplete or unfaithful"},{"id":"B","text":"Hidden reasoning always makes a model accurate"},{"id":"C","text":"A visible rationale always exposes every model operation"},{"id":"D","text":"The model's private reasoning can be reconstructed exactly from its final answer"}],
+      "correctAnswers": ["A"],
+      "summary": ["Neural computations are not necessarily represented by the text an LLM produces as a rationale.", "Treat explanations as evidence to test, not direct transcripts of hidden cognition."]
+    },
+    {
+      "questionId": "xai-115",
+      "questionText": "Should internal reasoning always be exposed?",
+      "questionType": "single",
+      "skills": ["Chain-of-Thought & Reasoning Transparency"],
+      "hint": "Balance usefulness with fidelity, privacy, security, and the needs of the user.",
+      "options": [{"id":"A","text":"No; provide appropriate evidence and concise rationales while considering safety, privacy, and fidelity"},{"id":"B","text":"Yes; every internal token must be published to every user"},{"id":"C","text":"Yes; exposing reasoning guarantees correctness"},{"id":"D","text":"No; never provide any explanation or evidence"}],
+      "correctAnswers": ["A"],
+      "summary": ["Exposing raw reasoning is not always useful, safe, faithful, or appropriate.", "A well-designed system can offer evidence, concise rationales, uncertainty, and audit records suited to each audience."]
+    },
+    {
+      "questionId": "xai-116",
+      "questionText": "What is trustworthy AI?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "Trustworthiness includes reliability and safeguards throughout a system's lifecycle.",
+      "options": [{"id":"A","text":"AI designed and operated to be reliable, safe, fair, transparent, and accountable in context"},{"id":"B","text":"AI that users are told never to question"},{"id":"C","text":"Any model with high accuracy on one test"},{"id":"D","text":"AI whose source code is public, regardless of behavior"}],
+      "correctAnswers": ["A"],
+      "summary": ["Trustworthy AI is designed and governed to meet relevant expectations such as reliability, safety, fairness, and accountability.", "No single property or label proves that a system is trustworthy in every context."]
+    },
+    {
+      "questionId": "xai-117",
+      "questionText": "What is responsible AI?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "It includes responsible choices from design and data collection through deployment and monitoring.",
+      "options": [{"id":"A","text":"Developing and using AI with attention to its impacts, risks, rights, and accountability"},{"id":"B","text":"Using AI only when it produces a high-confidence output"},{"id":"C","text":"A tool that automatically makes ethical decisions"},{"id":"D","text":"Publishing every dataset regardless of consent"}],
+      "correctAnswers": ["A"],
+      "summary": ["Responsible AI applies principles and controls across development, deployment, and use to manage impacts and risks.", "It requires human and organizational accountability, not just technical features."]
+    },
+    {
+      "questionId": "xai-118",
+      "questionText": "What is fairness in AI?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "Fairness concerns how people and groups are treated, and the appropriate measure depends on context.",
+      "options": [{"id":"A","text":"Treating people justly under relevant ethical and legal criteria, assessed in context"},{"id":"B","text":"Giving every person identical predictions regardless of relevant circumstances"},{"id":"C","text":"A single universal metric that fits every AI task"},{"id":"D","text":"Removing every feature that could correlate with a protected trait"}],
+      "correctAnswers": ["A"],
+      "summary": ["Fairness concerns equitable treatment and outcomes under context-specific principles and legal requirements.", "Different fairness goals can conflict, so the chosen criteria and trade-offs should be justified."]
+    },
+    {
+      "questionId": "xai-119",
+      "questionText": "How does explainability support fairness?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "Explanations can expose which factors influence decisions and how those factors behave across groups.",
+      "options": [{"id":"A","text":"It can help reviewers investigate decision factors and compare outcomes across relevant groups"},{"id":"B","text":"It guarantees equal outcomes without measurement"},{"id":"C","text":"It removes the need for representative evaluation data"},{"id":"D","text":"It proves that any feature attribution is a causal explanation"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanations can help identify concerning features or patterns for further fairness testing.", "Fairness requires appropriate group metrics, data analysis, and context; explanations alone do not prove fairness."]
+    },
+    {
+      "questionId": "xai-120",
+      "questionText": "What is bias in AI?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "Bias can enter through data, labels, design choices, deployment, or social context.",
+      "options": [{"id":"A","text":"A systematic pattern that can produce distorted or unfair outcomes in a model or its use"},{"id":"B","text":"Any difference between two individual predictions"},{"id":"C","text":"A random software crash"},{"id":"D","text":"A guarantee that model outputs are inaccurate"}],
+      "correctAnswers": ["A"],
+      "summary": ["AI bias can arise from systematic patterns in data, labels, modeling choices, or deployment context that lead to problematic outcomes.", "Not every group difference has the same cause or remedy; investigate the specific setting."]
+    },
+    {
+      "questionId": "xai-121",
+      "questionText": "How can explanations reveal bias?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI", "Must-Know Certification"],
+      "hint": "Compare influential factors and explanation patterns across groups, then test outcomes with suitable metrics.",
+      "options": [{"id":"A","text":"They can highlight suspicious decision factors or differing patterns that warrant fairness investigation"},{"id":"B","text":"They automatically prove a system is unbiased"},{"id":"C","text":"They replace evaluation across demographic groups"},{"id":"D","text":"They guarantee that removing a sensitive feature removes all bias"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanations can surface proxies or group-specific patterns that guide further investigation.", "Bias may remain through correlated features or system design, so conduct broader fairness testing."]
+    },
+    {
+      "questionId": "xai-122",
+      "questionText": "What is ethical AI?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "Ethical use considers impacts on people and society, not just technical performance.",
+      "options": [{"id":"A","text":"AI developed and used in ways that consider human values, rights, harms, and responsibilities"},{"id":"B","text":"AI that is ethical because it is automated"},{"id":"C","text":"AI that optimizes accuracy without considering impacts"},{"id":"D","text":"A model that has no human owners"}],
+      "correctAnswers": ["A"],
+      "summary": ["Ethical AI considers values, rights, harms, benefits, and responsibilities in its design and use.", "Ethical decisions require context and accountable people; they cannot be delegated entirely to a model."]
+    },
+    {
+      "questionId": "xai-123",
+      "questionText": "What is human oversight?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "Oversight gives people a meaningful ability to supervise and intervene.",
+      "options": [{"id":"A","text":"Arrangements that let qualified people monitor, review, correct, or stop an AI system"},{"id":"B","text":"A person who merely watches a dashboard with no authority"},{"id":"C","text":"Allowing a model to approve its own decisions"},{"id":"D","text":"Removing humans from consequential workflows"}],
+      "correctAnswers": ["A"],
+      "summary": ["Human oversight gives responsible people the knowledge, authority, and practical ability to intervene.", "A nominal human check is ineffective if reviewers lack context, time, or power to act."]
+    },
+    {
+      "questionId": "xai-124",
+      "questionText": "Why is Human-in-the-Loop important?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI", "Must-Know Certification"],
+      "hint": "Humans can review exceptions and consequential outcomes, provided they have meaningful authority and information.",
+      "options": [{"id":"A","text":"It enables human judgment, correction, and escalation when automated outputs need review"},{"id":"B","text":"It guarantees that every human reviewer is unbiased"},{"id":"C","text":"It removes the need to design safe systems"},{"id":"D","text":"It means humans must manually approve every low-risk computation"}],
+      "correctAnswers": ["A"],
+      "summary": ["Human-in-the-Loop arrangements can provide review and intervention for uncertain or consequential cases.", "They must be designed carefully to avoid rubber-stamping and should match the level of risk."]
+    },
+    {
+      "questionId": "xai-125",
+      "questionText": "What role do humans play in explainability?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "People interpret explanations, compare them with evidence, and decide what action is appropriate.",
+      "options": [{"id":"A","text":"They assess whether explanations are useful, accurate, and appropriate and act on concerns"},{"id":"B","text":"They accept every explanation without question"},{"id":"C","text":"They transfer accountability to the model"},{"id":"D","text":"They need no domain knowledge to review high-impact decisions"}],
+      "correctAnswers": ["A"],
+      "summary": ["People determine how explanations fit a decision, challenge unsupported claims, and trigger correction or escalation.", "Reviewers need appropriate training, evidence, and authority."]
+    },
+    {
+      "questionId": "xai-126",
+      "questionText": "What is explainability governance?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "Governance defines who gets explanations, what quality they need, and how those explanations are monitored.",
+      "options": [{"id":"A","text":"Policies and responsibilities for designing, validating, delivering, and monitoring AI explanations"},{"id":"B","text":"A technique that automatically generates perfect explanations"},{"id":"C","text":"A requirement to publish all model internals"},{"id":"D","text":"A practice limited to choosing chart colors"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explainability governance establishes roles, standards, access, evaluation, and processes for explanation quality.", "It helps ensure explanations are appropriate for users and decision contexts."]
+    },
+    {
+      "questionId": "xai-127",
+      "questionText": "How can explanations improve accountability?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "A useful record helps identify who approved a system and what evidence informed a decision.",
+      "options": [{"id":"A","text":"They help people inspect decision factors and connect outcomes to responsible roles and controls"},{"id":"B","text":"They make the AI model legally responsible instead of its operator"},{"id":"C","text":"They remove the need to document ownership"},{"id":"D","text":"They guarantee that no one will dispute a decision"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanations and records can clarify the basis of decisions and support investigation of responsible processes.", "Accountability still requires named owners, authority, and remedies."]
+    },
+    {
+      "questionId": "xai-128",
+      "questionText": "What is AI auditability?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI", "Must-Know Certification"],
+      "hint": "An auditable system leaves enough reliable evidence for authorized reviewers to examine it.",
+      "options": [{"id":"A","text":"The ability to examine evidence, records, and controls about an AI system and its decisions"},{"id":"B","text":"A guarantee that an audit will find no issues"},{"id":"C","text":"The publication of every user record"},{"id":"D","text":"A model's ability to explain itself in fluent language"}],
+      "correctAnswers": ["A"],
+      "summary": ["Auditability means reviewers can access reliable evidence about system design, operation, decisions, and controls.", "Records should be sufficient for oversight while protecting privacy and security."]
+    },
+    {
+      "questionId": "xai-129",
+      "questionText": "What is explainable decision-making?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "A decision should have an understandable, reviewable basis and a clear responsible owner.",
+      "options": [{"id":"A","text":"Making decisions with understandable reasons, relevant evidence, and a process for review"},{"id":"B","text":"Accepting an AI score without considering context"},{"id":"C","text":"Using explanations as a substitute for evidence"},{"id":"D","text":"Allowing a system to make decisions with no accountable owner"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explainable decision-making communicates reasons and evidence so that decisions can be evaluated and challenged.", "The explanation should match the actual process and leave room for correction."]
+    },
+    {
+      "questionId": "xai-130",
+      "questionText": "How does XAI support compliance?",
+      "questionType": "single",
+      "skills": ["Trust, Ethics & Responsible AI"],
+      "hint": "Documentation, traceability, and explanations can provide evidence for required oversight.",
+      "options": [{"id":"A","text":"It can help provide decision records and evidence for reviews required by applicable rules"},{"id":"B","text":"It guarantees compliance with every law"},{"id":"C","text":"It replaces legal and policy analysis"},{"id":"D","text":"It requires disclosure of all confidential information"}],
+      "correctAnswers": ["A"],
+      "summary": ["XAI can support compliance by improving documentation, reviewability, and evidence of controls.", "It does not itself satisfy legal requirements; obligations must be assessed for the use and jurisdiction."]
+    },
+    {
+      "questionId": "xai-131",
+      "questionText": "What is AI governance?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk", "Must-Know Certification"],
+      "hint": "It covers the roles, policies, and controls used to oversee AI throughout its lifecycle.",
+      "options": [{"id":"A","text":"The structures, policies, responsibilities, and controls for managing AI systems and their risks"},{"id":"B","text":"A single accuracy metric for a model"},{"id":"C","text":"A process performed only after an AI incident"},{"id":"D","text":"A technique for increasing model size"}],
+      "correctAnswers": ["A"],
+      "summary": ["AI governance defines how organizations direct, oversee, and control AI development and use.", "Effective governance spans the lifecycle and assigns clear responsibilities."]
+    },
+    {
+      "questionId": "xai-132",
+      "questionText": "Why must AI decisions be auditable?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "Records enable authorized people to reconstruct, review, and challenge consequential decisions.",
+      "options": [{"id":"A","text":"To investigate outcomes, verify controls, and demonstrate how decisions were reached"},{"id":"B","text":"To make every internal record public"},{"id":"C","text":"To guarantee no decision will be challenged"},{"id":"D","text":"To avoid assigning system owners"}],
+      "correctAnswers": ["A"],
+      "summary": ["Auditability provides evidence for accountability, incident response, and review of decisions.", "Auditing requires trustworthy, appropriately protected records."]
+    },
+    {
+      "questionId": "xai-133",
+      "questionText": "What are AI guardrails?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk", "Must-Know Certification"],
+      "hint": "Guardrails constrain system behavior and support safe, policy-compliant use.",
+      "options": [{"id":"A","text":"Controls that limit or guide AI inputs, outputs, and actions according to policy"},{"id":"B","text":"A guarantee that a model cannot fail"},{"id":"C","text":"A way to remove all human review"},{"id":"D","text":"A list of model capabilities without operational controls"}],
+      "correctAnswers": ["A"],
+      "summary": ["Guardrails include rules, validation, permissions, filters, and escalation steps that constrain system behavior.", "They reduce risk but must be tested and monitored because they can fail."]
+    },
+    {
+      "questionId": "xai-134",
+      "questionText": "How do guardrails improve explainability?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "Clear controls make it easier to understand why an action was allowed, blocked, or escalated.",
+      "options": [{"id":"A","text":"They define reviewable rules and log when a request triggers an allow, block, or escalation"},{"id":"B","text":"They reveal every parameter in a model automatically"},{"id":"C","text":"They guarantee all explanations are faithful"},{"id":"D","text":"They hide policy decisions from users"}],
+      "correctAnswers": ["A"],
+      "summary": ["Documented guardrails make system boundaries and intervention points clearer to reviewers.", "Logging outcomes and reasons can support explanation, but controls do not expose all model internals."]
+    },
+    {
+      "questionId": "xai-135",
+      "questionText": "What is explainability risk?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "Explanations themselves can mislead, disclose sensitive details, or be used inappropriately.",
+      "options": [{"id":"A","text":"The risk that explanations are inaccurate, misleading, unstable, or disclose sensitive information"},{"id":"B","text":"A guarantee that model explanations are complete"},{"id":"C","text":"The risk that a model responds too quickly"},{"id":"D","text":"A synonym for model accuracy"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanation risk includes false confidence, low fidelity, inconsistent results, and privacy or security leakage.", "Explanation methods need validation and access controls like other system components."]
+    },
+    {
+      "questionId": "xai-136",
+      "questionText": "What are model cards?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "They document a model's intended uses, evaluation, limitations, and performance context.",
+      "options": [{"id":"A","text":"Structured documents describing a model's purpose, evaluation, limitations, and appropriate use"},{"id":"B","text":"Physical cards that store model parameters"},{"id":"C","text":"A guarantee of regulatory approval"},{"id":"D","text":"A list of customer passwords used in training"}],
+      "correctAnswers": ["A"],
+      "summary": ["Model cards communicate model details such as intended use, evaluation results, limitations, and ethical considerations.", "They should be accurate, maintained, and tailored to the model and its audience."]
+    },
+    {
+      "questionId": "xai-137",
+      "questionText": "What are system cards?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "A system-level document describes how models, tools, people, and controls work together.",
+      "options": [{"id":"A","text":"Documents describing an AI system's components, behavior, safeguards, evaluation, and limitations"},{"id":"B","text":"A summary limited to one model's parameter count"},{"id":"C","text":"A record of only user interface colors"},{"id":"D","text":"A substitute for operational monitoring"}],
+      "correctAnswers": ["A"],
+      "summary": ["System cards describe an integrated AI application, including connected components, intended use, safeguards, and evaluation.", "System documentation complements model-level documentation because deployment context changes risk."]
+    },
+    {
+      "questionId": "xai-138",
+      "questionText": "What is AI documentation?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "It records information about system design, data, evaluation, decisions, and operation.",
+      "options": [{"id":"A","text":"Records that describe an AI system's purpose, data, design, evaluation, controls, and changes"},{"id":"B","text":"The model's generated response only"},{"id":"C","text":"A document that guarantees safe operation"},{"id":"D","text":"A collection of undocumented assumptions"}],
+      "correctAnswers": ["A"],
+      "summary": ["AI documentation helps people understand intended use, data, design choices, evaluation, limitations, and operational changes.", "It should be kept current and useful for its intended audience."]
+    },
+    {
+      "questionId": "xai-139",
+      "questionText": "Why should AI systems maintain logs?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "Logs can support monitoring and reconstruction, but must be proportionate and protected.",
+      "options": [{"id":"A","text":"To monitor behavior, investigate incidents, and reconstruct relevant system activity"},{"id":"B","text":"To store sensitive information indefinitely without access controls"},{"id":"C","text":"To replace preventive security measures"},{"id":"D","text":"To guarantee that every event was recorded correctly"}],
+      "correctAnswers": ["A"],
+      "summary": ["Logs provide evidence for operations, investigations, and audits.", "Collect only appropriate information and apply retention, integrity, privacy, and access controls."]
+    },
+    {
+      "questionId": "xai-140",
+      "questionText": "What is explainability compliance?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "It concerns meeting applicable requirements for explaining, documenting, or reviewing AI use.",
+      "options": [{"id":"A","text":"Meeting relevant obligations for explanations, records, oversight, and review of AI systems"},{"id":"B","text":"A universal certificate that makes every AI use lawful"},{"id":"C","text":"Publishing all confidential model details"},{"id":"D","text":"A method for improving model accuracy only"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explainability compliance involves meeting applicable requirements related to transparency, documentation, decisions, or oversight.", "Requirements vary, so the system's purpose, jurisdiction, and affected people must be considered."]
+    },
+    {
+      "questionId": "xai-141",
+      "questionText": "How does explainability support security?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "Understanding system behavior can help detect misuse or unusual paths, but explanations must not leak secrets.",
+      "options": [{"id":"A","text":"It can help investigate anomalous behavior and identify risky pathways while supporting controlled review"},{"id":"B","text":"It requires exposing credentials to all users"},{"id":"C","text":"It replaces access control and threat modeling"},{"id":"D","text":"It guarantees that the model cannot be manipulated"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanatory traces can help security teams investigate behavior and identify unexpected tool use or inputs.", "Explanation access must be controlled to avoid exposing sensitive system details."]
+    },
+    {
+      "questionId": "xai-142",
+      "questionText": "What is data lineage?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "Lineage follows data from its source through transformations and use.",
+      "options": [{"id":"A","text":"A record of where data came from and how it was transformed and used"},{"id":"B","text":"A prediction of which data will be collected next year"},{"id":"C","text":"A method for encrypting a dataset"},{"id":"D","text":"A list of model outputs without their inputs"}],
+      "correctAnswers": ["A"],
+      "summary": ["Data lineage tracks data provenance and transformations through a system's lifecycle.", "It helps with quality checks, rights management, debugging, and audits."]
+    },
+    {
+      "questionId": "xai-143",
+      "questionText": "What is decision lineage?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "It links a decision to the data, model, rules, and human approvals that influenced it.",
+      "options": [{"id":"A","text":"A trace connecting an outcome to relevant inputs, model versions, rules, and review steps"},{"id":"B","text":"A description of how model weights were initialized only"},{"id":"C","text":"A guarantee that a decision was fair"},{"id":"D","text":"A record of employee reporting lines"}],
+      "correctAnswers": ["A"],
+      "summary": ["Decision lineage records the key components and stages contributing to a decision, including human actions where relevant.", "It supports reconstruction and review but does not itself establish that the decision was appropriate."]
+    },
+    {
+      "questionId": "xai-144",
+      "questionText": "What is model monitoring?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "Monitoring checks behavior and performance over time after deployment.",
+      "options": [{"id":"A","text":"Ongoing measurement of model performance, data changes, errors, and operational risks"},{"id":"B","text":"A one-time review before deployment only"},{"id":"C","text":"A way to prevent any data or behavior change"},{"id":"D","text":"A dashboard that shows only model age"}],
+      "correctAnswers": ["A"],
+      "summary": ["Model monitoring tracks performance, drift, data quality, safety, and other relevant indicators in production.", "Monitoring should have owners and thresholds that trigger investigation or intervention."]
+    },
+    {
+      "questionId": "xai-145",
+      "questionText": "How does explainability help incident investigation?",
+      "questionType": "single",
+      "skills": ["Governance, Security & Risk"],
+      "hint": "An investigator needs evidence about inputs, versions, decisions, sources, and actions.",
+      "options": [{"id":"A","text":"It can help reconstruct contributing factors and identify where a failure or unsafe action occurred"},{"id":"B","text":"It guarantees the root cause is obvious from one explanation"},{"id":"C","text":"It removes the need to preserve logs"},{"id":"D","text":"It makes all incidents impossible"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanations and traces can help investigators locate contributing factors and understand a system's path to an outcome.", "Root-cause analysis still needs reliable records, technical investigation, and domain context."]
+    },
+    {
+      "questionId": "xai-146",
+      "questionText": "How should enterprises implement XAI?",
+      "questionType": "single",
+      "skills": ["Enterprise XAI"],
+      "hint": "Start with the decision, audience, and risk, then choose and validate appropriate methods.",
+      "options": [{"id":"A","text":"Define stakeholder needs and risk, select suitable methods, validate explanations, and integrate them into governance"},{"id":"B","text":"Choose one explanation tool and use it for every model and audience"},{"id":"C","text":"Add explanations only after an incident"},{"id":"D","text":"Assume technical transparency alone ensures adoption"}],
+      "correctAnswers": ["A"],
+      "summary": ["Enterprise XAI should begin with use cases, affected stakeholders, and the decisions explanations must support.", "Select, evaluate, and govern methods throughout development and deployment, then monitor their value and risk."]
+    },
+    {
+      "questionId": "xai-147",
+      "questionText": "What are XAI KPIs?",
+      "questionType": "single",
+      "skills": ["Enterprise XAI"],
+      "hint": "Measure whether explanations are faithful, useful, understandable, and used appropriately.",
+      "options": [{"id":"A","text":"Indicators such as explanation fidelity, stability, user comprehension, review outcomes, and coverage"},{"id":"B","text":"A single universal score that proves trustworthiness"},{"id":"C","text":"The number of words shown in every explanation"},{"id":"D","text":"Measures limited to model accuracy"}],
+      "correctAnswers": ["A"],
+      "summary": ["XAI KPIs should reflect explanation quality and outcomes, such as fidelity, stability, comprehension, and successful review.", "Use metrics appropriate to the users, risk, and decision; no one score captures explainability."]
+    },
+    {
+      "questionId": "xai-148",
+      "questionText": "How can XAI improve business adoption?",
+      "questionType": "single",
+      "skills": ["Enterprise XAI"],
+      "hint": "Explanations can help teams fit AI outputs into existing decisions and know when to escalate.",
+      "options": [{"id":"A","text":"It helps employees understand outputs, verify their basis, and use them with appropriate confidence"},{"id":"B","text":"It forces employees to automate every decision"},{"id":"C","text":"It guarantees that users will prefer AI"},{"id":"D","text":"It replaces workflow and usability design"}],
+      "correctAnswers": ["A"],
+      "summary": ["Well-designed explanations can make AI outputs more actionable and easier to integrate into business processes.", "Adoption depends on reliable performance, usability, training, and clear accountability as well."]
+    },
+    {
+      "questionId": "xai-149",
+      "questionText": "How can XAI improve customer service AI?",
+      "questionType": "single",
+      "skills": ["Enterprise XAI"],
+      "hint": "Customers and support agents benefit from knowing the evidence behind a response and when to escalate.",
+      "options": [{"id":"A","text":"Show relevant sources and limits, and make escalation to a human easy"},{"id":"B","text":"Hide that AI is involved and block human escalation"},{"id":"C","text":"Present every generated answer as verified fact"},{"id":"D","text":"Expose another customer's private conversation as evidence"}],
+      "correctAnswers": ["A"],
+      "summary": ["Customer-service explanations can cite approved information, identify uncertainty, and offer a route to human help.", "Personal data and access rights must be protected when presenting evidence."]
+    },
+    {
+      "questionId": "xai-150",
+      "questionText": "How can XAI support executive decision making?",
+      "questionType": "single",
+      "skills": ["Enterprise XAI"],
+      "hint": "Executives need concise evidence, assumptions, uncertainties, and implications rather than raw model internals.",
+      "options": [{"id":"A","text":"Summarize relevant drivers, evidence, uncertainty, and limitations for the decision at hand"},{"id":"B","text":"Show all model parameters without context"},{"id":"C","text":"Hide uncertainty to simplify the choice"},{"id":"D","text":"Replace executive accountability with a model score"}],
+      "correctAnswers": ["A"],
+      "summary": ["Executive explanations should communicate decision-relevant evidence, assumptions, uncertainty, and potential impact.", "They should be concise without hiding important caveats or the accountable decision-maker."]
+    },
+    {
+      "questionId": "xai-151",
+      "questionText": "What role does explainability play in AI transformation?",
+      "questionType": "single",
+      "skills": ["Enterprise XAI"],
+      "hint": "Large-scale adoption requires capabilities for oversight and organizational learning, not only models.",
+      "options": [{"id":"A","text":"It helps organizations integrate AI with transparent processes, accountable roles, and continuous improvement"},{"id":"B","text":"It allows an organization to skip change management"},{"id":"C","text":"It guarantees every AI project will succeed"},{"id":"D","text":"It requires automating every business process"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explainability supports organizational learning, oversight, and confidence as AI is incorporated into workflows.", "Successful transformation also requires data, skills, process design, and sustained governance."]
+    },
+    {
+      "questionId": "xai-152",
+      "questionText": "How do you explain an LLM output to a business user?",
+      "questionType": "single",
+      "skills": ["Enterprise XAI", "Must-Know Certification"],
+      "hint": "Use plain language to summarize what supports the answer, what it cannot establish, and when to verify it.",
+      "options": [{"id":"A","text":"Give a concise answer with relevant evidence, important limitations, and a clear way to verify or escalate"},{"id":"B","text":"Say the model produced it, so no further explanation is needed"},{"id":"C","text":"Provide a confident rationale without checking its evidence"},{"id":"D","text":"Reveal confidential technical or customer data unrelated to the question"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explain the answer in business terms and point to relevant evidence, uncertainty, and limitations.", "Offer a way to verify or escalate important claims, and avoid exposing unnecessary confidential information."]
+    },
+    {
+      "questionId": "xai-153",
+      "questionText": "What explainability reports should be generated?",
+      "questionType": "single",
+      "skills": ["Enterprise XAI"],
+      "hint": "Reports should be appropriate for their audience and cover both the model and its use.",
+      "options": [{"id":"A","text":"Reports on intended use, data and model provenance, evaluation, explanations, limitations, monitoring, and incidents"},{"id":"B","text":"A report containing only an accuracy score"},{"id":"C","text":"The same internal technical report for every audience"},{"id":"D","text":"Reports that omit known limitations"}],
+      "correctAnswers": ["A"],
+      "summary": ["Useful reports can include system purpose, data lineage, evaluation, explanation quality, limitations, controls, and monitoring results.", "The format and detail should fit the audience, from operators to auditors and affected users."]
+    },
+    {
+      "questionId": "xai-154",
+      "questionText": "How should AI decisions be documented?",
+      "questionType": "single",
+      "skills": ["Enterprise XAI"],
+      "hint": "Keep enough context to reproduce and review a decision without collecting unnecessary sensitive data.",
+      "options": [{"id":"A","text":"Record relevant inputs, model and policy versions, evidence, outputs, approvals, and review outcomes"},{"id":"B","text":"Store only the final answer with no version or context"},{"id":"C","text":"Keep every user's personal data forever"},{"id":"D","text":"Rely on the model to remember its past decisions"}],
+      "correctAnswers": ["A"],
+      "summary": ["Decision records should include enough context to support reconstruction, review, and accountability.", "Apply data minimization, access controls, retention limits, and integrity protections."]
+    },
+    {
+      "questionId": "xai-155",
+      "questionText": "How can XAI improve user experience?",
+      "questionType": "single",
+      "skills": ["Enterprise XAI"],
+      "hint": "Give people clear, timely information and a way to verify or question important results.",
+      "options": [{"id":"A","text":"Present relevant reasons, evidence, uncertainty, and next steps in an understandable format"},{"id":"B","text":"Show raw model internals to every user"},{"id":"C","text":"Hide errors and uncertainty to reduce screen clutter"},{"id":"D","text":"Require users to read lengthy technical documentation for every result"}],
+      "correctAnswers": ["A"],
+      "summary": ["User-centered explanations make important results easier to understand and act on without overwhelming people.", "Use research and testing to tailor detail, terminology, accessibility, and controls."]
+    },
+    {
+      "questionId": "xai-156",
+      "questionText": "Explain the trade-off between accuracy and explainability.",
+      "questionType": "single",
+      "skills": ["Advanced Interview Questions"],
+      "hint": "More complex models may perform better on some tasks, while simpler models may be easier to inspect.",
+      "options": [{"id":"A","text":"Some tasks involve a trade-off, but it is context-dependent and should be measured rather than assumed"},{"id":"B","text":"Explainability always reduces accuracy by a fixed amount"},{"id":"C","text":"Accuracy and explainability are identical measures"},{"id":"D","text":"A complex model is always both more accurate and more explainable"}],
+      "correctAnswers": ["A"],
+      "summary": ["Complex models can outperform simpler interpretable models on some tasks, but the trade-off varies by data and objective.", "Compare task performance, explanation quality, and risk; sometimes an interpretable model performs just as well or better."]
+    },
+    {
+      "questionId": "xai-157",
+      "questionText": "Can a highly explainable model outperform a black-box model?",
+      "questionType": "single",
+      "skills": ["Advanced Interview Questions"],
+      "hint": "Performance depends on the task, data, constraints, and evaluation criteria.",
+      "options": [{"id":"A","text":"Yes; on some tasks a simpler model can match or exceed a complex one, though results are context-dependent"},{"id":"B","text":"No; explainable models are always less accurate"},{"id":"C","text":"Yes; every interpretable model is always more accurate"},{"id":"D","text":"No; explainability and performance cannot be compared"}],
+      "correctAnswers": ["A"],
+      "summary": ["A highly explainable model can outperform a black-box model when its inductive assumptions fit the task or data well.", "The comparison should use representative data and metrics relevant to the actual use."]
+    },
+    {
+      "questionId": "xai-158",
+      "questionText": "How would you explain an LLM response to a regulator?",
+      "questionType": "single",
+      "skills": ["Advanced Interview Questions"],
+      "hint": "Describe the system and decision process with traceable evidence, limitations, and controls.",
+      "options": [{"id":"A","text":"Document the model and version, prompts, retrieved sources, output checks, uncertainty, controls, and human review"},{"id":"B","text":"Provide only the model's generated chain of thought as conclusive proof"},{"id":"C","text":"Claim the model is accurate because it sounds confident"},{"id":"D","text":"Omit the data and deployment context"}],
+      "correctAnswers": ["A"],
+      "summary": ["A regulator-facing account should be factual and reproducible: explain system purpose, model version, inputs, evidence, controls, evaluation, and review.", "Do not present generated reasoning as a guaranteed faithful record; tailor disclosures to applicable obligations."]
+    },
+    {
+      "questionId": "xai-159",
+      "questionText": "How would you explain a hallucinated answer?",
+      "questionType": "single",
+      "skills": ["Advanced Interview Questions"],
+      "hint": "Explain how unsupported generation can happen, then identify what evidence and safeguards were missing.",
+      "options": [{"id":"A","text":"State that the model generated a plausible but unsupported claim, trace its context, and explain corrective checks"},{"id":"B","text":"Call it a verified fact because the output was fluent"},{"id":"C","text":"Blame the user without examining system behavior"},{"id":"D","text":"Claim that hallucinations cannot occur in a well-designed system"}],
+      "correctAnswers": ["A"],
+      "summary": ["A hallucination should be described as unsupported or inaccurate generated content, with evidence showing what was checked.", "Investigate prompt, retrieval, source quality, model behavior, and review controls before drawing conclusions."]
+    },
+    {
+      "questionId": "xai-160",
+      "questionText": "How would you build explainability into a RAG solution?",
+      "questionType": "single",
+      "skills": ["Advanced Interview Questions"],
+      "hint": "Make retrieval and generation inspectable, and test whether cited passages actually support claims.",
+      "options": [{"id":"A","text":"Record source provenance and retrieved passages, cite claim-level evidence, expose uncertainty, and evaluate grounding"},{"id":"B","text":"Show citations without checking whether sources support the output"},{"id":"C","text":"Hide retrieval results and log only the final answer"},{"id":"D","text":"Assume that retrieval eliminates hallucinations"}],
+      "correctAnswers": ["A"],
+      "summary": ["A transparent RAG design records retrieval queries, source identifiers, passages, model versions, and generated outputs.", "Evaluate retrieval quality and claim-to-source support; citations do not guarantee faithful grounding."]
+    },
+    {
+      "questionId": "xai-161",
+      "questionText": "How would you design explainability for an AI agent?",
+      "questionType": "single",
+      "skills": ["Advanced Interview Questions"],
+      "hint": "Trace decisions and side effects end-to-end, and include authorization and human approval points.",
+      "options": [{"id":"A","text":"Log goals, plans, allowed tools, validated calls, observations, approvals, outcomes, and concise rationales"},{"id":"B","text":"Expose credentials and raw private reasoning to every user"},{"id":"C","text":"Record only the final answer and discard actions"},{"id":"D","text":"Give the agent unrestricted tools and rely on explanations afterward"}],
+      "correctAnswers": ["A"],
+      "summary": ["Agent explainability should make plans, tool calls, evidence, permissions, approvals, and results traceable end-to-end.", "Use privacy-aware logs, meaningful human controls, and clear explanations suitable for operators and users."]
+    },
+    {
+      "questionId": "xai-162",
+      "questionText": "How would you audit an LLM decision?",
+      "questionType": "single",
+      "skills": ["Advanced Interview Questions"],
+      "hint": "Reconstruct the run using versioned inputs, configuration, sources, outputs, and review records.",
+      "options": [{"id":"A","text":"Inspect the use case, model and prompt versions, inputs, retrieval, output, evaluations, controls, and approvals"},{"id":"B","text":"Ask the same LLM whether it behaved correctly and accept the answer"},{"id":"C","text":"Review only whether the response was grammatically correct"},{"id":"D","text":"Audit without preserving any system records"}],
+      "correctAnswers": ["A"],
+      "summary": ["An LLM audit examines system purpose, data and model provenance, prompts, retrieval, outputs, evaluation, access, controls, and human review.", "Use independent evidence and assess both expected behavior and relevant failure modes."]
+    },
+    {
+      "questionId": "xai-163",
+      "questionText": "How would you explain a multi-agent workflow?",
+      "questionType": "single",
+      "skills": ["Advanced Interview Questions"],
+      "hint": "Describe each agent's role and how information and responsibility move between them.",
+      "options": [{"id":"A","text":"Show roles, task routing, handoffs, shared evidence, tool actions, validation, and final responsibility"},{"id":"B","text":"Show only the final answer from the whole system"},{"id":"C","text":"Assume every agent independently verified all other agents"},{"id":"D","text":"Hide agent identities to simplify the audit"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explain the workflow by showing components, delegation, information flow, tool use, checks, and ownership.", "The explanation should reveal dependencies and shared failure risks rather than implying that multiple agents guarantee correctness."]
+    },
+    {
+      "questionId": "xai-164",
+      "questionText": "How would you evaluate explanation quality?",
+      "questionType": "single",
+      "skills": ["Advanced Interview Questions"],
+      "hint": "Evaluate whether explanations are faithful, stable, understandable, useful, and safe for the audience.",
+      "options": [{"id":"A","text":"Measure fidelity, stability, completeness, user comprehension, decision usefulness, and privacy risk"},{"id":"B","text":"Count words and treat longer explanations as better"},{"id":"C","text":"Ask only whether users like the visual design"},{"id":"D","text":"Assume explanation quality is identical to model accuracy"}],
+      "correctAnswers": ["A"],
+      "summary": ["Explanation quality is multidimensional: evaluate fidelity, consistency, comprehensibility, usefulness, and potential harms.", "Use task-specific quantitative tests and feedback from relevant users or domain experts."]
+    },
+    {
+      "questionId": "xai-165",
+      "questionText": "What is the future of XAI in Agentic AI ecosystems?",
+      "questionType": "single",
+      "skills": ["Advanced Interview Questions"],
+      "hint": "Consider explainability across connected models, tools, data, and autonomous actions.",
+      "options": [{"id":"A","text":"More end-to-end, evidence-linked traces and governance that support human oversight across agents and tools"},{"id":"B","text":"Removing audit trails as agents become more capable"},{"id":"C","text":"Relying only on longer generated chains of thought"},{"id":"D","text":"Treating agent autonomy as a substitute for accountability"}],
+      "correctAnswers": ["A"],
+      "summary": ["As agentic systems expand, XAI will need to connect evidence, decisions, tool actions, and outcomes across components.", "Reliable progress requires validated explanations, secure traceability, and meaningful human accountability."]
+    }
+  ]
+}
