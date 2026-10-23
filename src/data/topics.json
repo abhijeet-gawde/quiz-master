@@ -43,6 +43,13 @@
       "accent": "coral"
     },
     {
+      "id": "model-context-protocol-mcp-beginner",
+      "name": "Model Context Protocol (MCP)",
+      "description": "Learn MCP clients, servers, tools, APIs, transports, security, remote hosting, authentication, and RAG fundamentals.",
+      "level": "Beginner",
+      "accent": "mint"
+    },
+    {
       "id": "explainable-ai-beginner",
       "name": "Explainable AI (XAI)",
       "description": "Learn how to understand, explain, and govern AI and generative AI decisions.",

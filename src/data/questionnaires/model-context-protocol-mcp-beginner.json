@@ -1,0 +1,1085 @@
+{
+  "topicId": "model-context-protocol-mcp-beginner",
+  "questions": [
+    {
+      "questionId": "mcp-1",
+      "questionText": "What is one important difference between a conventional fixed-flow program and an AI agent?",
+      "questionType": "single",
+      "skills": ["Agents and Tool Use"],
+      "hint": "Consider who decides what to do next.",
+      "options": [
+        {"id":"A","text":"An agent can use a model to make some decisions about what to do next"},
+        {"id":"B","text":"A fixed-flow program always learns new behavior from every request"},
+        {"id":"C","text":"An agent cannot follow predefined rules"},
+        {"id":"D","text":"A fixed-flow program always has access to external tools"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An agent uses a model to make some decisions as it works toward a goal.", "A fixed-flow program follows steps explicitly laid out in its code."]
+    },
+    {
+      "questionId": "mcp-2",
+      "questionText": "What can an agent do after deciding a tool would help?",
+      "questionType": "single",
+      "skills": ["Agents and Tool Use"],
+      "hint": "Think about what happens after the tool returns its result.",
+      "options": [
+        {"id":"A","text":"Choose the tool, provide inputs, inspect the result, and decide what to do next"},
+        {"id":"B","text":"Assume the tool succeeded without checking its result"},
+        {"id":"C","text":"Show the user the tool's source code instead of calling it"},
+        {"id":"D","text":"Stop processing the request immediately"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An agent can select and call a tool, inspect its result, and continue or respond.", "The tool result becomes part of the agent's decision process."]
+    },
+    {
+      "questionId": "mcp-3",
+      "questionText": "What does the ReAct idea describe?",
+      "questionType": "single",
+      "skills": ["Agents and Tool Use"],
+      "hint": "The name combines thinking with doing.",
+      "options": [
+        {"id":"A","text":"Reasoning interleaved with actions"},
+        {"id":"B","text":"A format for storing API keys"},
+        {"id":"C","text":"A method for converting text into embeddings"},
+        {"id":"D","text":"A transport used only by local MCP servers"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["ReAct is a reasoning-and-action pattern used to explain agent tool-use loops.", "It is background for understanding agents that reason, act, and consider results."]
+    },
+    {
+      "questionId": "mcp-4",
+      "questionText": "Does every request to an agent need a tool call?",
+      "questionType": "single",
+      "skills": ["Agents and Tool Use"],
+      "hint": "Some requests can be answered without external information or actions.",
+      "options": [
+        {"id":"A","text":"No. An agent may answer directly when a tool is unnecessary"},
+        {"id":"B","text":"Yes. Every agent response must call every available tool"},
+        {"id":"C","text":"Yes. Tools are required for all language generation"},
+        {"id":"D","text":"No. Agents are not allowed to use tools"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An agent can answer directly or use a tool depending on the request.", "Tool use should be selected when it helps, not treated as mandatory."]
+    },
+    {
+      "questionId": "mcp-5",
+      "questionText": "In a coding-agent workflow, what is a sensible sequence before the final response?",
+      "questionType": "single",
+      "skills": ["Agents and Tool Use"],
+      "hint": "The agent needs to observe what its chosen actions did.",
+      "options": [
+        {"id":"A","text":"Inspect information, select tools, observe results, and respond when the task is complete"},
+        {"id":"B","text":"Call tools at random and ignore their outputs"},
+        {"id":"C","text":"Respond first, then decide what the user asked"},
+        {"id":"D","text":"Ask the model to execute code without application controls"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Tool use involves observing, acting, and considering outcomes before responding.", "The agent can repeat the loop if the task needs more than one action."]
+    },
+    {
+      "questionId": "mcp-6",
+      "questionText": "Why might an agent need a tool rather than relying only on its model?",
+      "questionType": "single",
+      "skills": ["Agents and Tool Use"],
+      "hint": "Think about access to current or external information.",
+      "options": [
+        {"id":"A","text":"A tool can access external data or perform actions such as reading files or querying an API"},
+        {"id":"B","text":"A tool guarantees that every answer is correct"},
+        {"id":"C","text":"A tool permanently changes the model's training"},
+        {"id":"D","text":"A tool removes the need to validate inputs"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Tools extend an agent with access to information or actions beyond a model-only response.", "Examples include current data, files, APIs, and databases."]
+    },
+    {
+      "questionId": "mcp-7",
+      "questionText": "What problem does MCP address when agents need to use external tools?",
+      "questionType": "single",
+      "skills": ["MCP Architecture"],
+      "hint": "Consider what happens if every agent implements the same integration separately.",
+      "options": [
+        {"id":"A","text":"It provides a common way to connect clients to separately implemented tools"},
+        {"id":"B","text":"It replaces all APIs with one database"},
+        {"id":"C","text":"It prevents clients from using external services"},
+        {"id":"D","text":"It requires every tool to be part of the model"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["MCP offers a common protocol so tools can be reused by compatible clients.", "This avoids implementing every tool separately inside each agent."]
+    },
+    {
+      "questionId": "mcp-8",
+      "questionText": "What role does MCP play in an AI application's tool architecture?",
+      "questionType": "single",
+      "skills": ["MCP Architecture"],
+      "hint": "It connects the application side to the side providing tools.",
+      "options": [
+        {"id":"A","text":"A protocol connecting MCP clients to tools exposed by MCP servers"},
+        {"id":"B","text":"A programming language used to train LLMs"},
+        {"id":"C","text":"A database for storing API credentials"},
+        {"id":"D","text":"A user interface for creating documents"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["MCP defines a common way for clients and servers to communicate about available tools.", "Clients can use tools provided separately by servers."]
+    },
+    {
+      "questionId": "mcp-9",
+      "questionText": "What is an MCP client?",
+      "questionType": "single",
+      "skills": ["MCP Architecture"],
+      "hint": "It is the application that connects to the server.",
+      "options": [
+        {"id":"A","text":"An application or agent that communicates with MCP servers"},
+        {"id":"B","text":"A function that can only run in a browser"},
+        {"id":"C","text":"A server that publishes API documentation"},
+        {"id":"D","text":"A database record returned by a tool"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An MCP client implements the client side of the protocol and communicates with servers.", "The client may be an AI-enabled application or agent."]
+    },
+    {
+      "questionId": "mcp-10",
+      "questionText": "What is an MCP server?",
+      "questionType": "single",
+      "skills": ["MCP Architecture"],
+      "hint": "It makes callable operations available to clients.",
+      "options": [
+        {"id":"A","text":"A service that makes one or more tools available to clients"},
+        {"id":"B","text":"The language model's hidden reasoning process"},
+        {"id":"C","text":"A user account used to sign in to a website"},
+        {"id":"D","text":"A JSON file containing only quiz questions"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An MCP server exposes tools to compatible clients.", "The server can be implemented separately from the client application."]
+    },
+    {
+      "questionId": "mcp-11",
+      "questionText": "What is an MCP tool in the basic model?",
+      "questionType": "single",
+      "skills": ["MCP Architecture"],
+      "hint": "It is something callable with defined inputs and an outcome.",
+      "options": [
+        {"id":"A","text":"A callable operation, commonly a function with inputs and a result"},
+        {"id":"B","text":"A model's training dataset"},
+        {"id":"C","text":"A network cable between two computers"},
+        {"id":"D","text":"A user interface theme"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A tool performs a defined operation when called with suitable inputs.", "MCP servers make tools available to clients."]
+    },
+    {
+      "questionId": "mcp-12",
+      "questionText": "Which are examples of applications that could be MCP clients?",
+      "questionType": "multiple",
+      "skills": ["MCP Architecture"],
+      "hint": "A client is an application that connects to MCP servers.",
+      "options": [
+        {"id":"A","text":"A coding assistant"},
+        {"id":"B","text":"A personal assistant"},
+        {"id":"C","text":"A voice-oriented assistant"},
+        {"id":"D","text":"A protocol message identifier"}
+      ],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Coding assistants, personal assistants, and voice assistants can all be clients.", "A message identifier is protocol data, not an application."]
+    },
+    {
+      "questionId": "mcp-13",
+      "questionText": "What tool information is presented to a model, and what is not?",
+      "questionType": "single",
+      "skills": ["MCP Architecture", "Tool Design"],
+      "hint": "The model needs enough metadata to choose and call a tool.",
+      "options": [
+        {"id":"A","text":"The tool name, description, and input schema may be presented; implementation code is not"},
+        {"id":"B","text":"Only the implementation code is presented"},
+        {"id":"C","text":"The model is always given unrestricted access to the server's files"},
+        {"id":"D","text":"No information about tools is presented"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Tool metadata helps a model understand and call a tool without exposing its implementation code.", "This distinction also means descriptions alone cannot prove what the code does."]
+    },
+    {
+      "questionId": "mcp-14",
+      "questionText": "Why can MCP servers make agent systems more modular?",
+      "questionType": "single",
+      "skills": ["MCP Architecture"],
+      "hint": "Consider whether tools have to be built into one specific agent.",
+      "options": [
+        {"id":"A","text":"Tools can be implemented separately and shared across compatible clients"},
+        {"id":"B","text":"Every server must contain a complete AI model"},
+        {"id":"C","text":"Clients can no longer use more than one tool"},
+        {"id":"D","text":"All server code is copied into each model"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Separate servers can provide reusable capabilities to compatible clients.", "This supports modularity and avoids duplicating integrations in each agent."]
+    },
+    {
+      "questionId": "mcp-15",
+      "questionText": "Why consult MCP SDK and protocol documentation when building a server?",
+      "questionType": "single",
+      "skills": ["Building and Testing Tools"],
+      "hint": "Documentation describes how the SDK and protocol should be used.",
+      "options": [
+        {"id":"A","text":"It provides implementation guidance for the protocol and SDK"},
+        {"id":"B","text":"It automatically writes and secures every tool"},
+        {"id":"C","text":"It removes the need to test the server"},
+        {"id":"D","text":"It provides user passwords for remote services"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Protocol and SDK documentation helps developers implement a compatible server.", "Relevant documentation can also help a coding assistant generate code that follows the intended APIs."]
+    },
+    {
+      "questionId": "mcp-16",
+      "questionText": "What is FastMCP used for when building an MCP server in Python?",
+      "questionType": "single",
+      "skills": ["Building and Testing Tools"],
+      "hint": "It is a Python interface for creating MCP servers.",
+      "options": [
+        {"id":"A","text":"A higher-level Python interface for creating servers and exposing functions as tools"},
+        {"id":"B","text":"A cloud provider's OAuth password manager"},
+        {"id":"C","text":"A vector database query language"},
+        {"id":"D","text":"A replacement for all HTTP methods"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["FastMCP is a higher-level Python interface for creating MCP servers and registering functions as tools.", "It helps reduce the setup needed to expose functions as tools."]
+    },
+    {
+      "questionId": "mcp-17",
+      "questionText": "Why should an MCP tool have a clear name and description?",
+      "questionType": "single",
+      "skills": ["Tool Design"],
+      "hint": "The client or model uses this information when deciding what to call.",
+      "options": [
+        {"id":"A","text":"They help clients and models understand the tool's purpose and when to use it"},
+        {"id":"B","text":"They hide the tool from every client"},
+        {"id":"C","text":"They guarantee the tool implementation is safe"},
+        {"id":"D","text":"They replace the tool's input validation"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Names and descriptions help explain the tool's purpose.", "They do not replace testing, validation, or security review of its implementation."]
+    },
+    {
+      "questionId": "mcp-18",
+      "questionText": "What purpose do parameter types and input schemas serve?",
+      "questionType": "single",
+      "skills": ["Tool Design"],
+      "hint": "They describe what information a tool expects.",
+      "options": [
+        {"id":"A","text":"They describe acceptable tool inputs so clients can provide suitable values"},
+        {"id":"B","text":"They encrypt every response from the server"},
+        {"id":"C","text":"They decide which hosting provider to use"},
+        {"id":"D","text":"They store the model's conversation history permanently"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Types and schemas describe the inputs a tool accepts.", "Clients can use that information to construct suitable calls."]
+    },
+    {
+      "questionId": "mcp-19",
+      "questionText": "What is the MCP Inspector for?",
+      "questionType": "single",
+      "skills": ["Building and Testing Tools"],
+      "hint": "It lets you examine and invoke tools without relying on an agent to choose them.",
+      "options": [
+        {"id":"A","text":"Inspecting available tools and testing calls against a server"},
+        {"id":"B","text":"Creating OAuth identities for every user"},
+        {"id":"C","text":"Automatically deploying a server to the cloud"},
+        {"id":"D","text":"Replacing the MCP client in production"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["The Inspector helps developers connect to a server, list its tools, and invoke them.", "This isolates tool testing from an agent's tool-selection behavior."]
+    },
+    {
+      "questionId": "mcp-20",
+      "questionText": "Why might an MCP server fail to start if its configuration is incomplete?",
+      "questionType": "single",
+      "skills": ["Building and Testing Tools"],
+      "hint": "The server may depend on configuration such as an API credential.",
+      "options": [
+        {"id":"A","text":"A required setting or environment variable may be missing"},
+        {"id":"B","text":"The tool description has too many words"},
+        {"id":"C","text":"The server always needs a graphical user interface"},
+        {"id":"D","text":"A JSON-RPC identifier is missing from every startup command"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Servers may require environment variables or settings such as API keys.", "Configuration should be supplied securely and checked when the server starts."]
+    },
+    {
+      "questionId": "mcp-21",
+      "questionText": "Why use environment variables for API keys instead of hard-coding them?",
+      "questionType": "single",
+      "skills": ["Security and Secrets"],
+      "hint": "Think about what happens if source code is shared publicly.",
+      "options": [
+        {"id":"A","text":"To reduce the chance of exposing secrets in source code or a public repository"},
+        {"id":"B","text":"To make the API key visible to the language model"},
+        {"id":"C","text":"To ensure the key never expires"},
+        {"id":"D","text":"To disable authentication on the API"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Keeping secrets outside source code reduces accidental exposure.", "Environment variables are one configuration mechanism; they still need appropriate protection."]
+    },
+    {
+      "questionId": "mcp-22",
+      "questionText": "What role can uv play in a Python MCP project?",
+      "questionType": "single",
+      "skills": ["Building and Testing Tools"],
+      "hint": "It helps manage a Python project's setup.",
+      "options": [
+        {"id":"A","text":"Managing project setup, environments, and dependencies"},
+        {"id":"B","text":"Serving as an OAuth authorization server"},
+        {"id":"C","text":"Creating embeddings for every language model"},
+        {"id":"D","text":"Translating HTTP into JSON-RPC"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["uv can manage Python project setup, environments, and dependencies.", "It helps prepare the development environment for an MCP server."]
+    },
+    {
+      "questionId": "mcp-23",
+      "questionText": "What does API stand for, and what does it provide?",
+      "questionType": "single",
+      "skills": ["API Fundamentals"],
+      "hint": "It is an interface intended for software-to-software interaction.",
+      "options": [
+        {"id":"A","text":"Application Programming Interface; a programmatic way to access a service or its data"},
+        {"id":"B","text":"Automated Protocol Identifier; a language model training method"},
+        {"id":"C","text":"Application Permission Index; a type of database"},
+        {"id":"D","text":"Agent Processing Instruction; a graphical interface"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An API is an Application Programming Interface.", "It lets software interact programmatically with another service."]
+    },
+    {
+      "questionId": "mcp-24",
+      "questionText": "How does an API differ from a graphical user interface?",
+      "questionType": "single",
+      "skills": ["API Fundamentals"],
+      "hint": "One is typically used by people directly; the other by software.",
+      "options": [
+        {"id":"A","text":"A graphical interface is for direct human use; an API enables programmatic requests"},
+        {"id":"B","text":"An API can only be used by people with a mouse"},
+        {"id":"C","text":"A graphical interface is always more secure than an API"},
+        {"id":"D","text":"An API is a visual layout of buttons and menus"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A graphical interface helps people interact directly with an application.", "An API exposes operations for software to call."]
+    },
+    {
+      "questionId": "mcp-25",
+      "questionText": "What is an API endpoint?",
+      "questionType": "single",
+      "skills": ["API Fundamentals"],
+      "hint": "It is a specific route or URL used to request an operation.",
+      "options": [
+        {"id":"A","text":"A specific URL or route for requesting an API operation or data"},
+        {"id":"B","text":"The final answer generated by an LLM"},
+        {"id":"C","text":"The private source code of an API client"},
+        {"id":"D","text":"A user permission scope"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An endpoint identifies a particular API route or operation.", "Clients send requests to endpoints and process the responses."]
+    },
+    {
+      "questionId": "mcp-26",
+      "questionText": "What are a request and a response in a typical API interaction?",
+      "questionType": "single",
+      "skills": ["API Fundamentals"],
+      "hint": "The client sends one, and the service returns the other.",
+      "options": [
+        {"id":"A","text":"The client sends a request; the service processes it and returns a response"},
+        {"id":"B","text":"The service sends a request to itself and hides the response"},
+        {"id":"C","text":"A request is an API key and a response is a password"},
+        {"id":"D","text":"They are two names for an endpoint"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A client sends a request to an API, which returns a response.", "The response often contains requested data or the result of an operation."]
+    },
+    {
+      "questionId": "mcp-27",
+      "questionText": "What is the GET HTTP method commonly used for?",
+      "questionType": "single",
+      "skills": ["API Fundamentals"],
+      "hint": "It is used when the client wants to retrieve data.",
+      "options": [
+        {"id":"A","text":"Retrieving data"},
+        {"id":"B","text":"Deleting the API server"},
+        {"id":"C","text":"Encrypting an API key"},
+        {"id":"D","text":"Creating a new MCP transport"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["GET is commonly used to retrieve data from an API.", "For example, a client might use GET to fetch a list of news headlines."]
+    },
+    {
+      "questionId": "mcp-28",
+      "questionText": "What is the POST HTTP method commonly used for?",
+      "questionType": "single",
+      "skills": ["API Fundamentals"],
+      "hint": "It commonly sends data to a server.",
+      "options": [
+        {"id":"A","text":"Sending data to a server or creating a resource"},
+        {"id":"B","text":"Retrieving only public documentation"},
+        {"id":"C","text":"Opening a local stdio connection"},
+        {"id":"D","text":"Validating a JWT signature without a server"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["POST is commonly used to send data to a server or create a resource.", "It does not itself encrypt data or guarantee that request data is never logged."]
+    },
+    {
+      "questionId": "mcp-29",
+      "questionText": "Which set contains HTTP methods commonly used for updating or deleting resources?",
+      "questionType": "single",
+      "skills": ["API Fundamentals"],
+      "hint": "They are often used for updating or deleting resources.",
+      "options": [
+        {"id":"A","text":"PUT, PATCH, and DELETE"},
+        {"id":"B","text":"STDIO, SSE, and JSON"},
+        {"id":"C","text":"OAuth, JWT, and scope"},
+        {"id":"D","text":"GET, MCP, and FastMCP"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["PUT, PATCH, and DELETE are additional HTTP methods.", "Which method to use depends on the API's design and documentation."]
+    },
+    {
+      "questionId": "mcp-30",
+      "questionText": "Why might an API require an API key?",
+      "questionType": "single",
+      "skills": ["API Fundamentals", "Security and Secrets"],
+      "hint": "The service may need to identify or authorize the caller.",
+      "options": [
+        {"id":"A","text":"To identify or authorize the caller before providing access"},
+        {"id":"B","text":"To convert every request into an MCP tool"},
+        {"id":"C","text":"To guarantee that the service is always available"},
+        {"id":"D","text":"To make the endpoint easier to guess"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An API key may be required to identify or authorize a caller.", "Keys should be treated as secrets and protected."]
+    },
+    {
+      "questionId": "mcp-31",
+      "questionText": "What can an API client such as Bruno help a learner do?",
+      "questionType": "single",
+      "skills": ["API Fundamentals"],
+      "hint": "It allows requests to be sent and their responses inspected.",
+      "options": [
+        {"id":"A","text":"Send API requests, adjust methods or parameters, and inspect responses"},
+        {"id":"B","text":"Automatically make every API public"},
+        {"id":"C","text":"Replace the server's authentication policy"},
+        {"id":"D","text":"Create model embeddings without text"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["API clients help learners explore endpoints and understand request and response behavior.", "They are useful for testing an API before wrapping it in an MCP tool."]
+    },
+    {
+      "questionId": "mcp-32",
+      "questionText": "What does JSON-RPC describe in MCP communication?",
+      "questionType": "single",
+      "skills": ["JSON-RPC and Transports"],
+      "hint": "It describes message structure, not the physical communication channel.",
+      "options": [
+        {"id":"A","text":"The structure of request and response messages exchanged by client and server"},
+        {"id":"B","text":"The programming language used to implement every server"},
+        {"id":"C","text":"The cloud host that runs a remote server"},
+        {"id":"D","text":"The permission granted by an OAuth scope"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["JSON-RPC describes the shape of requests and responses.", "It is distinct from the transport carrying those messages."]
+    },
+    {
+      "questionId": "mcp-33",
+      "questionText": "Which items are commonly included in a JSON-RPC tool-call request?",
+      "questionType": "multiple",
+      "skills": ["JSON-RPC and Transports"],
+      "hint": "A request needs to identify what to call, with which inputs, and correlate the response.",
+      "options": [
+        {"id":"A","text":"The method to call"},
+        {"id":"B","text":"The method parameters"},
+        {"id":"C","text":"A request identifier"},
+        {"id":"D","text":"The server's source-code repository password"}
+      ],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["The request identifies a method, its parameters, and a request ID.", "The ID helps correlate the response with the request."]
+    },
+    {
+      "questionId": "mcp-34",
+      "questionText": "How does a successful tool result return to the client?",
+      "questionType": "single",
+      "skills": ["JSON-RPC and Transports"],
+      "hint": "The server returns a response after executing the requested operation.",
+      "options": [
+        {"id":"A","text":"The server sends a JSON-RPC response containing the result"},
+        {"id":"B","text":"The model reads the server's source code directly"},
+        {"id":"C","text":"The client assumes success without receiving a message"},
+        {"id":"D","text":"The result is returned only by a graphical interface"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["After executing a tool, the server returns a response containing its result.", "The client can then provide that result to the agent's decision process."]
+    },
+    {
+      "questionId": "mcp-35",
+      "questionText": "What does “transport” mean in MCP?",
+      "questionType": "single",
+      "skills": ["JSON-RPC and Transports"],
+      "hint": "It is the channel used to carry protocol messages.",
+      "options": [
+        {"id":"A","text":"The communication channel carrying messages between client and server"},
+        {"id":"B","text":"The schema defining each tool's arguments"},
+        {"id":"C","text":"The tool's implementation language"},
+        {"id":"D","text":"A list of OAuth scopes"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A transport carries MCP messages between the communicating parties.", "It is distinct from the format of the messages themselves."]
+    },
+    {
+      "questionId": "mcp-36",
+      "questionText": "What is stdio transport commonly used for?",
+      "questionType": "single",
+      "skills": ["JSON-RPC and Transports"],
+      "hint": "The client and server usually run on the same computer.",
+      "options": [
+        {"id":"A","text":"Local communication with a server process using standard input and output"},
+        {"id":"B","text":"Communication with any cloud server through a public website"},
+        {"id":"C","text":"Storing vectors in a database"},
+        {"id":"D","text":"Exchanging OAuth scopes without a client"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Stdio is commonly used when a local client starts or communicates with a server process.", "The communication uses standard input and output."]
+    },
+    {
+      "questionId": "mcp-37",
+      "questionText": "What is Streamable HTTP used for?",
+      "questionType": "single",
+      "skills": ["JSON-RPC and Transports"],
+      "hint": "It is appropriate for a server exposed through an HTTP URL.",
+      "options": [
+        {"id":"A","text":"Communicating with an MCP server exposed over HTTP, including a remote server"},
+        {"id":"B","text":"Calling a Python function without any client-server message"},
+        {"id":"C","text":"Managing Python package versions"},
+        {"id":"D","text":"Replacing tool input schemas"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Streamable HTTP carries MCP communication over HTTP.", "It supports connecting to HTTP-accessible servers, including remote deployments."]
+    },
+    {
+      "questionId": "mcp-38",
+      "questionText": "Which statement best describes Server-Sent Events (SSE) in relation to MCP transports?",
+      "questionType": "single",
+      "skills": ["JSON-RPC and Transports"],
+      "hint": "Consider how SSE relates historically to Streamable HTTP and check the protocol version supported by an implementation.",
+      "options": [
+        {"id":"A","text":"SSE is an earlier HTTP transport; implementations should follow the MCP protocol version and SDK they support"},
+        {"id":"B","text":"It describes SSE as a tool input schema"},
+        {"id":"C","text":"It says SSE is an API authentication token"},
+        {"id":"D","text":"It describes SSE as the Python package manager"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["SSE was used as an earlier MCP HTTP transport, while Streamable HTTP is the newer transport described in current MCP guidance.", "Transport support can depend on protocol and SDK versions, so check the documentation for the implementation you use."]
+    },
+    {
+      "questionId": "mcp-39",
+      "questionText": "Why can a tool's description alone not establish that it is safe?",
+      "questionType": "single",
+      "skills": ["Security and Trust"],
+      "hint": "The model typically does not inspect the implementation code.",
+      "options": [
+        {"id":"A","text":"The code could behave differently from what its description claims"},
+        {"id":"B","text":"Descriptions always contain executable code"},
+        {"id":"C","text":"MCP servers cannot have descriptions"},
+        {"id":"D","text":"A description guarantees the server has no permissions"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["The model sees metadata, not necessarily the server implementation.", "A misleading description is not a substitute for reviewing and trusting the code."]
+    },
+    {
+      "questionId": "mcp-40",
+      "questionText": "What is a key risk of running an untrusted stdio server locally?",
+      "questionType": "single",
+      "skills": ["Security and Trust"],
+      "hint": "The server code executes on your computer.",
+      "options": [
+        {"id":"A","text":"It may access files, environment values, or network resources available to its process"},
+        {"id":"B","text":"It can only display its tool description"},
+        {"id":"C","text":"It cannot execute code because stdio is a transport"},
+        {"id":"D","text":"It automatically runs in a remote sandbox"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A local server executes code on the user's computer with the process's available resources.", "Use trusted servers and consider what access they receive."]
+    },
+    {
+      "questionId": "mcp-41",
+      "questionText": "What precautions are sensible before installing a community MCP server?",
+      "questionType": "multiple",
+      "skills": ["Security and Trust"],
+      "hint": "Consider the publisher, source code, and whether the server is trustworthy.",
+      "options": [
+        {"id":"A","text":"Check who published it"},
+        {"id":"B","text":"Prefer trusted or official sources"},
+        {"id":"C","text":"Inspect its source when possible"},
+        {"id":"D","text":"Assume popularity guarantees safety"}
+      ],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Checking the publisher, source, and trusted distribution can reduce risk.", "Popularity or a listing alone does not prove that code is safe."]
+    },
+    {
+      "questionId": "mcp-42",
+      "questionText": "Why specify or pin a server version when installing one?",
+      "questionType": "single",
+      "skills": ["Security and Trust"],
+      "hint": "Version selection helps control which code is installed.",
+      "options": [
+        {"id":"A","text":"To control the version and avoid unintentionally installing unverified code"},
+        {"id":"B","text":"To let the server ignore all permission checks"},
+        {"id":"C","text":"To make the server run without a transport"},
+        {"id":"D","text":"To guarantee there will never be a security vulnerability"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Pinning a version makes the selected code version explicit.", "It helps with reproducibility but does not guarantee that the version is secure."]
+    },
+    {
+      "questionId": "mcp-43",
+      "questionText": "Does using a remote server eliminate security and privacy concerns?",
+      "questionType": "single",
+      "skills": ["Security and Trust"],
+      "hint": "The code runs elsewhere, but data and provider trust still matter.",
+      "options": [
+        {"id":"A","text":"No. The provider must be trusted and data sent to the server still needs protection"},
+        {"id":"B","text":"Yes. Remote servers cannot access user data"},
+        {"id":"C","text":"Yes. Hosting automatically encrypts every kind of data"},
+        {"id":"D","text":"No. Remote servers always run with administrator access"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Remote hosting changes where code runs, not whether the provider is trustworthy.", "Consider the information sent to the service and how it is protected."]
+    },
+    {
+      "questionId": "mcp-44",
+      "questionText": "Which items should developers avoid committing to a public repository for a RAG application?",
+      "questionType": "multiple",
+      "skills": ["Security and Trust"],
+      "hint": "Keep secrets and local data out of source control.",
+      "options": [
+        {"id":"A","text":"Environment files containing secrets"},
+        {"id":"B","text":"Local document data"},
+        {"id":"C","text":"The local Chroma database"},
+        {"id":"D","text":"A README explaining how to run the project"}
+      ],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Secrets and local data or databases should not be committed publicly.", "A README with safe setup instructions is not itself a secret."]
+    },
+    {
+      "questionId": "mcp-45",
+      "questionText": "What is the difference between a localhost HTTP MCP server and a cloud-hosted remote server?",
+      "questionType": "single",
+      "skills": ["Remote Servers and Deployment"],
+      "hint": "The key difference is where the server process runs.",
+      "options": [
+        {"id":"A","text":"Localhost runs on the developer's computer; a remote server runs on another machine"},
+        {"id":"B","text":"Localhost always uses stdio, while remote servers cannot use HTTP"},
+        {"id":"C","text":"A remote server is always safe, while localhost is never safe"},
+        {"id":"D","text":"They differ only in the tool names"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A localhost server runs on the local computer; a cloud-hosted server runs elsewhere.", "Both can expose HTTP endpoints, but deployment and trust considerations differ."]
+    },
+    {
+      "questionId": "mcp-46",
+      "questionText": "Why might a developer integrate an MCP server into a FastAPI application?",
+      "questionType": "single",
+      "skills": ["Remote Servers and Deployment"],
+      "hint": "A web application can host MCP endpoints alongside other backend capabilities.",
+      "options": [
+        {"id":"A","text":"To provide a broader backend for MCP and related services such as authentication or other endpoints"},
+        {"id":"B","text":"To prevent the server from receiving HTTP requests"},
+        {"id":"C","text":"To make all tools run in the model's training process"},
+        {"id":"D","text":"To replace every API with stdio"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["FastAPI can host MCP endpoints as part of a broader backend application.", "Related services can include authentication and other HTTP routes."]
+    },
+    {
+      "questionId": "mcp-47",
+      "questionText": "When can hosting multiple MCP servers in one application be useful?",
+      "questionType": "single",
+      "skills": ["Remote Servers and Deployment"],
+      "hint": "Consider whether the servers are related and benefit from sharing a host.",
+      "options": [
+        {"id":"A","text":"When they are related or benefit from being hosted together"},
+        {"id":"B","text":"Whenever servers have unrelated security requirements"},
+        {"id":"C","text":"Only when they use different programming languages"},
+        {"id":"D","text":"It is required by MCP for every deployment"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Related servers may be hosted together when it is useful.", "Unrelated servers may be better separated."]
+    },
+    {
+      "questionId": "mcp-48",
+      "questionText": "Which sequence is a sensible general process for deploying a remote MCP server?",
+      "questionType": "single",
+      "skills": ["Remote Servers and Deployment"],
+      "hint": "The deployed URL needs to be tested after the host is configured.",
+      "options": [
+        {"id":"A","text":"Prepare the app, configure the host and environment, deploy, then test the URL"},
+        {"id":"B","text":"Deploy first, add the server code later, and never test"},
+        {"id":"C","text":"Publish API keys in the repository, then deploy"},
+        {"id":"D","text":"Remove all configuration before starting the server"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Deployment involves preparing the application, configuring the hosting service, and deploying it.", "Testing the resulting endpoint helps confirm that the remote server is reachable."]
+    },
+    {
+      "questionId": "mcp-49",
+      "questionText": "Why must a client use the correct HTTP URL and path when connecting to a server?",
+      "questionType": "single",
+      "skills": ["Remote Servers and Deployment"],
+      "hint": "The MCP endpoint may be mounted at a specific route.",
+      "options": [
+        {"id":"A","text":"The endpoint may use a specific path, and the wrong route can cause connection errors"},
+        {"id":"B","text":"The URL determines which tool implementation the model sees"},
+        {"id":"C","text":"HTTP paths are only used to store embeddings"},
+        {"id":"D","text":"A client can connect only if the URL contains an API key"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Clients must connect to the correct host and MCP endpoint path.", "A wrong URL or route can prevent successful communication."]
+    },
+    {
+      "questionId": "mcp-50",
+      "questionText": "Which settings are commonly important when deploying a web-based MCP server to a hosting platform?",
+      "questionType": "multiple",
+      "skills": ["Remote Servers and Deployment"],
+      "hint": "The server must bind correctly and receive its required configuration.",
+      "options": [
+        {"id":"A","text":"Binding the host appropriately"},
+        {"id":"B","text":"Using the expected port"},
+        {"id":"C","text":"Setting required environment variables"},
+        {"id":"D","text":"Committing all secret values to source control"}
+      ],
+      "correctAnswers": ["A","B","C"],
+      "summary": ["Host binding, the expected port, and required environment variables are common deployment considerations.", "Exact settings vary by hosting platform and should be checked in its documentation."]
+    },
+    {
+      "questionId": "mcp-51",
+      "questionText": "Why does a remote MCP server need authentication and authorization?",
+      "questionType": "single",
+      "skills": ["Authentication and Authorization"],
+      "hint": "The server may expose sensitive data or actions.",
+      "options": [
+        {"id":"A","text":"To control who can connect and what they are permitted to do"},
+        {"id":"B","text":"To make every tool publicly available"},
+        {"id":"C","text":"To replace the need for tool input schemas"},
+        {"id":"D","text":"To ensure responses contain no errors"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Authentication and authorization help protect remote tools and data.", "They establish who is accessing the server and what access is permitted."]
+    },
+    {
+      "questionId": "mcp-52",
+      "questionText": "Why can local API-key configuration be inconvenient for nontechnical users?",
+      "questionType": "single",
+      "skills": ["Authentication and Authorization"],
+      "hint": "Think about what a user may need to edit or obtain.",
+      "options": [
+        {"id":"A","text":"They may need to edit configuration files and obtain or enter keys themselves"},
+        {"id":"B","text":"API keys can only be entered into a vector database"},
+        {"id":"C","text":"Local configuration prevents all tools from working"},
+        {"id":"D","text":"It requires users to write the MCP protocol"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Manual API-key configuration can require users to find credentials and edit files.", "OAuth-style flows can improve the experience in some cases."]
+    },
+    {
+      "questionId": "mcp-53",
+      "questionText": "What does OAuth help a user avoid sharing directly with an MCP server?",
+      "questionType": "single",
+      "skills": ["Authentication and Authorization"],
+      "hint": "The server can receive a token rather than the user's underlying credentials.",
+      "options": [
+        {"id":"A","text":"The user's underlying credentials for another service"},
+        {"id":"B","text":"The tool's public description"},
+        {"id":"C","text":"The MCP transport name"},
+        {"id":"D","text":"The API endpoint path"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["OAuth flows can let a service receive a token rather than the user's underlying credentials.", "The server should validate the token and its permitted access."]
+    },
+    {
+      "questionId": "mcp-54",
+      "questionText": "What is a scope used for in OAuth-based access to a protected MCP server?",
+      "questionType": "single",
+      "skills": ["Authentication and Authorization"],
+      "hint": "It represents a permission that can be granted or required.",
+      "options": [
+        {"id":"A","text":"Representing a permission, such as access to a particular tool"},
+        {"id":"B","text":"Choosing whether the server uses JSON or Python"},
+        {"id":"C","text":"Storing the server's source code"},
+        {"id":"D","text":"Selecting an HTTP port automatically"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A scope describes a permission associated with a token.", "A server can check whether the token grants the permission needed for a tool."]
+    },
+    {
+      "questionId": "mcp-55",
+      "questionText": "What can a 401 response communicate in an OAuth-enabled MCP authorization flow?",
+      "questionType": "single",
+      "skills": ["Authentication and Authorization"],
+      "hint": "It signals that the request is unauthorized and can point a client toward authentication metadata.",
+      "options": [
+        {"id":"A","text":"It indicates the request is unauthorized and may provide metadata to find the authorization process"},
+        {"id":"B","text":"It confirms that the tool call succeeded"},
+        {"id":"C","text":"It means the server has permanently deleted the tool"},
+        {"id":"D","text":"It encrypts the client configuration"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A 401 response indicates that the request is unauthorized.", "A server may include metadata that helps a compatible client discover how to authenticate."]
+    },
+    {
+      "questionId": "mcp-56",
+      "questionText": "Why might authorization metadata endpoints be accessible without a bearer token?",
+      "questionType": "single",
+      "skills": ["Authentication and Authorization"],
+      "hint": "A client needs some public information before it can authenticate.",
+      "options": [
+        {"id":"A","text":"The client needs the metadata to learn how to authenticate"},
+        {"id":"B","text":"Metadata endpoints execute all protected tools"},
+        {"id":"C","text":"Bearer tokens are never used by remote servers"},
+        {"id":"D","text":"The metadata endpoint stores user passwords"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A client may need authorization metadata before it can obtain a token.", "Leaving that discovery information accessible supports the authentication flow."]
+    },
+    {
+      "questionId": "mcp-57",
+      "questionText": "What should a server do when it receives a bearer token?",
+      "questionType": "single",
+      "skills": ["Authentication and Authorization"],
+      "hint": "Checking that a token exists is not the same as checking that it is valid.",
+      "options": [
+        {"id":"A","text":"Validate the token and check relevant permissions"},
+        {"id":"B","text":"Accept any non-empty string as valid"},
+        {"id":"C","text":"Send the token to the language model for storage"},
+        {"id":"D","text":"Ignore the token and grant administrator access"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A server should validate tokens rather than merely checking for their presence.", "Validation can include checking token properties and required permissions."]
+    },
+    {
+      "questionId": "mcp-58",
+      "questionText": "When may a tool call require a scope check?",
+      "questionType": "single",
+      "skills": ["Authentication and Authorization"],
+      "hint": "Some tools may require a specific permission.",
+      "options": [
+        {"id":"A","text":"When the requested tool has a permission requirement that the server must verify"},
+        {"id":"B","text":"Only when the client uses stdio"},
+        {"id":"C","text":"For every public documentation page, regardless of policy"},
+        {"id":"D","text":"Scopes are never checked after token validation"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A server can associate a required scope with a protected tool.", "It checks whether the caller's token grants that permission."]
+    },
+    {
+      "questionId": "mcp-59",
+      "questionText": "What problem does RAG help address?",
+      "questionType": "single",
+      "skills": ["RAG Fundamentals"],
+      "hint": "It supplies external or private document information as context to a model.",
+      "options": [
+        {"id":"A","text":"It lets a model answer using retrieved external or private document information"},
+        {"id":"B","text":"It guarantees that a model never makes an error"},
+        {"id":"C","text":"It permanently trains every document into model weights"},
+        {"id":"D","text":"It replaces the need for a language model"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["RAG retrieves relevant information and supplies it as context to a language model.", "This can help answer questions about external or private material."]
+    },
+    {
+      "questionId": "mcp-60",
+      "questionText": "What are the three broad stages of a typical RAG workflow?",
+      "questionType": "single",
+      "skills": ["RAG Fundamentals"],
+      "hint": "Prepare the data, find relevant content, then generate an answer.",
+      "options": [
+        {"id":"A","text":"ETL or document preparation, retrieval, and generation"},
+        {"id":"B","text":"Authentication, authorization, and deployment"},
+        {"id":"C","text":"Prompting, compiling, and encrypting"},
+        {"id":"D","text":"Tokenizing, hosting, and deleting"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["RAG commonly includes document preparation, retrieval, and generation.", "The retrieved context is provided to the model to support its response."]
+    },
+    {
+      "questionId": "mcp-61",
+      "questionText": "What does ETL mean in the RAG explanation?",
+      "questionType": "single",
+      "skills": ["RAG Fundamentals"],
+      "hint": "The letters refer to preparing data for a target store.",
+      "options": [
+        {"id":"A","text":"Extract, transform, and load"},
+        {"id":"B","text":"Encrypt, transfer, and log"},
+        {"id":"C","text":"Evaluate, train, and learn"},
+        {"id":"D","text":"Execute, test, and launch"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["ETL stands for extract, transform, and load.", "In RAG, document content is prepared and loaded into a searchable store."]
+    },
+    {
+      "questionId": "mcp-62",
+      "questionText": "Why split long documents into chunks for RAG?",
+      "questionType": "single",
+      "skills": ["RAG Fundamentals"],
+      "hint": "Smaller pieces are easier to search and pass as relevant context.",
+      "options": [
+        {"id":"A","text":"Chunks are easier to store and retrieve than treating a whole long document as one unit"},
+        {"id":"B","text":"Chunking guarantees that all document facts are correct"},
+        {"id":"C","text":"Chunks prevent the need for embeddings"},
+        {"id":"D","text":"Chunking automatically grants users access"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Chunking divides long text into smaller retrievable pieces.", "Relevant chunks can be supplied as context without using an entire document."]
+    },
+    {
+      "questionId": "mcp-63",
+      "questionText": "What is an embedding?",
+      "questionType": "single",
+      "skills": ["RAG Fundamentals"],
+      "hint": "It represents text numerically so its meaning can be compared.",
+      "options": [
+        {"id":"A","text":"A numerical vector representation intended to capture aspects of text meaning"},
+        {"id":"B","text":"A human-readable API password"},
+        {"id":"C","text":"A JSON-RPC response identifier"},
+        {"id":"D","text":"A server deployment region"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An embedding represents text as a numerical vector.", "These vectors can be compared to find semantically related text."]
+    },
+    {
+      "questionId": "mcp-64",
+      "questionText": "Why is a vector database useful for RAG?",
+      "questionType": "single",
+      "skills": ["RAG Fundamentals"],
+      "hint": "It can compare a query vector with stored document vectors.",
+      "options": [
+        {"id":"A","text":"It can find vectors similar to a query, supporting semantic search"},
+        {"id":"B","text":"It guarantees that every source is authoritative"},
+        {"id":"C","text":"It replaces all document preparation"},
+        {"id":"D","text":"It stores OAuth passwords in plain text"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Vector databases support similarity search over embeddings.", "This can retrieve semantically relevant text even when it does not share exact keywords."]
+    },
+    {
+      "questionId": "mcp-65",
+      "questionText": "What happens during retrieval after a user asks a question?",
+      "questionType": "single",
+      "skills": ["RAG Fundamentals"],
+      "hint": "Relevant chunks are found and supplied as context.",
+      "options": [
+        {"id":"A","text":"The query is used to find relevant document chunks, which are returned as model context"},
+        {"id":"B","text":"The user's question is automatically added to model training"},
+        {"id":"C","text":"Every stored document is sent to the user"},
+        {"id":"D","text":"The vector database changes the OAuth scopes"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Retrieval searches for document chunks relevant to the query.", "Those chunks can be included as context for generation."]
+    },
+    {
+      "questionId": "mcp-66",
+      "questionText": "How can agentic RAG differ from a fixed RAG workflow?",
+      "questionType": "single",
+      "skills": ["Agentic RAG"],
+      "hint": "The agent can decide how and when to use retrieval tools.",
+      "options": [
+        {"id":"A","text":"An agent can choose retrieval tools, inspect results, and decide whether more information is needed"},
+        {"id":"B","text":"It never retrieves documents"},
+        {"id":"C","text":"It requires every document to be placed in the model's training data"},
+        {"id":"D","text":"It makes the vector database responsible for generating all answers"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["An agent can decide when to retrieve and how to use returned results.", "It may make additional tool calls before giving an answer."]
+    },
+    {
+      "questionId": "mcp-67",
+      "questionText": "What is the purpose of a document-ingestion tool in the RAG project?",
+      "questionType": "single",
+      "skills": ["Agentic RAG"],
+      "hint": "It prepares and loads documents so they can be searched later.",
+      "options": [
+        {"id":"A","text":"Extracting and loading documents into a vector collection for later search"},
+        {"id":"B","text":"Granting OAuth permission to every user"},
+        {"id":"C","text":"Returning a final answer without retrieving data"},
+        {"id":"D","text":"Hosting an MCP client on a user's computer"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Ingestion prepares documents and adds them to the searchable collection.", "Later query tools can retrieve relevant content from that collection."]
+    },
+    {
+      "questionId": "mcp-68",
+      "questionText": "Why should a reload or ingestion operation avoid unintentionally duplicating old entries?",
+      "questionType": "single",
+      "skills": ["Agentic RAG"],
+      "hint": "Running ingestion repeatedly may add the same source more than once.",
+      "options": [
+        {"id":"A","text":"Repeated ingestion may add duplicate documents, so the collection may need a controlled reset or deduplication"},
+        {"id":"B","text":"Duplicate entries are required for OAuth"},
+        {"id":"C","text":"Vector databases cannot store more than one document"},
+        {"id":"D","text":"The MCP client cannot read a collection with one entry"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Repeated ingestion can duplicate stored content if not handled carefully.", "A controlled reset or deduplication strategy can help avoid duplicate entries."]
+    },
+    {
+      "questionId": "mcp-69",
+      "questionText": "What does the document-query tool return to the agent?",
+      "questionType": "single",
+      "skills": ["Agentic RAG"],
+      "hint": "The agent needs the matching content and its source context.",
+      "options": [
+        {"id":"A","text":"Relevant document results with content and source information"},
+        {"id":"B","text":"The server's secret environment variables"},
+        {"id":"C","text":"Only the user's OAuth password"},
+        {"id":"D","text":"A list of unrelated API endpoints"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["The query tool returns relevant document results and source details.", "A search response may also include similarity distance or a configurable result count."]
+    },
+    {
+      "questionId": "mcp-70",
+      "questionText": "What is the database-status tool for?",
+      "questionType": "single",
+      "skills": ["Agentic RAG"],
+      "hint": "It helps check whether documents have been loaded.",
+      "options": [
+        {"id":"A","text":"Reporting collection information such as the number of stored documents"},
+        {"id":"B","text":"Generating API keys for all clients"},
+        {"id":"C","text":"Replacing the document-ingestion process"},
+        {"id":"D","text":"Changing the MCP transport"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["A status tool can report collection details such as its document count.", "This helps developers verify whether ingestion has occurred."]
+    },
+    {
+      "questionId": "mcp-71",
+      "questionText": "Why test RAG functions in a notebook before integrating them into an MCP server?",
+      "questionType": "single",
+      "skills": ["Agentic RAG", "Building and Testing Tools"],
+      "hint": "Test the core functions before adding the server integration layer.",
+      "options": [
+        {"id":"A","text":"It makes the underlying functions easier to develop and debug before exposing them as tools"},
+        {"id":"B","text":"A notebook automatically makes the tools secure for production"},
+        {"id":"C","text":"MCP servers cannot call Python functions"},
+        {"id":"D","text":"Testing first removes the need to inspect tool results"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["Testing the underlying RAG functions separately helps isolate development and debugging.", "They can then be exposed through MCP tools."]
+    },
+    {
+      "questionId": "mcp-72",
+      "questionText": "What main components are brought together in the final agentic RAG server?",
+      "questionType": "single",
+      "skills": ["Agentic RAG", "MCP Architecture"],
+      "hint": "Think about preparing, searching, and checking the document collection.",
+      "options": [
+        {"id":"A","text":"Ingestion, document search, and database status tools backed by a vector collection and used through an MCP client"},
+        {"id":"B","text":"Only a language model and a public API key"},
+        {"id":"C","text":"An OAuth server with no tools or document store"},
+        {"id":"D","text":"A graphical interface that replaces retrieval"}
+      ],
+      "correctAnswers": ["A"],
+      "summary": ["The project combines ingestion, retrieval, and status tools backed by a vector collection.", "An agent accesses those capabilities through an MCP client."]
+    }
+  ]
+}
